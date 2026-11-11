@@ -1,0 +1,71 @@
+# Render Blueprint. Sandbox secrets are entered in Render, never in this file.
+databases:
+  - name: nebraska-db
+    databaseName: nebraska
+    user: nebraska
+    plan: basic-256mb
+services:
+  - type: web
+    name: nebraska
+    runtime: node
+    plan: starter
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start -- --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.22.1
+      - key: NEBRASKA_MODE
+        value: sandbox
+      - key: DATABASE_URL
+        fromDatabase: { name: nebraska-db, property: connectionString }
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_API_TOKEN
+        generateValue: true
+      - key: APP_URL
+        sync: false
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
+      - key: PAYPAL_WEBHOOK_ID
+        sync: false
+      - key: GITHUB_CLIENT_ID
+        sync: false
+      - key: GITHUB_CLIENT_SECRET
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: DECISION_MODEL
+        value: gpt-4.1-2025-04-14
+      - key: TREASURER_MODEL
+        value: gpt-4.1-2025-04-14
+  - type: cron
+    name: nebraska-daily-treasurer
+    runtime: node
+    plan: starter
+    schedule: '0 2 * * *'
+    buildCommand: npm ci --omit=dev
+    startCommand: npm run worker
+    envVars:
+      - key: NODE_VERSION
+        value: 24.22.1
+      - key: NEBRASKA_MODE
+        value: sandbox
+      - key: DATABASE_URL
+        fromDatabase: { name: nebraska-db, property: connectionString }
+      - key: APP_URL
+        sync: false
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
+      - key: PAYPAL_WEBHOOK_ID
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: DECISION_MODEL
+        value: gpt-4.1-2025-04-14
+      - key: TREASURER_MODEL
+        value: gpt-4.1-2025-04-14

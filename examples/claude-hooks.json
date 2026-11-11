@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /absolute/path/to/nebraska/node_modules/tsx/dist/cli.mjs /absolute/path/to/nebraska/scripts/meter.ts --root \"$CLAUDE_PROJECT_DIR\" --agent claude-code --changed-only --base HEAD"
+          }
+        ]
+      }
+    ]
+  }
+}

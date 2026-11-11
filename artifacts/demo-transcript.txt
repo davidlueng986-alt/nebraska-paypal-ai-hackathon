@@ -1,0 +1,65 @@
+
+> nebraska@1.0.0 demo
+> node --env-file-if-exists=.env --import tsx scripts/demo.ts
+
+SIMULATION — no PayPal money moves.
+┌─────────┬───────────────────┬───────┬─────┬─────┬────────┬────────────┐
+│ (index) │ package           │ usage │ c   │ n   │ usd    │ status     │
+├─────────┼───────────────────┼───────┼─────┼─────┼────────┼────────────┤
+│ 0       │ 'next'            │ 400   │ 1   │ 0.6 │ 96.77  │ 'Verified' │
+│ 1       │ 'zod'             │ 100   │ 1.5 │ 1.8 │ 217.74 │ 'Verified' │
+│ 2       │ 'fast-xml-parser' │ 25    │ 2   │ 2   │ 161.29 │ 'Verified' │
+│ 3       │ 'kleur'           │ 9     │ 1   │ 1   │ 24.19  │ 'Held'     │
+└─────────┴───────────────────┴───────┴─────┴─────┴────────┴────────────┘
+{
+  "mode": "simulated-agent",
+  "closes": 1,
+  "batch": {
+    "createdAt": "2026-11-11T03:02:50.654Z",
+    "id": "nebraska-2026-11",
+    "items": [
+      {
+        "cents": 9677,
+        "creditIds": [
+          "credit_797baffd-63fd-4904-81f3-1911650ec7c0:m1"
+        ],
+        "currency": "USD",
+        "id": "1f39ecf72d-2026-11-USD",
+        "maintainerId": "m1",
+        "providerItemId": "DEMO-ITEM-1f39ecf72d-2026-11-USD",
+        "receiver": "framework-team@example.com",
+        "status": "SUCCESS"
+      },
+      {
+        "cents": 21774,
+        "creditIds": [
+          "credit_5dc1972b-b4d5-4967-b7d6-a64be5db158a:m2"
+        ],
+        "currency": "USD",
+        "id": "5a669488ee-2026-11-USD",
+        "maintainerId": "m2",
+        "providerItemId": "DEMO-ITEM-5a669488ee-2026-11-USD",
+        "receiver": "alex-chen@example.com",
+        "status": "SUCCESS"
+      },
+      {
+        "cents": 41129,
+        "creditIds": [
+          "credit:grant_5a2c4c71a6a8a0a2037bf6f6:m3",
+          "credit_b1d0ac4d-af71-4a63-a04b-80fbf9fb772b:m3"
+        ],
+        "currency": "USD",
+        "id": "cfe8210245-2026-11-USD",
+        "maintainerId": "m3",
+        "providerItemId": "DEMO-ITEM-cfe8210245-2026-11-USD",
+        "receiver": "maya-rivera@example.com",
+        "status": "SUCCESS"
+      }
+    ],
+    "payloadHash": "ce0666f29c7b89d5e8d12e3fbac681d66dcaa534dec11352c8bc5a2002f3d8b6",
+    "period": "2026-11",
+    "providerBatchId": "DEMO-PAYOUT-2026-11",
+    "status": "complete"
+  }
+}
+PASS: 1 immutable batch; all gate invariants passed; replay safe. Audit: artifacts/demo-result.json

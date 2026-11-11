@@ -1,0 +1,49 @@
+name: Nebraska open-source usage meter
+description: Record deterministic lockfile, import and SBOM observations without uploading source code.
+inputs:
+  endpoint:
+    description: Nebraska server URL
+    required: true
+  org-id:
+    description: Payer organization ID
+    required: true
+  api-token:
+    description: Scoped organization API token
+    required: true
+  repo-salt:
+    description: Stable secret salt, shared across hooks and CI for this repository
+    required: true
+  root:
+    description: Absolute path of the repository to scan
+    default: ${{ github.workspace }}
+  base:
+    description: Base git revision for lockfile comparison
+    default: HEAD~1
+  sbom:
+    description: Optional CycloneDX or SPDX JSON relative to root
+    default: ""
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: "24"
+    - name: Install meter dependencies
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm ci --ignore-scripts --no-audit --no-fund
+    - name: Record privacy-preserving usage
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      env:
+        NEBRASKA_URL: ${{ inputs.endpoint }}
+        NEBRASKA_ORG_ID: ${{ inputs.org-id }}
+        NEBRASKA_API_TOKEN: ${{ inputs.api-token }}
+        NEBRASKA_REPO_SALT: ${{ inputs.repo-salt }}
+        METER_ROOT: ${{ inputs.root }}
+        METER_BASE: ${{ inputs.base }}
+        METER_SBOM: ${{ inputs.sbom }}
+      run: |
+        args=(--root "$METER_ROOT" --base "$METER_BASE" --agent github-action)
+        if [ -n "$METER_SBOM" ]; then args+=(--sbom "$METER_SBOM"); fi
+        npm run meter -- "${args[@]}"

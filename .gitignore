@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.env*
+!.env.example
+data/
+*.tsbuildinfo
+coverage/
+__pycache__/
+artifacts/*
+!artifacts/nebraska-demo.mp4
+!artifacts/nebraska-demo.srt
+!artifacts/nebraska-poster.png
+!artifacts/demo-result.json
+!artifacts/demo-transcript.txt
+!artifacts/scenes.json
+!artifacts/video-metadata.json

@@ -1,0 +1,183 @@
+1
+00:00:00,000 --> 00:00:02,473
+AI coding agents build on open source every day.
+
+2
+00:00:02,473 --> 00:00:05,925
+The people maintaining that foundation often see none of the value.
+
+3
+00:00:05,925 --> 00:00:10,665
+Nebraska connects what an agent actually uses to a monthly payment for the
+people behind it.
+
+4
+00:00:10,665 --> 00:00:13,396
+This demonstration executes our working local system.
+
+5
+00:00:13,396 --> 00:00:17,930
+All funding, identities, model decisions and transactions here are
+explicitly simulated.
+
+6
+00:00:20,430 --> 00:00:24,643
+A company chooses a monthly budget through a quantity based PayPal
+subscription.
+
+7
+00:00:24,643 --> 00:00:25,855
+One unit is one dollar.
+
+8
+00:00:25,855 --> 00:00:30,595
+Nebraska only allocates money after a verified completed payment, never an
+unpaid promise.
+
+9
+00:00:30,595 --> 00:00:32,280
+Changes require renewed consent.
+
+10
+00:00:32,280 --> 00:00:36,178
+Here, the demo organization has five hundred dollars of confirmed funding.
+
+11
+00:00:36,178 --> 00:00:41,234
+Separate currency pools support dollars, euros, pounds, Canadian dollars
+and Australian dollars.
+
+12
+00:00:43,734 --> 00:00:49,594
+Hooks, continuous integration and the MCP server record package coordinates
+and salted repository hashes.
+
+13
+00:00:49,594 --> 00:00:51,883
+Source code stays on the payer’s machine.
+
+14
+00:00:51,883 --> 00:00:55,455
+Observations are deduplicated per repository, package and month.
+
+15
+00:00:55,455 --> 00:00:59,306
+Direct usage counts as one; each dependency level halves that amount.
+
+16
+00:00:59,306 --> 00:01:04,162
+The meter supports npm, Python, Rust and Go, plus standard software bills
+of materials.
+
+17
+00:01:06,662 --> 00:01:11,128
+The decision model answers fixed, typed questions about criticality and
+resource need.
+
+18
+00:01:11,128 --> 00:01:12,583
+Its scores change the money.
+
+19
+00:01:12,583 --> 00:01:18,711
+In the actual demo run, the small infrastructure package receives one
+hundred sixty one dollars and twenty nine cents.
+
+20
+00:01:18,711 --> 00:01:21,256
+An uncertain model falls back to neutral weights.
+
+21
+00:01:21,256 --> 00:01:23,749
+A malicious README is included in the seed data.
+
+22
+00:01:23,749 --> 00:01:27,437
+It cannot add a recipient, change the budget or escape the package cap.
+
+23
+00:01:29,937 --> 00:01:33,746
+The treasurer initiates settlement through seven code enforced safeguards.
+
+24
+00:01:33,746 --> 00:01:36,988
+Recipients must be verified and past the fourteen day cooldown.
+
+25
+00:01:36,988 --> 00:01:42,341
+Funding, caps, fixed batch identity, decision types, human approval and
+reproducibility are all checked.
+
+26
+00:01:42,341 --> 00:01:44,400
+The suspicious fourth recipient is held.
+
+27
+00:01:44,400 --> 00:01:46,922
+An emergency grant needs separate human approval.
+
+28
+00:01:46,922 --> 00:01:52,790
+In this simulation, the approved two hundred fifty dollar grant is captured
+and added to the maintainer’s balance.
+
+29
+00:01:55,290 --> 00:01:58,142
+These are results from executing the real demo command.
+
+30
+00:01:58,142 --> 00:02:01,304
+Three eligible recipients are paid by the simulated provider.
+
+31
+00:02:01,304 --> 00:02:07,474
+The infrastructure maintainer receives four hundred eleven dollars and
+twenty nine cents, including the separate grant.
+
+32
+00:02:07,474 --> 00:02:10,119
+Running settlement again reuses the existing batch.
+
+33
+00:02:10,119 --> 00:02:12,970
+In sandbox mode, the same service calls PayPal Payouts.
+
+34
+00:02:12,970 --> 00:02:17,118
+Webhooks are signature verified and individual statuses are fetched from
+PayPal.
+
+35
+00:02:19,618 --> 00:02:24,516
+Both sides receive statements with frozen snapshots, model versions and
+recompute hashes.
+
+36
+00:02:24,516 --> 00:02:28,643
+Maintainers see usage counts while company names remain private by default.
+
+37
+00:02:28,643 --> 00:02:30,184
+Small balances roll forward.
+
+38
+00:02:30,184 --> 00:02:35,741
+Multiple maintainers can set custom shares, and verified fiscal hosts can
+receive authorized payouts.
+
+39
+00:02:35,741 --> 00:02:37,887
+Nebraska cannot force a company to pay.
+
+40
+00:02:37,887 --> 00:02:42,565
+It removes two excuses: not knowing who to support, and making payment too
+difficult.
+
+41
+00:02:42,565 --> 00:02:44,546
+The AI decides where the money goes.
+
+42
+00:02:44,546 --> 00:02:46,472
+Code decides where it can never go.

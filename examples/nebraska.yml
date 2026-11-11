@@ -1,0 +1,5 @@
+# Copy to .nebraska.yml inside the repository you want to meter.
+org_id: org_YOUR_ORG
+endpoint: https://YOUR_NEBRASKA_SERVER
+# API token and stable repository salt belong in environment variables or CI secrets.
+# NEBRASKA_API_TOKEN, NEBRASKA_REPO_SALT

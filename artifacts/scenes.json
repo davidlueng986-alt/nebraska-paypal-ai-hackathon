@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Open source, paid forward.",
+    "eyebrow": "NEBRASKA / PAYPAL AI HACKATHON",
+    "kind": "intro",
+    "narration": "AI coding agents build on open source every day. The people maintaining that foundation often see none of the value. Nebraska connects what an agent actually uses to a monthly payment for the people behind it. This demonstration executes our working local system. All funding, identities, model decisions and transactions here are explicitly simulated.",
+    "audioSeconds": 17.930385487528344,
+    "duration": 20.430385487528344
+  },
+  {
+    "title": "A mandate, not a blank check.",
+    "eyebrow": "01 / HUMAN AUTHORIZATION",
+    "kind": "funding",
+    "narration": "A company chooses a monthly budget through a quantity based PayPal subscription. One unit is one dollar. Nebraska only allocates money after a verified completed payment, never an unpaid promise. Changes require renewed consent. Here, the demo organization has five hundred dollars of confirmed funding. Separate currency pools support dollars, euros, pounds, Canadian dollars and Australian dollars.",
+    "audioSeconds": 20.803854875283445,
+    "duration": 23.303854875283445
+  },
+  {
+    "title": "Every dependency has a record.",
+    "eyebrow": "02 / DETERMINISTIC USAGE",
+    "kind": "usage",
+    "narration": "Hooks, continuous integration and the MCP server record package coordinates and salted repository hashes. Source code stays on the payer’s machine. Observations are deduplicated per repository, package and month. Direct usage counts as one; each dependency level halves that amount. The meter supports npm, Python, Rust and Go, plus standard software bills of materials.",
+    "audioSeconds": 20.4281179138322,
+    "duration": 22.9281179138322
+  },
+  {
+    "title": "Judgment changes the outcome.",
+    "eyebrow": "03 / BOUNDED AI DECISIONS",
+    "kind": "allocation",
+    "narration": "The decision model answers fixed, typed questions about criticality and resource need. Its scores change the money. In the actual demo run, the small infrastructure package receives one hundred sixty one dollars and twenty nine cents. An uncertain model falls back to neutral weights. A malicious README is included in the seed data. It cannot add a recipient, change the budget or escape the package cap.",
+    "audioSeconds": 20.774920634920633,
+    "duration": 23.274920634920633
+  },
+  {
+    "title": "Seven checks before a cent moves.",
+    "eyebrow": "04 / THE RULE GATE",
+    "kind": "gate",
+    "narration": "The treasurer initiates settlement through seven code enforced safeguards. Recipients must be verified and past the fourteen day cooldown. Funding, caps, fixed batch identity, decision types, human approval and reproducibility are all checked. The suspicious fourth recipient is held. An emergency grant needs separate human approval. In this simulation, the approved two hundred fifty dollar grant is captured and added to the maintainer’s balance.",
+    "audioSeconds": 22.853015873015874,
+    "duration": 25.353015873015874
+  },
+  {
+    "title": "One month. One immutable batch.",
+    "eyebrow": "05 / EXECUTED LOCAL SETTLEMENT",
+    "kind": "terminal",
+    "narration": "These are results from executing the real demo command. Three eligible recipients are paid by the simulated provider. The infrastructure maintainer receives four hundred eleven dollars and twenty nine cents, including the separate grant. Running settlement again reuses the existing batch. In sandbox mode, the same service calls PayPal Payouts. Webhooks are signature verified and individual statuses are fetched from PayPal.",
+    "audioSeconds": 21.82857142857143,
+    "duration": 24.32857142857143
+  },
+  {
+    "title": "Proof travels with the payment.",
+    "eyebrow": "06 / MAINTAINER INCOME AND AUDIT",
+    "kind": "proof",
+    "narration": "Both sides receive statements with frozen snapshots, model versions and recompute hashes. Maintainers see usage counts while company names remain private by default. Small balances roll forward. Multiple maintainers can set custom shares, and verified fiscal hosts can receive authorized payouts. Nebraska cannot force a company to pay. It removes two excuses: not knowing who to support, and making payment too difficult. The AI decides where the money goes. Code decides where it can never go.",
+    "audioSeconds": 26.85342403628118,
+    "duration": 29.35342403628118
+  }
+]

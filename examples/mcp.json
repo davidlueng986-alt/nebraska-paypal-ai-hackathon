@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "nebraska": {
+      "command": "node",
+      "args": [
+        "/absolute/path/to/nebraska/node_modules/tsx/dist/cli.mjs",
+        "/absolute/path/to/nebraska/scripts/mcp.ts"
+      ],
+      "env": {
+        "NEBRASKA_URL": "http://localhost:3000",
+        "NEBRASKA_ORG_ID": "org_YOUR_ORG",
+        "NEBRASKA_API_TOKEN": "USE_A_SCOPED_TOKEN_FROM_YOUR_SECRET_MANAGER"
+      }
+    }
+  }
+}

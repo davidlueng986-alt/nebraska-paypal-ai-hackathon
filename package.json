@@ -1,0 +1,53 @@
+{
+  "name": "nebraska",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agentic open-source funding, bounded by code and settled through PayPal.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm run build",
+    "seed": "node --env-file-if-exists=.env --import tsx scripts/seed.ts",
+    "demo": "node --env-file-if-exists=.env --import tsx scripts/demo.ts",
+    "meter": "node --env-file-if-exists=.env --import tsx scripts/meter.ts",
+    "mcp": "node --env-file-if-exists=.env --import tsx scripts/mcp.ts",
+    "worker": "node --env-file-if-exists=.env --import tsx scripts/worker.ts",
+    "recompute": "node --env-file-if-exists=.env --import tsx scripts/recompute.ts",
+    "video": "python scripts/video.py",
+    "toolkit:mcp": "node --env-file-if-exists=.env --import tsx scripts/toolkit-mcp.ts",
+    "check:api": "node --import tsx scripts/api-check.ts",
+    "check:mcp": "node --import tsx scripts/mcp-check.ts",
+    "check:postgres": "node --import tsx scripts/postgres-check.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.24.0",
+    "@paypal/agent-toolkit": "^1.11.0",
+    "ag-grid-community": "^34.3.1",
+    "ag-grid-react": "^34.3.1",
+    "lucide-react": "^0.468.0",
+    "next": "^16.0.1",
+    "pg": "^8.16.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "smol-toml": "^1.9.1",
+    "tsx": "^4.23.15",
+    "yaml": "^2.8.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@echogarden/espeak-ng-emscripten": "^0.3.5",
+    "@types/node": "^24.10.0",
+    "@types/pg": "^8.15.6",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "type": "module"
+}

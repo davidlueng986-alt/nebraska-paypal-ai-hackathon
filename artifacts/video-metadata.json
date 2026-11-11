@@ -1,0 +1,8 @@
+{
+  "seconds": 168.97229024943312,
+  "resolution": "1280x720",
+  "narration": "English, synthetic eSpeak-NG",
+  "dataSource": "fresh npm run demo execution",
+  "mode": "simulated payments",
+  "browserScreenRecording": false
+}
