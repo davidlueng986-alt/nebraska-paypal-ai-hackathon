@@ -8,11 +8,15 @@ Nebraska includes the full P0, P1 **and P2** scope from the supplied design: pay
 
 > **Default: an interactive local simulation.** No credentials are needed and no money moves. Demo identities, funding signals, advisories and transactions are fictional. `NEBRASKA_MODE=sandbox` switches to actual sandbox APIs and authenticated access. There is no live-payment mode.
 
+Repository: [https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon](https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon).
+
 ## Run it
 
 Requires **Node.js 24+** and npm. SQLite is included in Node; no database installation is needed for the local demo.
 
 ```bash
+git clone https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon.git
+cd nebraska-paypal-ai-hackathon
 npm ci
 cp .env.example .env
 npm run seed
@@ -109,7 +113,7 @@ Sandbox browser access accepts an admin token or a signed organization token; ma
 
 Default models are pinned to `gpt-4.1-2025-04-14`. The API-returned model identifier is recorded per decision. Change to an available dated model if your account lacks access. `TREASURER_MODE=workflow` uses deterministic orchestration while retaining real structured decisions; unavailable decisions use conservative defaults. The decision-provider boundary can accommodate Jev; the included real implementation uses structured LLM output rather than guessing an unverified Jev API.
 
-**No external PayPal/GitHub/LLM execution is claimed for this handoff:** those credentials were not supplied. Provider request contracts are tested with mocks; actual external confirmation requires the sandbox runbook.
+**No external PayPal sandbox payment, GitHub OAuth verification or LLM inference is claimed for this handoff:** runtime credentials were not supplied. Source publication to the public GitHub repository above has been completed. Provider request contracts are tested with mocks; actual external confirmation requires the sandbox runbook.
 
 ## Meter, MCP and CI
 

@@ -71,4 +71,4 @@ The configured runtime decision and Treasurer model defaults to `gpt-4.1-2025-04
 
 Follow the repository README for the no-credential interactive demo, `npm run demo`, `npm run check`, `npm run check:api` and `npm run check:mcp`. Follow `docs/SANDBOX.md` for actual external integration.
 
-Before submitting, fill in the entrant-owned public repository URL, optional hosted demo URL and public YouTube video URL. Do not describe the prepared Render configuration as an existing deployment. Do not describe simulated payments as actual sandbox execution. Update this draft’s accomplishments only after retaining the corresponding external evidence.
+Public source repository: https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon. Before submitting, fill in the optional hosted demo URL and public YouTube video URL. Do not describe the prepared Render configuration as an existing deployment. Do not describe simulated payments as actual sandbox execution. Update this draft’s accomplishments only after retaining the corresponding external evidence.

@@ -42,6 +42,6 @@
 - PayPal sandbox business app, Payouts entitlement and test accounts must belong to the entrant. No real account credentials were present here.
 - GitHub OAuth and an available dated model must be configured to exercise actual identity/model calls.
 - Render Blueprint is ready; no user-owned Render deployment has been created.
-- Repository source is ready locally, but no public remote URL was supplied or created.
+- Source and demo assets are published at [https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon](https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon); GitHub confirms public visibility, the main branch and MIT license.
 - Video includes actual CLI execution results and data visuals; it does not contain browser or actual PayPal sandbox footage. Capture that footage for the final submission.
 - YouTube/Devpost publication is not performed by local code generation.

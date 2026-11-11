@@ -39,7 +39,8 @@ The model/PayPal request-contract tests mock external fetches; they are not evid
 ## Verification limits
 
 - No PayPal/GitHub/model secrets were configured, so actual provider accounts, OAuth sign-in, model inference and sandbox money movement were not executed.
-- No user-owned Render deployment, public source remote, YouTube upload or Devpost submission was created.
+- Public source and demo assets were published to [https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon](https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon). The remote main commit was verified against the local commit.
+- No user-owned Render deployment, YouTube upload or Devpost submission was created.
 - The managed environment did not expose `cua_repl.js`. Per the Sites workflow, no alternate browser-control path or preview server was improvised. The UI has a passing production build and API checks, but browser visual/interaction QA remains unverified.
 - The video is generated from actual local CLI execution and data visualization. It is not browser footage and does not imply real sandbox settlement.
 

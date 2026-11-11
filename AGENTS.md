@@ -21,7 +21,7 @@ Next.js 16 / React 19 / AG Grid. Domain TypeScript in src/core. Durable append-o
 Tests cover money safety, injection, retries, webhooks, privacy and meter fixtures. Do not claim external sandbox execution without credentials and observed results.
 
 ## Progress
-Implementation complete across P0/P1/P2. Read docs/STATUS.md and docs/VALIDATION.md for current checks, external blockers and handoff. 44 tests, production build, direct API integration, actual MCP transport and PostgreSQL concurrent-write/trigger/settlement checks passed. Narrated 169-second demo assets are in artifacts/. Do not claim external sandbox payment/OAuth/model access or publication: no credentials were provided.
+Implementation complete across P0/P1/P2. Read docs/STATUS.md and docs/VALIDATION.md for current checks, external blockers and handoff. 44 tests, production build, direct API integration, actual MCP transport and PostgreSQL concurrent-write/trigger/settlement checks passed. Narrated 169-second demo assets are in artifacts/. Public source is published at https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon. Do not claim actual sandbox payment, GitHub OAuth verification, model inference, Render deployment, YouTube upload or Devpost submission without observed evidence.
 
 ## Delivery
 README English; docs/QUICKSTART.zh-Hant.md; docs/FEATURES.md traceability; sandbox runbook; Devpost text; video assets/script; Render config; MIT license. Final must distinguish implemented/tested local functionality from credentials-dependent external validation and publication.

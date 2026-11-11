@@ -58,6 +58,7 @@ npm run check:api
 - 英文 README、Devpost 描述、MIT license、Render 部署設定、CI、短片與字幕均在此專案。
 - 原始兩份文件保存在 `docs/source/`。
 - `AGENTS.md` 是 context compact 後接續工作的說明；`docs/STATUS.md` 記錄驗證及剩餘事項。
-- 公開 GitHub repo、部署至自己的 Render、實際 sandbox 授權、補拍瀏覽器影片、上傳 YouTube 及按 Devpost 提交，需要參賽者帳戶完成，未代為發布。
+- 已建立並上載至公開 GitHub repo：[https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon](https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon)。
+- 部署至自己的 Render、實際 sandbox 授權、補拍瀏覽器影片、上傳 YouTube 及按 Devpost 提交，仍需要參賽者帳戶完成。
 
 官方規則已核對：截止為 **2026-11-12 12:00 Pacific／20:00 UTC／21:00 巴黎時間**。在香港為 **2026-11-13 04:00**。

@@ -21,7 +21,7 @@ Original documents: `docs/source/`. Key clarifications: floor example cents and 
 
 ## External boundaries (do not claim complete)
 
-No PayPal/GitHub/model secrets or user-owned Render/GitHub/YouTube/Devpost publishing context were available. Actual external sandbox money movement, OAuth/model account validation, public repository/deployment, browser/sandbox video footage, YouTube upload and Devpost submission remain account-dependent. `docs/SANDBOX.md` and `docs/SUBMISSION.md` give concrete steps.
+Public source and demo assets are now published to https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon. Actual external sandbox money movement, OAuth/model account validation, Render deployment, browser/sandbox video footage, YouTube upload and Devpost submission remain account-dependent. `docs/SANDBOX.md` and `docs/SUBMISSION.md` give concrete steps.
 
 No `cua_repl.js` tool was available. Per Sites skill, no improvised browser preview/control was used. UI build/API checks passed; visual browser QA unverified.
 
@@ -29,6 +29,6 @@ No `cua_repl.js` tool was available. Per Sites skill, no improvised browser prev
 
 Read `AGENTS.md`, this file, `docs/FEATURES.md`, and `docs/VALIDATION.md`. Do not restart implementation or replace completed work. Use `npm run dev` to open the local app. To repeat isolated demo use `npm run demo`; it does not modify the web database. Use user-owned credentials from secure environment settings, never chat, for real external tests. Preserve fixed batch identity and reservations during any reconciliation work.
 
-## GitHub publication attempt
+## GitHub publication
 
-2026-11-11: the user requested a new GitHub repository. Authenticated account: `davidlueng986-alt`. Existing `nebraska` repository was left untouched. Proposed new repository: `nebraska-paypal-ai-hackathon`. GitHub CLI GraphQL and REST creation both returned `Resource not accessible by integration` (403), so no new repository was created and nothing was pushed. Local `main` is prepared with reviewed source, docs, demo video and reproducibility assets. Dependencies, builds, databases, populated environment files and intermediate audio/frames are excluded. Await an entrant-created empty repository URL, then push this commit without overwriting any existing repository history.
+2026-11-11: published source and demo assets to https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon. Account: `davidlueng986-alt`. The existing `nebraska` repository was left untouched. The new public repository was created through the user-supplied MCP endpoint, then the reviewed local `main` commit `d80df6e` was pushed using the authenticated Git transport. GitHub confirms public visibility, main branch and detected MIT license. GitHub Actions CI and PostgreSQL workflows were triggered. Source excludes dependencies, builds, databases, populated environment files and intermediate audio/frames. Documentation now points to the public source; external payment/OAuth/model/deployment/submission validation boundaries remain in force.
