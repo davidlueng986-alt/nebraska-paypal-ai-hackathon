@@ -115,7 +115,7 @@ pstart = s_pr
 offs = 0.0
 for sh in E['product']:
     whoosh(pstart + offs - 0.35, 0.7, 0.12); offs += sum(p[2] for p in sh['pieces'])
-for at in [2.3, 5.8, 20.3, 33.6, 36.85, 40.87, 81.3]:
+for at in [2.3, 20.3, 33.6, 40.87, 81.3]:
     uiclick(pstart + at)
 p4 = pstart + 40.0
 deny(p4 + 5.3)                       # injection rejected
