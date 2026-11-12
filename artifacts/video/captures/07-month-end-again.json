@@ -1,0 +1,13 @@
+{
+  "name": "07-month-end-again",
+  "seconds": 16.03,
+  "frames": 521,
+  "viewport": [
+    1440,
+    900
+  ],
+  "dpr": 2,
+  "base": "http://localhost:3000",
+  "mode": "demo",
+  "capturedAt": "2026-11-12T13:54:35.277Z"
+}
