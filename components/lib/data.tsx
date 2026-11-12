@@ -171,29 +171,3 @@ export function useLedger() {
     () => undefined,
   );
 }
-/**
- * Package → maintainer logins. Uses each maintainer's own view, which only an
- * administrator (demo mode) can read; elsewhere returns an empty map.
- */
-export function useRecipients() {
-  const { boot, period } = useData();
-  return useResource<Record<string, { login: string; held: boolean }[]>>(
-    boot?.actor.role === "admin" ? `recipients:${period}` : null,
-    async () => {
-      const out: Record<string, { login: string; held: boolean }[]> = {};
-      const views = await Promise.all(
-        (boot?.maintainers ?? []).map((m) =>
-          api<Maintainer>(`maintainer?id=${m.id}&period=${period}`).catch(() => null),
-        ),
-      );
-      for (const v of views)
-        if (v)
-          for (const c of v.claims)
-            (out[c.packageId] ??= []).push({ login: v.maintainer.login, held: !!v.hold });
-      return out;
-    },
-    () => ({
-      "npm:fast-xml-parser": [{ login: "maya-rivera", held: false }],
-    }),
-  );
-}

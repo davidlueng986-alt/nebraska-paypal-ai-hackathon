@@ -29,6 +29,9 @@ export function MonthView() {
   const recycled = p.close ? Math.max(0, funded - allocated) : 0;
   const pending = p.grants.filter((g) => g.status === "approval_pending");
   const paid = p.metrics.paid > 0;
+  const grantCents = p.grants
+    .filter((g) => g.status === "captured" && g.period === p.period)
+    .reduce((s, g) => s + g.cents, 0);
   const status = paid ? "Paid" : p.close ? "Allocated, not paid yet" : "Open";
 
   return (
@@ -53,7 +56,11 @@ export function MonthView() {
           <Stat
             label={paid ? "Paid to maintainers" : "Going to maintainers"}
             value={fmt(paid ? p.metrics.paid : p.close ? allocated : funded, cur)}
-            note={p.close ? `${rows.length} packages${recycled ? `, ${fmt(recycled, cur)} rolls over` : ""}` : `Allocated on ${lastDayOf(p.period)}`}
+            note={
+              p.close
+                ? `${rows.length} packages${paid && grantCents ? `, incl. ${fmt(grantCents, cur)} grant you approved` : ""}${recycled ? `, ${fmt(recycled, cur)} rolls over` : ""}`
+                : `Allocated on ${lastDayOf(p.period)}`
+            }
             tone={paid ? "success" : undefined}
           />
           <Stat label="Monthly budget" value={fmt(p.org.budgetCents, cur)} note="Approved by you on PayPal" />

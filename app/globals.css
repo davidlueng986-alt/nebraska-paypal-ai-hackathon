@@ -512,12 +512,14 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
   min-height: 36px;
   padding: 6px 0;
 }
 .banner svg {
   color: var(--attention);
+}
+.banner-row > span:first-of-type {
+  flex: 1;
 }
 
 /* ───── Identity ───── */
