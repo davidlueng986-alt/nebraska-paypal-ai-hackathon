@@ -253,7 +253,27 @@ export type Webhook = {
   at: string;
   resourceId: string;
 };
+export type RunEvent = {
+  run_id: string;
+  seq: number;
+  at: string;
+  actor: "treasurer" | "decision" | "gate" | "paypal" | "system";
+  step:
+    | "snapshot"
+    | "decide"
+    | "allocate"
+    | "gate"
+    | "payout"
+    | "webhook"
+    | "statement";
+  status: "running" | "ok" | "held" | "rejected";
+  invariant?: "I1" | "I2" | "I3" | "I4" | "I5" | "I6" | "I7";
+  title: string;
+  detail: Record<string, unknown>;
+};
+export type RunEventRow = RunEvent & { id: string };
 export type State = {
+  runEvents: RunEventRow[];
   orgs: Org[];
   packages: Package[];
   maintainers: Maintainer[];
@@ -285,6 +305,7 @@ export type Event = {
 };
 export function emptyState(): State {
   return {
+    runEvents: [],
     orgs: [],
     packages: [],
     maintainers: [],

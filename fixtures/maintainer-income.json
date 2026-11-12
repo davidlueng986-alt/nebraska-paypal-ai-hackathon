@@ -1,0 +1,124 @@
+{
+  "simulated": true,
+  "maintainer": {
+    "email": "maya-rivera@example.com",
+    "emailChangedAt": "2026-09-13T00:20:20.839Z",
+    "id": "m3",
+    "login": "maya-rivera",
+    "verifiedAt": "2026-09-13T00:20:20.839Z"
+  },
+  "eligibility": {
+    "email": "maya-rivera@example.com",
+    "ready": true,
+    "reason": "Verified and eligible"
+  },
+  "cooldownDays": 0,
+  "claims": [
+    {
+      "claimedAt": "2026-09-13T00:20:20.839Z",
+      "id": "claim:npm:fast-xml-parser:m3",
+      "maintainerId": "m3",
+      "packageId": "npm:fast-xml-parser",
+      "permission": "admin",
+      "share": 1,
+      "package": {
+        "ecosystem": "npm",
+        "id": "npm:fast-xml-parser",
+        "metadataAt": "2026-11-12T00:20:20.868Z",
+        "name": "fast-xml-parser",
+        "repoUrl": "https://github.com/NaturalIntelligence/fast-xml-parser",
+        "signals": {
+          "accountAgeDays": 900,
+          "backlog": 83,
+          "corporate": false,
+          "dependents": 3200,
+          "fundingKnown": true,
+          "fundingLinks": [],
+          "fundingUsd": 0,
+          "infrastructure": true,
+          "maintainerCountKnown": true,
+          "maintainers": 1,
+          "readme": "Demo metadata. These funding/team values are fictional.",
+          "recentChange": false,
+          "scorecard": 8.2,
+          "vulnerabilities": [
+            {
+              "id": "DEMO-2026-001",
+              "modified": "2026-11-12T00:20:20.868Z",
+              "summary": "Simulated parser advisory for the hackathon demonstration, not a real security claim."
+            }
+          ]
+        },
+        "version": "4.5.0"
+      }
+    }
+  ],
+  "usage": {
+    "orgCount": 1,
+    "repoCount": 25,
+    "organizations": [
+      "Private organization"
+    ]
+  },
+  "credits": [
+    {
+      "at": "2026-11-12T00:20:21.176Z",
+      "batchId": "nebraska-2026-11",
+      "cents": 16129,
+      "currency": "USD",
+      "id": "credit_e436971b-3723-4b11-aa74-f19c7ab8e950:m3",
+      "maintainerId": "m3",
+      "orgId": "org_acme",
+      "packageId": "npm:fast-xml-parser",
+      "period": "2026-11",
+      "source": "allocation",
+      "sourceId": "close:org_acme:2026-11",
+      "status": "paid"
+    },
+    {
+      "at": "2026-11-12T00:20:21.336Z",
+      "batchId": "nebraska-2026-11",
+      "cents": 25000,
+      "currency": "USD",
+      "id": "credit:grant_5a2c4c71a6a8a0a2037bf6f6:m3",
+      "maintainerId": "m3",
+      "orgId": "org_acme",
+      "packageId": "npm:fast-xml-parser",
+      "period": "2026-11",
+      "source": "grant",
+      "sourceId": "grant_5a2c4c71a6a8a0a2037bf6f6",
+      "status": "paid"
+    }
+  ],
+  "earned": {
+    "USD": 41129
+  },
+  "hold": null,
+  "statements": [
+    {
+      "body": "2026-11: your packages were observed in 25 repositories across 1 paying organizations. npm:fast-xml-parser: $161.29 (paid). npm:fast-xml-parser: $250.00 (paid). Balances below the payout minimum roll forward. Income funds your maintenance time and tools.",
+      "closeIds": [
+        "close:org_acme:2026-11"
+      ],
+      "createdAt": "2026-11-12T00:20:22.350Z",
+      "id": "statement:maintainer:m3:2026-11",
+      "ownerId": "m3",
+      "ownerType": "maintainer",
+      "period": "2026-11",
+      "recomputeHash": "2e72137ef548dfa3566dfd8083bb40dfd7f18290f2b3fc6fe2fa6c0142484133"
+    }
+  ],
+  "hosts": [],
+  "parameters": {
+    "version": "nebraska-1.0.0",
+    "gamma": 0.5,
+    "alpha": 0.5,
+    "minWeight": 0.5,
+    "maxWeight": 2,
+    "confidence": 0.8,
+    "risk": 0.3,
+    "cooldownDays": 14,
+    "minimumCents": 1000,
+    "unclaimedMonths": 6
+  }
+}

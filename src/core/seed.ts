@@ -127,7 +127,9 @@ export async function seedDemo(service: Nebraska, period = periodOf()) {
         login: p.login,
         email: `${p.login}@example.com`,
         verifiedAt: old,
-        emailChangedAt: old,
+        // Fictional recipient whose payout email changed yesterday: triggers payee_risk review.
+        emailChangedAt:
+          index === 3 ? new Date(Date.now() - 86400000).toISOString() : old,
       });
       tx.put("claims", {
         id: `claim:${pid}:${mid}`,

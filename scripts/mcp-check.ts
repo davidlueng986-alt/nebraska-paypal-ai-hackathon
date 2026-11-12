@@ -19,6 +19,10 @@ const http = createServer(async (req, res) => {
         ? { results: [{ deduplicated: false }] }
         : {
             org: { currency: "USD", budgetCents: 50000 },
+            rows: [
+              { id: "npm:zod", name: "zod", u: 100, c: 1.5, n: 1.8, cents: 21774, reason: "test reason", confidence: 0.96 },
+            ],
+            statements: [{ id: "statement:org:org_bound:2026-11", body: "test" }],
             metrics: { funded: 50000, allocated: 40000, packages: 4 },
           },
     ),
@@ -50,7 +54,7 @@ try {
     tools.tools
       .map((t) => t.name)
       .sort()
-      .join(",") !== "budget_status,record_usage"
+      .join(",") !== "budget_status,explain_allocation,record_usage"
   )
     throw new Error("Unexpected meter MCP tools");
   await client.callTool({
@@ -71,6 +75,20 @@ try {
       observed_at: "2026-11-01T00:00:00Z",
     },
   });
+  const explained = await client.callTool({
+    name: "explain_allocation",
+    arguments: { package: "zod", period: "2026-11" },
+  });
+  const ex = JSON.parse((explained.content as any)[0].text);
+  if (ex.u !== 100 || ex.c !== 1.5 || ex.n !== 1.8 || ex.estimate_usd !== 217.74 || ex.confidence !== 0.96)
+    throw new Error("explain_allocation shape wrong");
+  const res = await client.readResource({ uri: "nebraska://statements/2026-11" });
+  if (!(res.contents[0] as any).text.includes("statement:org:org_bound"))
+    throw new Error("Statements resource failed");
+  if (requests.some((r) => r.body && r.url?.includes("explain")))
+    throw new Error("explain_allocation must be read-only");
+  if (requests.filter((r) => r.body !== null).length !== 1)
+    throw new Error("Only record_usage may write");
   if (requests[1].body.events[0].org_id !== "org_bound")
     throw new Error("Org binding failed");
   if (requests.some((r) => r.authorization !== "Bearer test-scoped-token"))
