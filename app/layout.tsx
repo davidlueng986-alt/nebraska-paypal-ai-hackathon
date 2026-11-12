@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+
 export const metadata: Metadata = {
-  title: "Nebraska — Open source, paid forward.",
+  title: { default: "Nebraska", template: "%s · Nebraska" },
   description:
-    "AI coding agents fund the open-source maintainers they depend on. Actual usage. Bounded decisions. PayPal settlement.",
+    "Nebraska pays the open-source maintainers behind your AI coding agent's dependencies, every month, by actual usage, through PayPal.",
 };
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = { themeColor: "#F6F8FA" };
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>{children}</body>
