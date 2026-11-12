@@ -7,7 +7,7 @@ import {
   type Maintainer,
   type State,
 } from "./model";
-import { activeHold, daysSince, hash, id, now } from "./util";
+import { activeHold, cooldownDays, daysSince, hash, id, now } from "./util";
 export function closeHash(
   c: Pick<
     Close,
@@ -38,7 +38,7 @@ export function recipient(
 ): { email: string; ready: boolean; reason: string } {
   if (!m.verifiedAt || !m.email)
     return { email: "", ready: false, reason: "Unverified recipient" };
-  if (daysSince(m.emailChangedAt) < PARAMS.cooldownDays)
+  if (daysSince(m.emailChangedAt) < cooldownDays())
     return { email: m.email, ready: false, reason: "14-day email cooldown" };
   if (activeHold(s, m.id))
     return { email: m.email, ready: false, reason: "Recipient is held" };
@@ -51,7 +51,8 @@ export function recipient(
     };
   if (
     host &&
-    (daysSince(host.changedAt) < 14 || daysSince(m.hostAuthorizedAt!) < 14)
+    (daysSince(host.changedAt) < cooldownDays() ||
+      daysSince(m.hostAuthorizedAt!) < cooldownDays())
   )
     return {
       email: host.email,
@@ -103,7 +104,7 @@ export function checkPayout(s: State, batch: Batch): Audit {
           const claim = s.claims.find(
             (cl) => cl.packageId === c.packageId && cl.maintainerId === m.id,
           );
-          return !!claim && daysSince(claim.claimedAt) >= 14;
+          return !!claim && daysSince(claim.claimedAt) >= cooldownDays();
         })
       );
     }),

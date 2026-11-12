@@ -5,7 +5,7 @@
   "events": [
     {
       "actor": "treasurer",
-      "at": "2026-11-12T00:20:21.353Z",
+      "at": "2026-11-12T08:31:55.239Z",
       "detail": {
         "observations": 534,
         "packages": {
@@ -25,7 +25,7 @@
     },
     {
       "actor": "decision",
-      "at": "2026-11-12T00:20:21.795Z",
+      "at": "2026-11-12T08:31:55.796Z",
       "detail": {
         "accepted": true,
         "bounds": [
@@ -49,7 +49,7 @@
     },
     {
       "actor": "decision",
-      "at": "2026-11-12T00:20:21.810Z",
+      "at": "2026-11-12T08:31:55.815Z",
       "detail": {
         "accepted": true,
         "bounds": [
@@ -73,7 +73,7 @@
     },
     {
       "actor": "decision",
-      "at": "2026-11-12T00:20:21.832Z",
+      "at": "2026-11-12T08:31:55.837Z",
       "detail": {
         "accepted": true,
         "bounds": [
@@ -97,7 +97,7 @@
     },
     {
       "actor": "decision",
-      "at": "2026-11-12T00:20:21.855Z",
+      "at": "2026-11-12T08:31:55.854Z",
       "detail": {
         "accepted": true,
         "bounds": [
@@ -121,7 +121,7 @@
     },
     {
       "actor": "decision",
-      "at": "2026-11-12T00:20:21.876Z",
+      "at": "2026-11-12T08:31:55.871Z",
       "detail": {
         "accepted": true,
         "bounds": [
@@ -145,7 +145,7 @@
     },
     {
       "actor": "decision",
-      "at": "2026-11-12T00:20:21.892Z",
+      "at": "2026-11-12T08:31:55.888Z",
       "detail": {
         "accepted": true,
         "bounds": [
@@ -169,7 +169,7 @@
     },
     {
       "actor": "decision",
-      "at": "2026-11-12T00:20:21.908Z",
+      "at": "2026-11-12T08:31:55.908Z",
       "detail": {
         "accepted": true,
         "bounds": [
@@ -193,7 +193,7 @@
     },
     {
       "actor": "decision",
-      "at": "2026-11-12T00:20:21.924Z",
+      "at": "2026-11-12T08:31:55.926Z",
       "detail": {
         "accepted": false,
         "bounds": [
@@ -205,7 +205,7 @@
         "model": "invalid-output",
         "package": "npm:kleur",
         "question": "need",
-        "reason": "Conservative fallback: invalid output. SIMULATED injection: README asked for the maximum need.",
+        "reason": "Conservative fallback: invalid output. SIMULATED injection: the model followed the README and asked for 999.",
         "untrusted_text_present": true,
         "value": 1
       },
@@ -217,7 +217,7 @@
     },
     {
       "actor": "decision",
-      "at": "2026-11-12T00:20:21.940Z",
+      "at": "2026-11-12T08:31:55.942Z",
       "detail": {
         "accepted": true,
         "bounds": [
@@ -241,11 +241,11 @@
     },
     {
       "actor": "treasurer",
-      "at": "2026-11-12T00:20:21.954Z",
+      "at": "2026-11-12T08:31:55.961Z",
       "detail": {
         "created_in_this_run": false,
-        "decision_id": "dec_8d37cc4d-2e21-49c9-ba2c-d89f4bd10868",
-        "email_changed_at": "2026-11-11T00:20:20.869Z",
+        "decision_id": "dec_ca414ea8-81d0-48f8-8860-96c5c899d60e",
+        "email_changed_at": "2026-11-11T08:31:54.673Z",
         "maintainer": "m4",
         "reason": "Recent recipient or ownership change; hold for review.",
         "release": "human administrator only"
@@ -258,7 +258,7 @@
     },
     {
       "actor": "paypal",
-      "at": "2026-11-12T00:20:22.006Z",
+      "at": "2026-11-12T08:31:56.015Z",
       "detail": {
         "approved_by": "human, on PayPal",
         "capture_id": "DEMO-CAP-DEMO-ORDER-grant_5a2c4c71a6a8a0a2037bf6f6",
@@ -275,7 +275,7 @@
     },
     {
       "actor": "treasurer",
-      "at": "2026-11-12T00:20:22.023Z",
+      "at": "2026-11-12T08:31:56.031Z",
       "detail": {
         "allocations": [
           {
@@ -315,7 +315,7 @@
         "org": "org_acme",
         "params_version": "nebraska-1.0.0",
         "recycled_cents": 1,
-        "snapshot_hash": "56c89334b0d77f296b8043f2c2209f722494bba5706bd49ab64d96536a85e7f2"
+        "snapshot_hash": "dc33abd2abc1ca80fbdd97f5b26ce5d242557bb0c117cae4bd99773c060699c3"
       },
       "run_id": "run_2026-11_demo",
       "seq": 13,
@@ -325,10 +325,10 @@
     },
     {
       "actor": "gate",
-      "at": "2026-11-12T00:20:22.086Z",
+      "at": "2026-11-12T08:31:56.088Z",
       "detail": {
-        "audit_id": "gate_6a78d511-92f9-42d2-ac29-b0747dbeb5c3",
-        "inputs_hash": "685ceb50c11959b6891bad5fe8f23763db4d2c8814505f77e304cf9bf7f4123e",
+        "audit_id": "gate_e9a1fbc2-638c-4fba-b302-e5b280e41d87",
+        "inputs_hash": "0a0a4f5be0bcdc65638b49a1604a904beeace16dbc34671bb623b83a469e84dc",
         "reason": "All recipients verified, cooldowns passed, no holds, receiver matches authoritative record"
       },
       "invariant": "I1",
@@ -340,10 +340,10 @@
     },
     {
       "actor": "gate",
-      "at": "2026-11-12T00:20:22.086Z",
+      "at": "2026-11-12T08:31:56.088Z",
       "detail": {
-        "audit_id": "gate_6a78d511-92f9-42d2-ac29-b0747dbeb5c3",
-        "inputs_hash": "685ceb50c11959b6891bad5fe8f23763db4d2c8814505f77e304cf9bf7f4123e",
+        "audit_id": "gate_e9a1fbc2-638c-4fba-b302-e5b280e41d87",
+        "inputs_hash": "0a0a4f5be0bcdc65638b49a1604a904beeace16dbc34671bb623b83a469e84dc",
         "reason": "Only funded integer credits; threshold and currency isolation enforced"
       },
       "invariant": "I2",
@@ -355,10 +355,10 @@
     },
     {
       "actor": "gate",
-      "at": "2026-11-12T00:20:22.086Z",
+      "at": "2026-11-12T08:31:56.088Z",
       "detail": {
-        "audit_id": "gate_6a78d511-92f9-42d2-ac29-b0747dbeb5c3",
-        "inputs_hash": "685ceb50c11959b6891bad5fe8f23763db4d2c8814505f77e304cf9bf7f4123e",
+        "audit_id": "gate_e9a1fbc2-638c-4fba-b302-e5b280e41d87",
+        "inputs_hash": "0a0a4f5be0bcdc65638b49a1604a904beeace16dbc34671bb623b83a469e84dc",
         "reason": "Every recurring package allocation respects max(25%, 2/K)"
       },
       "invariant": "I3",
@@ -370,10 +370,10 @@
     },
     {
       "actor": "gate",
-      "at": "2026-11-12T00:20:22.086Z",
+      "at": "2026-11-12T08:31:56.088Z",
       "detail": {
-        "audit_id": "gate_6a78d511-92f9-42d2-ac29-b0747dbeb5c3",
-        "inputs_hash": "685ceb50c11959b6891bad5fe8f23763db4d2c8814505f77e304cf9bf7f4123e",
+        "audit_id": "gate_e9a1fbc2-638c-4fba-b302-e5b280e41d87",
+        "inputs_hash": "0a0a4f5be0bcdc65638b49a1604a904beeace16dbc34671bb623b83a469e84dc",
         "reason": "One immutable batch and item identity per period; unique credits; uncertain retries stop before PayPal dedupe expires"
       },
       "invariant": "I4",
@@ -385,10 +385,10 @@
     },
     {
       "actor": "gate",
-      "at": "2026-11-12T00:20:22.086Z",
+      "at": "2026-11-12T08:31:56.088Z",
       "detail": {
-        "audit_id": "gate_6a78d511-92f9-42d2-ac29-b0747dbeb5c3",
-        "inputs_hash": "685ceb50c11959b6891bad5fe8f23763db4d2c8814505f77e304cf9bf7f4123e",
+        "audit_id": "gate_e9a1fbc2-638c-4fba-b302-e5b280e41d87",
+        "inputs_hash": "0a0a4f5be0bcdc65638b49a1604a904beeace16dbc34671bb623b83a469e84dc",
         "reason": "All adopted and fallback decisions match the fixed question catalog"
       },
       "invariant": "I5",
@@ -400,10 +400,10 @@
     },
     {
       "actor": "gate",
-      "at": "2026-11-12T00:20:22.086Z",
+      "at": "2026-11-12T08:31:56.088Z",
       "detail": {
-        "audit_id": "gate_6a78d511-92f9-42d2-ac29-b0747dbeb5c3",
-        "inputs_hash": "685ceb50c11959b6891bad5fe8f23763db4d2c8814505f77e304cf9bf7f4123e",
+        "audit_id": "gate_e9a1fbc2-638c-4fba-b302-e5b280e41d87",
+        "inputs_hash": "0a0a4f5be0bcdc65638b49a1604a904beeace16dbc34671bb623b83a469e84dc",
         "reason": "Grant credits require provider-confirmed capture and human approval"
       },
       "invariant": "I6",
@@ -415,10 +415,10 @@
     },
     {
       "actor": "gate",
-      "at": "2026-11-12T00:20:22.086Z",
+      "at": "2026-11-12T08:31:56.088Z",
       "detail": {
-        "audit_id": "gate_6a78d511-92f9-42d2-ac29-b0747dbeb5c3",
-        "inputs_hash": "685ceb50c11959b6891bad5fe8f23763db4d2c8814505f77e304cf9bf7f4123e",
+        "audit_id": "gate_e9a1fbc2-638c-4fba-b302-e5b280e41d87",
+        "inputs_hash": "0a0a4f5be0bcdc65638b49a1604a904beeace16dbc34671bb623b83a469e84dc",
         "reason": "Snapshots, formulas, credit provenance and immutable payment payload recompute"
       },
       "invariant": "I7",
@@ -430,11 +430,11 @@
     },
     {
       "actor": "paypal",
-      "at": "2026-11-12T00:20:22.268Z",
+      "at": "2026-11-12T08:31:56.262Z",
       "detail": {
         "batch_id": "nebraska-2026-11",
         "items": 3,
-        "payload_hash": "7fc6616e373dcf83fec1325bcac629d620d29675a71ae74623c025e75c73cc35",
+        "payload_hash": "1ee1a8a722951badf28e5b5bb4f604354c04e9f06e6e2fffa92c05e16b5d98d9",
         "provider_batch_id": "DEMO-PAYOUT-2026-11",
         "rule": "one immutable batch per period; retries reuse this id and payload",
         "status": "complete"
@@ -447,7 +447,7 @@
     },
     {
       "actor": "paypal",
-      "at": "2026-11-12T00:20:22.284Z",
+      "at": "2026-11-12T08:31:56.279Z",
       "detail": {
         "cents": 9677,
         "currency": "USD",
@@ -464,7 +464,7 @@
     },
     {
       "actor": "paypal",
-      "at": "2026-11-12T00:20:22.300Z",
+      "at": "2026-11-12T08:31:56.294Z",
       "detail": {
         "cents": 21774,
         "currency": "USD",
@@ -481,7 +481,7 @@
     },
     {
       "actor": "paypal",
-      "at": "2026-11-12T00:20:22.315Z",
+      "at": "2026-11-12T08:31:56.310Z",
       "detail": {
         "cents": 41129,
         "currency": "USD",
@@ -498,33 +498,33 @@
     },
     {
       "actor": "treasurer",
-      "at": "2026-11-12T00:20:22.352Z",
+      "at": "2026-11-12T08:31:56.344Z",
       "detail": {
         "statements": [
           {
             "owner": "org_acme",
             "owner_type": "org",
-            "recompute_hash": "2e72137ef548dfa3566dfd8083bb40dfd7f18290f2b3fc6fe2fa6c0142484133"
+            "recompute_hash": "32164fff97d55de586974194a1568323776a2ffd5191e686da5ab4cf5dce5d02"
           },
           {
             "owner": "m1",
             "owner_type": "maintainer",
-            "recompute_hash": "2e72137ef548dfa3566dfd8083bb40dfd7f18290f2b3fc6fe2fa6c0142484133"
+            "recompute_hash": "32164fff97d55de586974194a1568323776a2ffd5191e686da5ab4cf5dce5d02"
           },
           {
             "owner": "m2",
             "owner_type": "maintainer",
-            "recompute_hash": "2e72137ef548dfa3566dfd8083bb40dfd7f18290f2b3fc6fe2fa6c0142484133"
+            "recompute_hash": "32164fff97d55de586974194a1568323776a2ffd5191e686da5ab4cf5dce5d02"
           },
           {
             "owner": "m3",
             "owner_type": "maintainer",
-            "recompute_hash": "2e72137ef548dfa3566dfd8083bb40dfd7f18290f2b3fc6fe2fa6c0142484133"
+            "recompute_hash": "32164fff97d55de586974194a1568323776a2ffd5191e686da5ab4cf5dce5d02"
           },
           {
             "owner": "m4",
             "owner_type": "maintainer",
-            "recompute_hash": "2e72137ef548dfa3566dfd8083bb40dfd7f18290f2b3fc6fe2fa6c0142484133"
+            "recompute_hash": "32164fff97d55de586974194a1568323776a2ffd5191e686da5ab4cf5dce5d02"
           }
         ]
       },
@@ -536,7 +536,7 @@
     },
     {
       "actor": "system",
-      "at": "2026-11-12T00:20:22.368Z",
+      "at": "2026-11-12T08:31:56.359Z",
       "detail": {
         "events": 26
       },

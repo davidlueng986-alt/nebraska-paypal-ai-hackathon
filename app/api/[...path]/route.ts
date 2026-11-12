@@ -23,7 +23,9 @@ import {
 } from "@/src/core/model";
 import { auditBundle, maintainerView, payerView } from "@/src/core/views";
 import {
+  cooldownDays,
   daysSince,
+  demoOverrides,
   DomainError,
   hash,
   id,
@@ -77,7 +79,12 @@ async function handler(req: Request): Promise<Response> {
       url.searchParams.get("period") ?? periodOf(),
     );
     if (method === "GET" && path === "health")
-      return j({ status: "ok", mode: service.mode, version: "1.0.0" });
+      return j({
+        status: "ok",
+        mode: service.mode,
+        version: "1.0.0",
+        demoOverrides: demoOverrides(),
+      });
     if (method === "POST" && path === "webhooks/paypal")
       return j(
         await handleWebhook(service, payments, req.headers, await json(req)),
@@ -557,7 +564,7 @@ async function handler(req: Request): Promise<Response> {
         b.maintainerId,
         "Recipient email changed; requires review and 14-day cooldown",
       );
-      return j({ updated: true, cooldownDays: 14 });
+      return j({ updated: true, cooldownDays: cooldownDays() });
     }
     if (path === "hosts" && method === "POST") {
       admin(a);
