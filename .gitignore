@@ -14,3 +14,4 @@ artifacts/*
 !artifacts/demo-transcript.txt
 !artifacts/scenes.json
 !artifacts/video-metadata.json
+!artifacts/ui/
