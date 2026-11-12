@@ -72,17 +72,17 @@ window.renderAt=(t)=>{
   }
   if(scene==='turn'){
     // words reveal with the narration (v05 starts at 0.3s, 6.3s long)
-    TAG.forEach((w,i)=>{const a=0.45+i*0.43; const e=$('w'+i); const k=eo(lin(t,a,a+0.6));
-      e.style.opacity=k*(1-lin(t,6.6,7.0)); e.style.filter=`blur(${(1-k)*6}px)`; e.style.transform=`translateY(${(1-k)*10}px)`;});
-    show($('name'),t,7.1,null,{dy:10,blur:14});
-    show($('what'),t,7.9,null);
-    show($('how'),t,11.2,null);
-    const out=1-lin(t,15.4,16); ['name','what','how'].forEach(id=>$(id).style.opacity*=out);
+    TAG.forEach((w,i)=>{const a=0.4+i*0.42; const e=$('w'+i); const k=eo(lin(t,a,a+0.6));
+      e.style.opacity=k*(1-lin(t,6.4,6.8)); e.style.filter=`blur(${(1-k)*6}px)`; e.style.transform=`translateY(${(1-k)*10}px)`;});
+    show($('name'),t,6.85,null,{dy:10,blur:14});
+    show($('what'),t,7.4,null);
+    show($('how'),t,8.5,null);
+    const out=1-lin(t,9.95,10.5); ['name','what','how'].forEach(id=>$(id).style.opacity*=out);
   }
   if(scene==='endcard'){
-    show($('e1'),t,0.4,5.0); show($('e2'),t,2.2,5.0);
-    show($('e3'),t,5.3,null,{blur:14}); show($('e4'),t,5.9,null); show($('e5'),t,6.3,null);
-    const out=1-lin(t,9.2,10); ['e3','e4','e5'].forEach(id=>$(id).style.opacity*=out);
+    show($('e1'),t,0.3,4.7); show($('e2'),t,1.6,4.7);
+    show($('e3'),t,4.8,null,{blur:14}); show($('e4'),t,5.2,null); show($('e5'),t,5.5,null);
+    const out=1-lin(t,7.0,7.5); ['e3','e4','e5'].forEach(id=>$(id).style.opacity*=out);
   }
   return true;
 };
