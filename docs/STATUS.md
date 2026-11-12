@@ -32,3 +32,23 @@ Read `AGENTS.md`, this file, `docs/FEATURES.md`, and `docs/VALIDATION.md`. Do no
 ## GitHub publication
 
 2026-11-11: published source and demo assets to https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon. Account: `davidlueng986-alt`. The existing `nebraska` repository was left untouched. The new public repository was created through the user-supplied MCP endpoint, then the reviewed local `main` commit `d80df6e` was pushed using the authenticated Git transport. GitHub confirms public visibility, main branch and detected MIT license. GitHub Actions CI and PostgreSQL workflows were triggered. Source excludes dependencies, builds, databases, populated environment files and intermediate audio/frames. Documentation now points to the public source; external payment/OAuth/model/deployment/submission validation boundaries remain in force.
+
+## Agent A progress (2026-11-12)
+
+
+Merged to `main` as PR #1 (merge commit `22f8fbe`). Local `npm run check` (typecheck, 47 tests, production build), `check:api` and `check:mcp` passed. CI for the first commit passed; CI for the last commit was still queued at merge time.
+
+### Done and observed
+- Contracts and fixtures: `contracts/month-end-run.schema.json`, `fixtures/month-end-run.json` (26 events), `fixtures/payer-month.json`, `fixtures/maintainer-income.json`, `fixtures/dependency-graph.json` (419 nodes, 584 edges from this repo's lockfile). Fixtures are simulated, fictional demo-mode output. Regenerate with `npm run fixtures`; graph with `npm run graph -- --root . --out fixtures/dependency-graph.json`.
+- Month-end live stream: `POST /api/month-end/runs`, `GET /api/month-end/runs/{id}/events` (SSE), persisted in the ledger, replay with `?replay=1&delay_ms=`. Tests cover event order, one gate event per invariant I1-I7, idempotent replay and one immutable batch on rerun.
+- MCP: read-only `explain_allocation` and resource `nebraska://statements/{period}`; no MCP tool moves money.
+- PayPal sandbox (observed 2026-11-12, no secrets recorded): OAuth succeeded; token scope includes payouts, subscriptions and webhooks; the payouts endpoint returned 404 for an unknown id (reachable, not 403). Reporting balances returned 403 (Transaction Search not enabled).
+
+### Not done / not proven
+- No real Payouts batch submitted, so Payouts entitlement and sandbox balance are unproven.
+- No real webhook, GitHub OAuth, model inference, Render deployment, YouTube upload or Devpost submission has been observed.
+- Remaining Agent A steps: real sandbox month (needs user: personal sandbox accounts, webhook id, model API key), sandbox-only `DEMO_COOLDOWN_MINUTES` override, Render deploy, README/Devpost/SUBMISSION rewrite.
+
+### Decisions logged
+- An out-of-range injected `need` (999) is rejected to the neutral 1.0, not clamped to 2.0, so the worked example (D = $24.19) holds. See `docs/OPEN-QUESTIONS.md`.
+- The PayPal client secret was shared in chat by the user and should be regenerated after the hackathon.
