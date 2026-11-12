@@ -1,102 +1,129 @@
 1
-00:00:16,000 --> 00:00:20,200
-This is how infrastructure breaks. Quietly,
-then all at once.
+00:00:13,800 --> 00:00:20,009
+Open source is worth an estimated eight point eight
+trillion dollars to the companies that use it.
 
 2
-00:00:23,700 --> 00:00:25,750
-And now, AI writes the code.
+00:00:20,059 --> 00:00:23,075
+Rewriting it once would cost about four billion.
 
 3
-00:00:25,800 --> 00:00:29,950
-Fewer people ever visit the docs, or the
-sponsor button.
+00:00:23,400 --> 00:00:27,005
+Five percent of developers, roughly three thousand
+people,
 
 4
-00:00:46,300 --> 00:00:50,361
-One click redirects to PayPal to approve a
-monthly budget.
+00:00:27,055 --> 00:00:29,525
+create ninety-six percent of that value.
 
 5
-00:00:50,411 --> 00:00:53,550
-That is the agent's mandate, and its ceiling.
+00:00:29,850 --> 00:00:34,803
+When Heartbleed hit, OpenSSL ran on under two thousand
+dollars a year.
 
 6
-00:00:53,800 --> 00:00:58,652
-Then, one hook line. Only package names and
-depth leave the machine.
+00:00:34,853 --> 00:00:40,950
+The xz backdoor was planted over two years, in a
+project run by one unpaid maintainer.
 
 7
-00:00:58,702 --> 00:00:59,950
-Never source code.
+00:00:41,300 --> 00:00:46,478
+Now AI writes the code, and fewer people ever see the
+docs or the sponsor button.
 
 8
-00:01:00,100 --> 00:01:05,221
-At month end, the AI Treasurer answers typed
-questions about each package.
+00:00:46,528 --> 00:00:52,675
+Tailwind lost about forty percent of its docs traffic,
+and nearly eighty percent of its revenue.
 
 9
-00:01:05,271 --> 00:01:08,925
-How critical is it? How much do its
-maintainers need?
+00:01:04,000 --> 00:01:06,664
+Why PayPal? Maintainers live everywhere.
 
 10
-00:01:09,400 --> 00:01:10,256
-Same budget.
+00:01:06,714 --> 00:01:13,043
+PayPal Payouts reach ninety-six markets in twenty-four
+currencies, with just an email address.
 
 11
-00:01:10,306 --> 00:01:16,900
-The AI's judgment moves this package from
-sixty-nine dollars to a hundred and sixty-one.
+00:01:13,093 --> 00:01:18,200
+A subscription holds the human's mandate, and one
+batch pays everyone, once.
 
 12
-00:01:17,400 --> 00:01:21,198
-A security advisory? The AI can propose a
-grant.
+00:01:19,000 --> 00:01:20,302
+Setup is two steps.
 
 13
-00:01:21,248 --> 00:01:24,325
-Only a human can approve it, on PayPal.
+00:01:20,352 --> 00:01:25,283
+Set a monthly budget, and one click redirects to
+PayPal to approve it.
 
 14
-00:01:31,000 --> 00:01:36,560
-A poisoned README tells the model to max out
-its score. The answer is rejected.
+00:01:25,333 --> 00:01:29,125
+That approval is the agent's mandate, and its ceiling.
 
 15
-00:01:36,610 --> 00:01:37,625
-Neutral weight.
+00:01:29,600 --> 00:01:34,850
+Then one hook line. Package names and depth only.
+Never source code.
 
 16
-00:01:37,900 --> 00:01:42,650
-A recipient changed their payout email
-yesterday. Held for review.
+00:01:35,400 --> 00:01:39,363
+At month end, the AI Treasurer answers typed
+questions:
 
 17
-00:01:42,800 --> 00:01:47,500
-Then seven rules, enforced in code, before a
-single cent moves.
+00:01:39,413 --> 00:01:44,252
+how critical is each package, and how much do its
+maintainers need?
 
 18
-00:01:47,800 --> 00:01:53,300
-The AI decides where the money goes. The code
-decides where it can never go.
+00:01:44,302 --> 00:01:47,025
+Code turns those answers into amounts.
 
 19
-00:01:56,400 --> 00:02:00,837
-Maya, a fictional maintainer, sees exactly why
-she was paid.
+00:01:47,500 --> 00:01:53,575
+Same budget. Judgment moves this package from
+sixty-nine dollars to one sixty-one.
 
 20
-00:02:00,887 --> 00:02:04,725
-One sixty-one twenty-nine, plus the two-fifty
-grant.
+00:01:54,300 --> 00:01:58,291
+A security advisory? The AI can propose a grant.
 
 21
-00:02:10,700 --> 00:02:14,075
-Run it twice. One batch. No double pay.
+00:01:58,341 --> 00:02:01,575
+Only a human can approve it, on PayPal.
 
 22
-00:02:14,500 --> 00:02:18,125
-Both sides get a statement anyone can
-recompute.
+00:02:03,000 --> 00:02:07,317
+Month end. A poisoned README asks for the maximum
+score.
+
+23
+00:02:07,367 --> 00:02:11,450
+The answer is rejected, and a neutral weight is used.
+
+24
+00:02:11,900 --> 00:02:15,825
+A recipient who just changed their payout email is
+held.
+
+25
+00:02:16,200 --> 00:02:20,300
+Seven invariants, checked in code, before a cent
+moves.
+
+26
+00:02:20,800 --> 00:02:26,575
+The AI decides where the money goes. The code decides
+where it can never go.
+
+27
+00:02:28,500 --> 00:02:33,575
+Maya, a fictional maintainer, sees every payment, and
+exactly why.
+
+28
+00:02:38,900 --> 00:02:42,400
+Run it twice. Same batch. No double pay.

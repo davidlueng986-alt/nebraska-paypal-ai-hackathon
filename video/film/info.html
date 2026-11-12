@@ -1,0 +1,185 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Serif;src:url(fonts/instrument-serif-latin-400-normal.woff2)}
+@font-face{font-family:Serif;font-style:italic;src:url(fonts/instrument-serif-latin-400-italic.woff2)}
+@font-face{font-family:Sans;src:url(fonts/inter-tight-latin-500-normal.woff2)}
+@font-face{font-family:Mono;src:url(fonts/jetbrains-mono-latin-400-normal.woff2)}
+:root{--s:calc(100vw/1920);--ink:#ede8dd;--mute:#a8a397;--dim:#6f6b63;--green:#3fb950;--red:#e5534b}
+html,body{margin:0;background:#000;overflow:hidden;width:100vw;height:100vh;color:var(--ink)}
+.scene{position:absolute;inset:0;display:none}
+.beat{position:absolute;inset:0;opacity:0}
+.abs{position:absolute}
+.eyebrow{font:500 calc(16*var(--s)) Sans;letter-spacing:.32em;text-transform:uppercase;color:var(--mute)}
+.src{font:500 calc(13*var(--s)) Sans;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.serif{font-family:Serif;font-weight:400}
+.num{font:400 calc(150*var(--s))/1 Serif;letter-spacing:-.01em}
+.mid{font:400 calc(54*var(--s))/1.1 Serif}
+.lab{font:500 calc(18*var(--s))/1.35 Sans;color:var(--mute);letter-spacing:.02em}
+.mono{font:400 calc(18*var(--s)) Mono;color:var(--mute)}
+.green{color:var(--green)}
+.bar{position:absolute;height:calc(14*var(--s));background:var(--ink);transform-origin:left center}
+canvas{position:absolute;inset:0}
+.box{position:absolute;border:1px solid #3a3833;border-radius:calc(10*var(--s));padding:calc(18*var(--s)) calc(22*var(--s));font:500 calc(19*var(--s))/1.3 Sans;color:var(--ink);background:#0b0b0a;white-space:nowrap}
+.box small{display:block;font:500 calc(13*var(--s)) Sans;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:calc(6*var(--s))}
+.arrow{position:absolute;height:1px;background:#5a5750;transform-origin:left center}
+</style></head>
+<body>
+<!-- ================= PROBLEM: value, concentration, failures, AI ================= -->
+<div class="scene" id="problem">
+  <!-- P1 value -->
+  <div class="beat" id="p1">
+    <div class="abs eyebrow" style="left:calc(260*var(--s));top:calc(250*var(--s))">What open source is worth</div>
+    <div class="abs num" id="p1n" style="left:calc(250*var(--s));top:calc(300*var(--s))">$8.8 trillion</div>
+    <div class="abs lab" style="left:calc(260*var(--s));top:calc(470*var(--s))">to the companies that use it</div>
+    <div class="bar" id="p1a" style="left:calc(260*var(--s));top:calc(560*var(--s));width:calc(1400*var(--s))"></div>
+    <div class="bar" id="p1b" style="left:calc(260*var(--s));top:calc(650*var(--s));width:calc(3*var(--s));background:var(--green)"></div>
+    <div class="abs lab" id="p1bl" style="left:calc(260*var(--s));top:calc(680*var(--s))"><span class="green">$4.15 billion</span> &nbsp;to rewrite it all once</div>
+    <div class="abs mid" id="p1x" style="right:calc(260*var(--s));top:calc(640*var(--s))">≈ 2,000×</div>
+    <div class="abs src" style="left:calc(260*var(--s));top:calc(860*var(--s))">Source: Harvard Business School working paper, 2024 · via The Decoder</div>
+  </div>
+  <!-- P2 concentration -->
+  <div class="beat" id="p2">
+    <div class="abs eyebrow" style="left:calc(260*var(--s));top:calc(250*var(--s))">Who makes it</div>
+    <canvas id="dots"></canvas>
+    <div class="abs" style="left:calc(1180*var(--s));top:calc(380*var(--s))">
+      <div class="num green" id="p2a" style="font-size:calc(120*var(--s))">5%</div>
+      <div class="lab" style="margin:calc(8*var(--s)) 0 calc(36*var(--s))">of developers, about 3,000 people,</div>
+      <div class="num" id="p2b" style="font-size:calc(120*var(--s))">96%</div>
+      <div class="lab" style="margin-top:calc(8*var(--s))">of the value</div>
+    </div>
+    <div class="abs src" style="left:calc(260*var(--s));top:calc(860*var(--s))">Source: Harvard Business School working paper, 2024 · via The Decoder</div>
+  </div>
+  <!-- P3 failures -->
+  <div class="beat" id="p3">
+    <div class="abs eyebrow" style="left:calc(260*var(--s));top:calc(250*var(--s))">What breaks when nobody pays</div>
+    <div class="abs" id="p3l" style="left:calc(260*var(--s));top:calc(330*var(--s))">
+      <div class="eyebrow" style="color:var(--red)">2014 · Heartbleed</div>
+      <div class="num" style="font-size:calc(120*var(--s));margin-top:calc(18*var(--s))">$2,000</div>
+      <div class="lab">a year in donations for OpenSSL<br>and one full-time developer</div>
+    </div>
+    <div class="abs" id="p3r" style="left:calc(1040*var(--s));top:calc(330*var(--s))">
+      <div class="eyebrow" style="color:var(--red)">2024 · xz utils</div>
+      <div class="num" style="font-size:calc(120*var(--s));margin-top:calc(18*var(--s))">2 years</div>
+      <div class="lab">to plant a backdoor in a project<br>run by one unpaid, overworked maintainer</div>
+    </div>
+    <svg class="abs" id="crack" style="left:calc(960*var(--s));top:calc(300*var(--s));width:calc(40*var(--s));height:calc(400*var(--s))" viewBox="0 0 40 400"><path id="crackp" d="M20 0 L12 60 L26 110 L10 170 L24 230 L14 290 L28 340 L18 400" fill="none" stroke="#e5534b" stroke-width="1.5" stroke-dasharray="460" stroke-dashoffset="460"/></svg>
+    <div class="abs src" style="left:calc(260*var(--s));top:calc(860*var(--s))">Sources: The Register, 2021 · LWN.net, 2024</div>
+  </div>
+  <!-- P4 AI -->
+  <div class="beat" id="p4">
+    <div class="abs eyebrow" style="left:calc(260*var(--s));top:calc(250*var(--s))">What AI changes · Tailwind CSS, 2026</div>
+    <div class="abs mid" style="left:calc(260*var(--s));top:calc(310*var(--s));width:calc(1400*var(--s))">AI writes the code. Fewer people ever see the docs, or the sponsor button.</div>
+    <div class="abs lab" style="left:calc(260*var(--s));top:calc(520*var(--s))">Docs traffic</div>
+    <div class="bar" id="p4a" style="left:calc(520*var(--s));top:calc(527*var(--s));width:calc(1000*var(--s))"></div>
+    <div class="abs mid" id="p4al" style="left:calc(1550*var(--s));top:calc(500*var(--s));font-size:calc(46*var(--s))">−40%</div>
+    <div class="abs lab" style="left:calc(260*var(--s));top:calc(620*var(--s))">Revenue</div>
+    <div class="bar" id="p4b" style="left:calc(520*var(--s));top:calc(627*var(--s));width:calc(1000*var(--s))"></div>
+    <div class="abs mid" id="p4bl" style="left:calc(1550*var(--s));top:calc(600*var(--s));font-size:calc(46*var(--s))">−80%</div>
+    <div class="abs lab" id="p4c" style="left:calc(260*var(--s));top:calc(730*var(--s))">Three of four engineers laid off.</div>
+    <div class="abs src" style="left:calc(260*var(--s));top:calc(860*var(--s))">Source: Adam Wathan, January 2026 · via Leanware</div>
+  </div>
+</div>
+
+<!-- ================= WHY PAYPAL ================= -->
+<div class="scene" id="paypal">
+  <canvas id="globe"></canvas>
+  <div class="abs eyebrow" id="w0" style="left:calc(200*var(--s));top:calc(230*var(--s))">Why PayPal</div>
+  <div class="abs mid" id="w1" style="left:calc(200*var(--s));top:calc(280*var(--s));font-size:calc(72*var(--s))">Maintainers live everywhere.</div>
+  <div class="abs" id="w2" style="left:calc(200*var(--s));top:calc(430*var(--s));display:flex;gap:calc(70*var(--s))">
+    <div><div class="num" style="font-size:calc(110*var(--s))">96</div><div class="lab">markets reached by Payouts</div></div>
+    <div><div class="num" style="font-size:calc(110*var(--s))">24</div><div class="lab">currencies</div></div>
+    <div><div class="num green" style="font-size:calc(110*var(--s))">1</div><div class="lab">email address per maintainer</div></div>
+  </div>
+  <div id="w3" class="abs" style="left:0;top:0;width:100%;height:100%">
+    <div class="box" id="b1" style="left:calc(200*var(--s));top:calc(720*var(--s))">A human approves<small>PayPal Subscription · the mandate</small></div>
+    <div class="box" id="b2" style="left:calc(720*var(--s));top:calc(720*var(--s))">Nebraska allocates<small>AI judgment, code limits</small></div>
+    <div class="box" id="b3" style="left:calc(1180*var(--s));top:calc(720*var(--s))">One payout batch<small>PayPal Payouts · paid once</small></div>
+    <div class="arrow" id="a1" style="left:calc(560*var(--s));top:calc(760*var(--s));width:calc(150*var(--s))"></div>
+    <div class="arrow" id="a2" style="left:calc(1020*var(--s));top:calc(760*var(--s));width:calc(150*var(--s))"></div>
+  </div>
+  <div class="abs src" id="w4" style="left:calc(200*var(--s));top:calc(900*var(--s))">Source: PayPal Payouts, paypal.com and developer.paypal.com, 2026</div>
+</div>
+
+<script>
+const scene = new URLSearchParams(location.search).get('scene') || 'problem';
+document.getElementById(scene).style.display = 'block';
+const W = innerWidth, H = innerHeight, S = W / 1920;
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lin=(t,a,b)=>clamp((t-a)/(b-a));
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2, eo=x=>1-Math.pow(1-x,3);
+const $=id=>document.getElementById(id);
+function beat(el,t,a,b,{dy=16,blur=8}={}){ const k=eo(lin(t,a,a+0.8)), o=b==null?1:1-lin(t,b-0.45,b);
+  el.style.opacity=k*o; el.style.transform=`translateY(${(1-k)*dy*S}px)`; el.style.filter=`blur(${(1-k)*blur*S}px)`; }
+function show(el,t,a,{dy=12}={}){ const k=eo(lin(t,a,a+0.7)); el.style.opacity=k; el.style.transform=`translateY(${(1-k)*dy*S}px)`; }
+let seed=5; const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+
+// ---- problem timings (seconds, local) ----
+const P = {p1:[0.1,10.2], p2:[10.2,16.6], p3:[16.6,27.8], p4:[27.8,39.7]};
+// dots for P2: 100 developers
+const dots = $('dots'); if (dots) { dots.width = W; dots.height = H; }
+const D = []; for (let i=0;i<100;i++) D.push({c:i%20, r:Math.floor(i/20), hot:[7,23,44,61,88].includes(i), ph:rnd()*6.28});
+// globe for paypal
+const globe = $('globe'); if (globe) { globe.width = W; globe.height = H; }
+const G = []; { const n=900; for (let i=0;i<n;i++){ const y=1-2*(i+.5)/n, r=Math.sqrt(1-y*y), th=i*2.399963; G.push({x:Math.cos(th)*r,y,z:Math.sin(th)*r,lit:rnd()<0.11,ph:rnd()}); } }
+
+window.renderAt = (t) => {
+  if (scene === 'problem') {
+    // P1 value
+    beat($('p1'), t, ...P.p1);
+    const n = 8.8 * eo(lin(t, 0.4, 2.2));
+    $('p1n').textContent = '$' + n.toFixed(1) + ' trillion';
+    $('p1a').style.transform = `scaleX(${ease(lin(t, 1.0, 3.2))})`;
+    $('p1b').style.opacity = lin(t, 4.6, 5.2);
+    $('p1bl').style.opacity = lin(t, 4.8, 5.6);
+    $('p1x').style.opacity = lin(t, 6.2, 7.0);
+    // P2 concentration
+    beat($('p2'), t, ...P.p2);
+    if (dots) { const g = dots.getContext('2d'); g.clearRect(0,0,W,H);
+      const o = parseFloat($('p2').style.opacity||0), x0=260*S, y0=380*S, step=42*S;
+      const hot = ease(lin(t, 12.0, 13.2));
+      D.forEach((d,i)=>{ const appear = eo(lin(t, 10.4 + i*0.012, 10.9 + i*0.012));
+        const r = (d.hot ? 7 + 5*hot : 7) * S, a = appear * (d.hot ? 1 : 1 - 0.65*hot);
+        g.beginPath(); g.arc(x0 + d.c*step, y0 + d.r*step, r, 0, 6.283);
+        g.fillStyle = d.hot && hot>0 ? `rgba(63,185,80,${a*o})` : `rgba(237,232,221,${a*o*0.85})`; g.fill();
+        if (d.hot && hot>0) { g.beginPath(); g.arc(x0+d.c*step, y0+d.r*step, r*2.2, 0, 6.283); g.fillStyle=`rgba(63,185,80,${0.12*hot*o})`; g.fill(); } });
+      // the 96% share: a thick arc from the hot dots
+      g.fillStyle = `rgba(237,232,221,${0.0})`; }
+    show($('p2a'), t, 12.4); show($('p2b'), t, 13.6);
+    $('p2a').style.opacity *= parseFloat($('p2').style.opacity||0); $('p2b').style.opacity *= parseFloat($('p2').style.opacity||0);
+    // P3 failures
+    beat($('p3'), t, ...P.p3);
+    show($('p3l'), t, 17.0); show($('p3r'), t, 22.0);
+    $('crackp').style.strokeDashoffset = 460 * (1 - ease(lin(t, 20.6, 22.2)));
+    // P4 AI
+    beat($('p4'), t, ...P.p4);
+    const k1 = ease(lin(t, 33.0, 34.6)), k2 = ease(lin(t, 34.4, 36.2));
+    $('p4a').style.transform = `scaleX(${1 - 0.4*k1})`; $('p4b').style.transform = `scaleX(${1 - 0.8*k2})`;
+    $('p4a').style.background = k1>0.01 ? '#ede8dd' : '#ede8dd';
+    $('p4al').style.opacity = lin(t, 34.0, 34.6); $('p4bl').style.opacity = lin(t, 35.6, 36.2);
+    $('p4bl').style.color = '#e5534b'; $('p4al').style.color = '#e5534b';
+    $('p4c').style.opacity = lin(t, 36.8, 37.6);
+  }
+  if (scene === 'paypal') {
+    const fadeAll = 1 - lin(t, 14.4, 15.0);
+    // globe on the right, rotating; lit points turn on over time
+    const g = globe.getContext('2d'); g.clearRect(0,0,W,H);
+    const cx = 1450*S, cy = 500*S, R = 290*S, rot = t*0.18, tilt = 0.35;
+    const ga = eo(lin(t, 0.2, 1.8)) * fadeAll * (1 - 0.55*lin(t, 9.0, 10.0));
+    G.forEach(p => { const x = p.x*Math.cos(rot) + p.z*Math.sin(rot), z0 = -p.x*Math.sin(rot) + p.z*Math.cos(rot);
+      const y = p.y*Math.cos(tilt) - z0*Math.sin(tilt), z = p.y*Math.sin(tilt) + z0*Math.cos(tilt);
+      if (z < -0.05) return; const lit = p.lit && t > 3.0 + p.ph*4.0;
+      g.beginPath(); g.arc(cx + x*R, cy + y*R, (lit ? 3.4 : 1.6)*S*(0.6+0.4*z), 0, 6.283);
+      g.fillStyle = lit ? `rgba(63,185,80,${ga*(0.5+0.5*z)})` : `rgba(237,232,221,${ga*0.45*(0.4+0.6*z)})`; g.fill();
+      if (lit) { g.beginPath(); g.arc(cx+x*R, cy+y*R, 9*S, 0, 6.283); g.fillStyle=`rgba(63,185,80,${ga*0.1})`; g.fill(); } });
+    show($('w0'), t, 0.2); show($('w1'), t, 0.6);
+    show($('w2'), t, 4.4);
+    [['b1',9.2],['a1',9.9],['b2',10.3],['a2',11.0],['b3',11.4]].forEach(([id,a])=>{ const el=$(id);
+      if (id[0]==='a') { el.style.transform=`scaleX(${ease(lin(t,a,a+0.5))})`; el.style.opacity=fadeAll; } else show(el,t,a); });
+    show($('w4'), t, 5.0);
+    ['w0','w1','w2','w3','w4'].forEach(id => $(id).style.opacity = (parseFloat($(id).style.opacity||1)) * fadeAll);
+  }
+  return true;
+};
+Promise.all(['400 40px Serif','italic 400 40px Serif','500 20px Sans','400 20px Mono'].map(f=>document.fonts.load(f))).then(()=>{window.__ready=true;});
+</script>
+</body></html>
