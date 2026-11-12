@@ -1,0 +1,91 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Serif;src:url(fonts/instrument-serif-latin-400-normal.woff2)}
+@font-face{font-family:Serif;font-style:italic;src:url(fonts/instrument-serif-latin-400-italic.woff2)}
+@font-face{font-family:Sans;src:url(fonts/inter-tight-latin-500-normal.woff2)}
+@font-face{font-family:Mono;src:url(fonts/jetbrains-mono-latin-400-normal.woff2)}
+:root{--s:calc(100vw/1920)}
+html,body{margin:0;background:#000;overflow:hidden;width:100vw;height:100vh;color:#ede8dd}
+.scene{position:absolute;inset:0;display:none}
+.abs{position:absolute;left:0;right:0;text-align:center}
+.eyebrow{font:500 calc(16*var(--s)) Sans;letter-spacing:.32em;text-transform:uppercase;color:#a8a397}
+.big{font:400 calc(74*var(--s))/1.12 Serif;letter-spacing:-.005em}
+.src{font:500 calc(14*var(--s)) Sans;letter-spacing:.18em;text-transform:uppercase;color:#6f6b63}
+.rule{position:absolute;left:50%;height:1px;background:#5a5750;transform:translateX(-50%)}
+.word{display:inline-block;white-space:pre}
+.it{font-style:italic}
+.mono{font:400 calc(22*var(--s)) Mono;color:#a8a397}
+.green{color:#3fb950}
+</style></head>
+<body>
+<!-- stakes: three verified incidents -->
+<div class="scene" id="stakes"></div>
+<!-- turn: tagline + product line -->
+<div class="scene" id="turn">
+  <div class="abs big" id="tag" style="top:calc(430*var(--s));padding:0 calc(220*var(--s))"></div>
+  <div class="abs" id="name" style="top:calc(330*var(--s));font:400 calc(150*var(--s))/1 Serif">Nebraska</div>
+  <div class="abs" id="what" style="top:calc(540*var(--s));font:400 calc(46*var(--s))/1.25 Serif;padding:0 calc(300*var(--s))">pays the open-source maintainers behind your AI&nbsp;coding agent’s dependencies.</div>
+  <div class="abs eyebrow" id="how" style="top:calc(700*var(--s));font-size:calc(19*var(--s))">Every month&nbsp;&nbsp;·&nbsp;&nbsp;By actual usage&nbsp;&nbsp;·&nbsp;&nbsp;Through PayPal</div>
+</div>
+<!-- end card -->
+<div class="scene" id="endcard">
+  <div class="abs big" id="e1" style="top:calc(410*var(--s))">You can still choose not to pay.</div>
+  <div class="abs big it" id="e2" style="top:calc(510*var(--s))">You just can’t say you didn’t know.</div>
+  <div class="abs" id="e3" style="top:calc(380*var(--s));font:400 calc(120*var(--s))/1 Serif">Nebraska</div>
+  <div class="abs mono" id="e4" style="top:calc(540*var(--s))">github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon</div>
+  <div class="abs src" id="e5" style="top:calc(640*var(--s))">PayPal AI Hackathon&nbsp;&nbsp;·&nbsp;&nbsp;PayPal sandbox only&nbsp;&nbsp;·&nbsp;&nbsp;Demo data and identities are fictional&nbsp;&nbsp;·&nbsp;&nbsp;MIT</div>
+</div>
+<script>
+const scene = new URLSearchParams(location.search).get('scene') || 'stakes';
+document.getElementById(scene).style.display = 'block';
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lin=(t,a,b)=>clamp((t-a)/(b-a));
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2, eo=x=>1-Math.pow(1-x,3);
+const $=id=>document.getElementById(id);
+function show(el,t,a,b,{dy=18,blur=8,fadeOut=0.5}={}){
+  const k=eo(lin(t,a,a+0.9)), o=b==null?1:1-lin(t,b-fadeOut,b);
+  el.style.opacity=k*o; el.style.transform=`translateY(${(1-k)*dy}px)`; el.style.filter=`blur(${(1-k)*blur}px)`;
+}
+// ---- stakes ----
+const CARDS=[
+  {eyebrow:'2014 · Heartbleed', line:'OpenSSL ran on less than <span class="green">$2,000</span> a year in donations,<br>and one full-time developer.', src:'The Register, 2021'},
+  {eyebrow:'2024 · xz utils', line:'One overworked, uncompensated maintainer.<br>An attack built over <span class="it">at least two years.</span>', src:'LWN.net, 2024'},
+  {eyebrow:'2026 · Tailwind CSS', line:'Docs traffic down 40%. Revenue down 80%.<br>Three of four engineers laid off.', src:'Adam Wathan, via Leanware, January 2026'},
+];
+const CARD_T=[0,4.0,8.0], CARD_END=[4.0,8.0,14.5];
+if(scene==='stakes'){
+  const root=$('stakes');
+  CARDS.forEach((c,i)=>{const d=document.createElement('div');d.id='c'+i;d.innerHTML=
+   `<div class="abs eyebrow" style="top:calc(380*var(--s))">${c.eyebrow}</div>
+    <div class="rule" id="r${i}" style="top:calc(430*var(--s))"></div>
+    <div class="abs big" style="top:calc(470*var(--s))">${c.line}</div>
+    <div class="abs src" style="top:calc(720*var(--s))">Source: ${c.src}</div>`;root.appendChild(d);});
+}
+// ---- turn ----
+const TAG='AI is the first user of open source that knows exactly who it owes.'.split(' ');
+if(scene==='turn'){ $('tag').innerHTML=TAG.map((w,i)=>`<span class="word" id="w${i}">${w}${i<TAG.length-1?' ':''}</span>`).join(''); }
+window.renderAt=(t)=>{
+  if(scene==='stakes'){
+    CARDS.forEach((c,i)=>{const el=$('c'+i); show(el,t,CARD_T[i]+0.15,CARD_END[i],{fadeOut:0.45});
+      $('r'+i).style.width=`calc(${ease(lin(t,CARD_T[i]+0.3,CARD_T[i]+1.3))*120}*var(--s))`;
+      const drift=(t-CARD_T[i])*1.2; el.style.transform+=` scale(${1+drift*0.004})`;});
+  }
+  if(scene==='turn'){
+    // words reveal with the narration (v05 starts at 0.3s, 6.3s long)
+    TAG.forEach((w,i)=>{const a=0.45+i*0.43; const e=$('w'+i); const k=eo(lin(t,a,a+0.6));
+      e.style.opacity=k*(1-lin(t,6.6,7.0)); e.style.filter=`blur(${(1-k)*6}px)`; e.style.transform=`translateY(${(1-k)*10}px)`;});
+    show($('name'),t,7.1,null,{dy:10,blur:14});
+    show($('what'),t,7.9,null);
+    show($('how'),t,11.2,null);
+    const out=1-lin(t,15.4,16); ['name','what','how'].forEach(id=>$(id).style.opacity*=out);
+  }
+  if(scene==='endcard'){
+    show($('e1'),t,0.4,5.0); show($('e2'),t,2.2,5.0);
+    show($('e3'),t,5.3,null,{blur:14}); show($('e4'),t,5.9,null); show($('e5'),t,6.3,null);
+    const out=1-lin(t,9.2,10); ['e3','e4','e5'].forEach(id=>$(id).style.opacity*=out);
+  }
+  return true;
+};
+Promise.all(['400 40px Serif','italic 400 40px Serif','500 20px Sans','400 20px Mono'].map(f=>document.fonts.load(f))).then(()=>{window.__ready=true;});
+</script>
+</body></html>
