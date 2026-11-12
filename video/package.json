@@ -1,0 +1,20 @@
+{
+  "name": "nebraska-film",
+  "private": true,
+  "type": "module",
+  "description": "Nebraska demo film: capture, generative scenes, edit and mix. See docs/VIDEO.md.",
+  "scripts": {
+    "capture": "node capture/capture.mjs",
+    "render": "bash film/build.sh"
+  },
+  "dependencies": {
+    "d3-force-3d": "^3.0.6",
+    "esbuild": "^0.25.0",
+    "kokoro-js": "^1.2.1",
+    "puppeteer-core": "^24.0.0",
+    "three": "^0.181.0",
+    "@fontsource/instrument-serif": "^5.2.0",
+    "@fontsource/inter-tight": "^5.2.0",
+    "@fontsource/jetbrains-mono": "^5.2.0"
+  }
+}

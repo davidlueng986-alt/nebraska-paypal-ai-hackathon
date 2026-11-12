@@ -1,0 +1,21 @@
+[
+ {"id":"v01","text":"Every line an AI agent writes stands on someone else's work."},
+ {"id":"v02","text":"Eight levels down, a package most people have never heard of."},
+ {"id":"v03","text":"This is how infrastructure breaks. Quietly, then all at once."},
+ {"id":"v04","text":"And now, AI writes the code. Fewer people ever visit the docs, or the sponsor button."},
+ {"id":"v05","text":"But an AI agent is the first user of open source that knows exactly who it owes."},
+ {"id":"v06","text":"Nebraska pays the maintainers behind your coding agent's dependencies. Every month, by actual usage, through PayPal."},
+ {"id":"v07","text":"A company approves a monthly budget on PayPal. That is the agent's mandate, and its ceiling."},
+ {"id":"v08","text":"Then, one hook line. Only package names and depth leave the machine. Never source code."},
+ {"id":"v09","text":"At month end, the AI Treasurer answers typed questions about each package. How critical is it? How much do its maintainers need?"},
+ {"id":"v10","text":"Same budget. The AI's judgment moves this package from sixty-nine dollars to a hundred and sixty-one."},
+ {"id":"v11","text":"A security advisory? The AI can propose a grant. Only a human can approve it, on PayPal."},
+ {"id":"v12","text":"A poisoned README tells the model to max out its score. The answer is rejected. Neutral weight."},
+ {"id":"v13","text":"A recipient changed their payout email yesterday. Held for review."},
+ {"id":"v14","text":"Then seven rules, enforced in code, before a single cent moves."},
+ {"id":"v15","text":"The AI decides where the money goes. The code decides where it can never go."},
+ {"id":"v16","text":"Maya, a fictional maintainer, sees exactly why she was paid. One sixty-one twenty-nine, plus the two-fifty grant."},
+ {"id":"v17","text":"Run it twice. One batch. No double pay."},
+ {"id":"v18","text":"Both sides get a statement anyone can recompute."},
+ {"id":"v19","text":"You can still choose not to pay. You just can't say you didn't know."}
+]
