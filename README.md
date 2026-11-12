@@ -1,159 +1,135 @@
 # Nebraska
 
-**Open source, paid forward.** AI coding agents fund the maintainers behind their dependencies, by actual usage, through PayPal.
+**Nebraska is a hosted service that pays the open-source maintainers behind your AI coding agent's dependencies, every month, by actual usage, through PayPal.**
 
-The AI decides where the money goes. Code decides where it can never go.
+> AI is the first user of open source that knows exactly who it owes.
+>
+> The AI decides where the money goes. The code decides where it can never go.
+>
+> You can still choose not to pay. You just can't say you didn't know.
 
-Nebraska includes the full P0, P1 **and P2** scope from the supplied design: payer and maintainer dashboards, deterministic metering, a typed decision layer, a tool-calling Treasurer, a guarded append-only ledger, PayPal sandbox integration, advisory monitoring, reconciliation, multiple ecosystems, custom shares, multiple currencies and fiscal hosts.
+- **Hosted app (PayPal sandbox mode):** https://nebraska-paypal-ai-hackathon.onrender.com
+- **Demo video (under 3 minutes):** see the Devpost submission page
+- **Source:** https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon (MIT)
 
-> **Default: an interactive local simulation.** No credentials are needed and no money moves. Demo identities, funding signals, advisories and transactions are fictional. `NEBRASKA_MODE=sandbox` switches to actual sandbox APIs and authenticated access. There is no live-payment mode.
+![This month: budget, allocation and why each package gets what it gets](artifacts/ui/desktop/02-month.png)
 
-Repository: [https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon](https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon).
+## How it works
 
-## Run it
+1. **Payer (a company or developer using coding agents)** approves a monthly budget on PayPal (Subscriptions, quantity = USD), then adds one hook line to their agent. The hook records which packages the agent actually uses, at what dependency depth, without uploading source code.
+2. **Maintainers** claim their package with GitHub, bind a PayPal email and receive monthly payouts. They never pay anything.
+3. **Month-end:** an AI Treasurer asks typed questions about each package (`criticality`, `need`, `payee_risk`, `grant_case`). A deterministic allocator turns the answers into cents. A policy gate enforces seven invariants (I1–I7) before PayPal is called. PayPal Payouts pays everyone in one batch. Both sides get a statement they can recompute.
 
-Requires **Node.js 24+** and npm. SQLite is included in Node; no database installation is needed for the local demo.
+The only human actions are approving the budget and approving any extra grant, **both on PayPal's own pages**. The AI can propose a grant; it can never approve one.
+
+| Month-end run (I1–I7 as live checks) | Maintainer income |
+|---|---|
+| ![Month-end run](artifacts/ui/desktop/05-month-end-live.png) | ![Maintainer](artifacts/ui/desktop/06-maintainer.png) |
+
+## Try it in 3 minutes (no credentials, local demo mode)
+
+Requires **Node.js 24+**. SQLite ships with Node; nothing else to install.
 
 ```bash
 git clone https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon.git
 cd nebraska-paypal-ai-hackathon
 npm ci
-cp .env.example .env
-npm run seed
-npm run dev
+npm run build && npm start      # or: npm run dev
 ```
 
-Open **http://localhost:3000**. The dashboard also seeds an empty demo database automatically. `npm run build && npm start` runs the production build.
+Open http://localhost:3000. Demo mode is the default: no PayPal call is made, and all identities (for example "Maya") are fictional.
 
-The initial November demonstration has a $500 budget, 534 package/repository observations, a suspicious recipient on hold, and a proposed $250 security grant. To reproduce the complete flow:
+1. **This month** (`/`): a $500 budget split across four packages: **$96.77 / $217.74 / $161.29 / $24.19**. One cent is recycled to next month. Open **Why this amount** on `fast-xml-parser`: **$69.44 with neutral AI weights → $161.29 with AI judgment**.
+2. **Approvals** (`/approvals`): approve the proposed **$250** security grant. In demo mode this opens a page labelled "Simulated approval page"; in sandbox mode it is PayPal's own approval page.
+3. **Month-end** (`/month-end`): run it. You will see the usage snapshot, typed decisions, a README prompt injection rejected to the neutral weight, a `payee_risk` hold on a recipient whose email changed yesterday, I1–I7 passing one by one, and batch `nebraska-2026-11`.
+4. **Maintainer** (`/maintainer`): Maya receives $161.29 recurring + $250.00 grant = **$411.29**.
+5. Run month-end **again**: the same batch ID comes back. No second payment.
 
-1. Open **Emergency grants** and approve the clearly labelled simulated grant.
-2. Select **Run month-end**. Three eligible recipients settle; the held recipient stays credited.
-3. Switch to **Maintainer**: Maya receives **$161.29 recurring income + $250.00 grant**.
-4. Run month-end again. The same immutable batch is returned; no second payment is created.
-5. Download **Statements → Audit bundle**, then independently recompute it.
+Deterministic replay for screen recording: `/month-end?replay=fixture`.
 
-The dashboard uses your current UTC month. The standalone reproducibility script uses `2026-11` and an isolated in-memory ledger:
+Command-line checks:
 
 ```bash
-npm run demo
-npm run recompute -- artifacts/demo-result.json
-npm run check
-npm run check:api
+npm run demo        # full month in an isolated in-memory ledger, writes artifacts/demo-result.json
+npm run recompute -- artifacts/demo-result.json   # independent recomputation
+npm run check       # typecheck, 54 unit tests, production build
+npm run check:api   # real route handlers, including the month-end SSE stream and replay
+npm run check:mcp   # real MCP stdio transport
 ```
 
-`npm run demo` produces a fresh `artifacts/demo-result.json` and never modifies the web app’s database. Local persisted demo state lives in `data/demo.db`; sandbox uses `data/sandbox.db` when Postgres is not configured. To start another demo safely, set `SQLITE_PATH=data/another-demo.db` before seeding.
+## Hosted sandbox (for judges)
 
-繁體中文快速開始：[docs/QUICKSTART.zh-Hant.md](docs/QUICKSTART.zh-Hant.md).
+The hosted app runs with `NEBRASKA_MODE=sandbox` against `api-m.sandbox.paypal.com` (the adapter cannot target live PayPal). Sandbox pages need a workspace sign-in at `/signin`.
 
-## What is implemented
-
-| Area | Included |
+| What | Value |
 |---|---|
-| Meter | npm/package-lock v1–3, pnpm v9, import scanning, before/after npm lockfile comparison, agent hooks, CycloneDX/SPDX, Poetry/uv, pinned requirements, Cargo, Go modules |
-| Ingestion | Strict event schema, stable salted repository hashes, retry deduplication, monthly minimum-depth attribution; no source uploads |
-| Decision layer | Fixed question catalog; structured-output LLM adapter; explicitly simulated provider; confidence/range checks; model version and input hashes |
-| Treasurer | Real LLM function-call loop in sandbox, fixed tool schemas, bounded steps; deterministic demo/workflow orchestration; no raw external text in agent context |
-| Allocation | Depth decay, square-root suppression, bounded c/n, iterative package caps, integer-cent outputs, public versioned parameters |
-| Ledger | Durable append-only hash chain; transactional projections; SQLite and PostgreSQL; snapshots, grants, receipt IDs, holds, payout items and audits |
-| PayPal | Catalog products, quantity plans, subscription create/revise/cancel, Orders capture, Payouts, item queries/cancel, verified idempotent webhooks, reporting |
-| Payer UI | Budget/funding/allocation/balances, allocation comparison, AG Grid sorting/filter/search, CSV export, grant approvals, private supply-chain report, audit bundles |
-| Maintainer UI | GitHub OAuth permissions, claims, email cooldowns, organization/repository counts, income statuses, custom splits, statements, fiscal-host routing |
-| Operations | OSV-triggered proposals, exception decisions and in-app review notifications, daily worker, read-only official PayPal Agent Toolkit MCP cross-check |
-| P2 | npm/Python/Rust/Go, custom maintainer shares, USD/EUR/GBP/CAD/AUD pools, verified and explicitly authorized fiscal-host recipients |
-| Delivery | Render web/Postgres/cron Blueprint, CI, composite GitHub Action, MIT license, English Devpost draft, video, subtitles, documentation |
+| Workspace sign-in token (sandbox only) | ⚠️ TO FILL before submission |
+| PayPal sandbox payer (personal) login | ⚠️ TO FILL before submission |
+| PayPal sandbox maintainer (personal) login | ⚠️ TO FILL before submission |
 
-Full requirement-to-file traceability: [docs/FEATURES.md](docs/FEATURES.md).
+These are PayPal **sandbox** test accounts only; they hold no real money.
+
+## What is real and what is simulated
+
+| | Status |
+|---|---|
+| Allocator, I1–I7 gate, immutable batch identity, ledger | Implemented and covered by automated tests (54 unit tests, API and MCP transport checks, PostgreSQL concurrency checks) |
+| Local demo mode | **Simulated:** no PayPal calls; decisions come from a deterministic rules provider labelled `demo-rules-1 (simulation)`; identities and funding signals are fictional |
+| Hosted deployment | Live on Render in sandbox mode (`/api/health` returned `mode: sandbox` on 2026-11-12) |
+| PayPal sandbox app | OAuth client-credentials verified on 2026-11-12; the token carries the Payouts, Subscriptions and Webhooks scopes; the Payouts API is reachable. Webhook registered for 14 event types |
+| End-to-end sandbox month (subscription → Payouts → webhooks) | Not yet recorded as evidence in this repository |
+| Runtime model | Integrated (OpenAI-compatible API; configured for DeepSeek V4.1 Flash via OpenCode Zen). No successful inference was observed before submission because the model account had no credit; without a model answer, decisions fall back to the neutral weight 1.0 with confidence 0 |
+| Cooldown | 14 days. A sandbox-only `DEMO_COOLDOWN_MINUTES` override exists; it is impossible to enable outside sandbox mode and the UI shows a permanent "Demo: cooldown shortened" badge when it is on |
 
 ## The money model
 
 ```
-u_i = sum over repositories of 0.5 ^ minimum_dependency_depth
-w_i = sqrt(u_i) * criticality_i * need_i
+u_i = Σ over repositories of 0.5 ^ (minimum dependency depth this month)
+w_i = sqrt(u_i) × criticality_i × need_i
 ```
 
-AI weights stay in `[0.5, 2]`, reverting to `1` below 80% confidence. Each package is capped at `max(25%, 2/K)` of its payer’s confirmed recurring pool; capped weight is redistributed. Package amounts round **down** to a cent. The remainder returns to the payer’s next open pool.
-
-| Example package | Usage | Criticality | Need | Recurring allocation |
-|---|---:|---:|---:|---:|
-| Framework | 400 | 1.0 | 0.6 | $96.77 |
-| Utility | 100 | 1.5 | 1.8 | $217.74 |
-| Infrastructure | 25 | 2.0 | 2.0 | $161.29 |
-| Helper | 9 | 1.0 | 1.0 | $24.19 |
-
-These required example amounts total **$499.99**; the remaining **$0.01** is explicitly recycled. Policy parameters are starting assumptions, **not empirically calibrated findings**. Multi-maintainer splits use deterministic largest-remainder rounding to preserve each package’s credited cents.
-
-Balances aggregate by **maintainer and currency across payers/packages**. The initial minimum is 10 units of each supported currency. Smaller balances roll forward. Unclaimed amounts expire after six calendar months and return to the original payer’s following-month pool. New claims, email changes and host authorization have a 14-day cooldown.
-
-Extra grants use a separate human-approved mandate and are outside the recurring package cap. Capture must be confirmed before credit. A grant captured after a period’s payout batch was prepared queues for the next month.
+- AI weights are bounded to `[0.5, 2]` and revert to `1` below 80 % confidence. Out-of-range answers are rejected, not clamped.
+- Each package is capped at `max(25 %, 2/K)` of the payer's confirmed pool; the excess is redistributed.
+- Amounts round **down** to the cent; the remainder returns to the payer's next month.
+- Balances under 10 units roll forward. Unclaimed funds return after six months. New claims, email changes and fiscal-host changes wait 14 days.
+- Extra grants use a separate human-approved PayPal order and are outside the recurring cap.
 
 ## Seven enforced invariants
 
-| Gate | Enforced boundary |
+| Gate | Boundary |
 |---|---|
-| I1 | Verified recipient, valid claim, cooldowns complete, no active hold; fiscal host verified and authorized |
-| I2 | Allocations ≤ actual receipts; payout amounts equal funded ledger credits; integer cents; isolated currencies |
-| I3 | Every recurring package respects its payer’s allocation cap |
-| I4 | One `nebraska-{period}` global batch; immutable items/payload; no reused credits; retries stop before dedupe expiry |
-| I5 | Every normalized decision satisfies the fixed catalog’s types and bounds |
-| I6 | Grant credits require provider-confirmed approval/capture evidence |
-| I7 | Frozen usage/decisions/parameter version recompute the allocation and every payout has traceable credits |
+| I1 | Verified recipient, valid claim, cooldowns complete, no active hold |
+| I2 | Allocations ≤ confirmed receipts; payout amounts equal funded integer-cent credits; currencies isolated |
+| I3 | Every recurring package respects the payer's cap |
+| I4 | One `nebraska-{period}` batch; immutable items and payload; item IDs include currency; retries reuse the same ID |
+| I5 | Every decision matches the fixed question catalog's types and bounds |
+| I6 | Grant credits require provider-confirmed human approval and capture |
+| I7 | Frozen usage, decisions and parameters recompute the allocation; every payout traces to credits |
 
-Payout item IDs use a stable hash of the maintainer plus period and currency, allowing multiple currency items in the **same** period batch while fitting PayPal ID limits. Local reservations persist before the external call. An uncertain transfer keeps its reservations and retries the exact payload; it cannot create a replacement batch. `UNCLAIMED`, `HELD`, and `BLOCKED` stay reserved. Confirmed failure/return/cancellation releases credits for a future monthly batch.
+A timeout never creates a new batch: credits are reserved before the call, and the exact payload is retried under the same `sender_batch_id`.
 
-[Architecture and implementation decisions](docs/ARCHITECTURE.md) · [Security and recovery](docs/SECURITY.md).
+## Run against your own PayPal sandbox
 
-## Connect actual sandbox services
+Copy `.env.example` to `.env`, set `NEBRASKA_MODE=sandbox` and fill in your sandbox app credentials, webhook ID and model endpoint. [docs/SANDBOX.md](docs/SANDBOX.md) walks through the PayPal app, webhook events, GitHub OAuth and the model. [render.yaml](render.yaml) deploys the web service, Postgres and the daily worker.
 
-Follow [docs/SANDBOX.md](docs/SANDBOX.md) for the complete setup and evidence checklist.
+## For agent and CI integrations
 
-Set `NEBRASKA_MODE=sandbox`, `APP_URL`, `SESSION_SECRET`, `ADMIN_API_TOKEN`, PayPal sandbox app credentials/webhook ID, GitHub OAuth credentials and `OPENAI_API_KEY`. The example file documents every variable. Never place populated `.env` files or private keys in a public repository.
+- Agent hook: [examples/claude-hooks.json](examples/claude-hooks.json)
+- MCP server (`npm run mcp`): `record_usage`, `budget_status`, read-only `explain_allocation` and resource `nebraska://statements/{period}`. No MCP tool can move money. [examples/mcp.json](examples/mcp.json)
+- GitHub Action: [action.yml](action.yml) · Meter: `npm run meter -- --root <repo> --dry-run` ([docs/METER.md](docs/METER.md))
+- Live month-end stream: `POST /api/month-end/runs`, then `GET /api/month-end/runs/{id}/events` (Server-Sent Events, `?replay=1`). Contract: [contracts/month-end-run.schema.json](contracts/month-end-run.schema.json)
 
-Sandbox browser access accepts an admin token or a signed organization token; maintainers use GitHub OAuth. An administrator creates organizations and scoped meter tokens in Settings. Organization tokens cannot access other organizations or payment operations. The only public APIs are health, OAuth entry/callback and signature-verified PayPal webhooks. The demo has no authentication and is intended for local judging.
+More: [API](docs/API.md) · [Architecture](docs/ARCHITECTURE.md) · [Security](docs/SECURITY.md) · [Features](docs/FEATURES.md) · [Video notes](docs/VIDEO.md) · [繁體中文快速開始](docs/QUICKSTART.zh-Hant.md)
 
-Default models are pinned to `gpt-4.1-2025-04-14`. The API-returned model identifier is recorded per decision. Change to an available dated model if your account lacks access. `TREASURER_MODE=workflow` uses deterministic orchestration while retaining real structured decisions; unavailable decisions use conservative defaults. The decision-provider boundary can accommodate Jev; the included real implementation uses structured LLM output rather than guessing an unverified Jev API.
+## AI disclosure
 
-**No external PayPal sandbox payment, GitHub OAuth verification or LLM inference is claimed for this handoff:** runtime credentials were not supplied. Source publication to the public GitHub repository above has been completed. Provider request contracts are tested with mocks; actual external confirmation requires the sandbox runbook.
+- **Built with AI assistance:** OpenAI Codex and Anthropic Claude were used for design, planning and implementation.
+- **Runtime AI:** the decision provider and the Treasurer call an OpenAI-compatible chat-completions model with structured output (configured: DeepSeek V4.1 Flash through OpenCode Zen). The model only answers a fixed set of typed questions; it never sees payment credentials and cannot approve, enlarge or redirect a payment. The model ID returned by the provider is stored with every decision.
+- **Local demo decisions are simulated** by a deterministic rules provider and are labelled as such.
+- **Video narration** uses synthetic voices (Kokoro-82M, Apache-2.0); music and sound are synthesized. Details in [docs/VIDEO.md](docs/VIDEO.md).
 
-## Meter, MCP and CI
+## Scope and limits
 
-```bash
-export NEBRASKA_ORG_ID=org_YOUR_ORG
-export NEBRASKA_URL=http://localhost:3000
-# Set NEBRASKA_API_TOKEN and NEBRASKA_REPO_SALT through your secret manager.
-npm run meter -- --root /path/to/repo --base HEAD~1 --dry-run
-npm run meter -- --root /path/to/repo --base HEAD~1
-npm run mcp
-```
+Nebraska does not force anyone to pay, does not convert currencies, and is not a licensed money transmitter. The competition build supports PayPal **sandbox** only. Policy parameters are starting assumptions, not calibrated findings.
 
-Use the **same secret salt and canonical repository identity** in hooks and CI. Normalized `git remote.origin.url` is the default identity; use `NEBRASKA_REPO_ID` when no origin exists. Absolute path is only a local fallback. Hooks and CI should share a stable session ID for exact replay deduplication; monthly attribution also deduplicates across sessions and versions.
-
-[Agent hook example](examples/claude-hooks.json) · [MCP config](examples/mcp.json) · [Composite Action](action.yml) · [Meter limitations](docs/METER.md).
-
-## Deploy and operate
-
-Use [render.yaml](render.yaml) to provision Next.js, Postgres and a daily cron. Enter sandbox secrets in Render. Set `APP_URL` to the web service’s HTTPS URL and register the webhook/OAuth callbacks before testing. The daily worker syncs pending payouts, handles exceptions and scans OSV; on UTC day 1 it settles the preceding month.
-
-```bash
-npm run worker
-# Intentional manual close; never change IDs to retry a transfer:
-SETTLEMENT_PERIOD=2026-11 npm run worker
-```
-
-Optional AI Toolkit cross-check uses the **official `@paypal/agent-toolkit`**, through `scripts/toolkit-mcp.ts`, with **only `transactions.list` enabled**. The client also enforces an explicit read-only allowlist. It never gives the Treasurer arbitrary Toolkit tools. `PAYPAL_TOOLKIT_URL` can select a separately hosted compatible MCP server.
-
-For Postgres integration verification, point `TEST_DATABASE_URL` at an **isolated test database** and run `npm run check:postgres`. It tests concurrent transactions, hash-chain replay, append-only triggers and settlement. Do not point that script at an operational ledger.
-
-## Submission materials
-
-- [Devpost English draft](docs/DEVPOST.md)
-- [Demo video and publishing notes](docs/VIDEO.md)
-- [Final account-dependent checklist](docs/SUBMISSION.md)
-- [Test evidence](docs/VALIDATION.md)
-- [Original design and decision records](docs/source/)
-
-`npm run video` regenerates a narrated MP4, poster, English SRT captions and the underlying command transcript from a **fresh local demo execution**. Requires Python/Pillow and ffmpeg. It combines real command results with data visualizations; it is **not a browser screen recording** and does not claim actual sandbox payments. For submission, add browser/PayPal sandbox footage after completing the account-dependent runbook.
-
-The project does not force anyone to fund open source, automatically authenticate legal fiscal-host identity, provide FX conversion, or operate a licensed money-transfer service. Sandbox is the supported integration target; real-money operation requires an appropriate regulated arrangement. See [docs/SECURITY.md](docs/SECURITY.md).
-
-Licensed under [MIT](LICENSE). Third-party dependencies retain their own licenses; the original supplied planning documents remain reference material.
+Licensed under [MIT](LICENSE).

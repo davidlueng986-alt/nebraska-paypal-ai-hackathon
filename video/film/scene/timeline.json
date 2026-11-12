@@ -1,0 +1,23 @@
+{
+ "fps": 30,
+ "duration": 18,
+ "importLine": "import { PayPalAgentToolkit } from \"@paypal/agent-toolkit/mcp\";",
+ "typeStart": 0.7,
+ "charDt": 0.034,
+ "collapseStart": 3.6,
+ "collapseEnd": 4.3,
+ "pullStart": 4.3,
+ "pullEnd": 8.0,
+ "diveStart": 8.0,
+ "diveEnd": 12.6,
+ "arrive": 12.6,
+ "line1": [
+  8.6,
+  11.6
+ ],
+ "line2": [
+  9.6,
+  11.9
+ ],
+ "end": 18
+}

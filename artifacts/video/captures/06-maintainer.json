@@ -1,0 +1,13 @@
+{
+  "name": "06-maintainer",
+  "seconds": 8.32,
+  "frames": 1,
+  "viewport": [
+    1440,
+    900
+  ],
+  "dpr": 2,
+  "base": "http://localhost:3000",
+  "mode": "demo",
+  "capturedAt": "2026-11-12T13:54:04.367Z"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "01-start",
+  "seconds": 10.03,
+  "frames": 158,
+  "viewport": [
+    1440,
+    900
+  ],
+  "dpr": 2,
+  "base": "http://localhost:3000",
+  "mode": "demo",
+  "capturedAt": "2026-11-12T13:51:58.856Z"
+}

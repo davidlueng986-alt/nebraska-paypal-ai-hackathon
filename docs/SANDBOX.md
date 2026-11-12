@@ -117,4 +117,4 @@ Checked 2026-11-11:
 - [ecosyste.ms OpenAPI](https://packages.ecosyste.ms/docs/api/v1/openapi.yaml): server base `https://packages.ecosyste.ms/api/v1`.
 - [Official PayPal Agent Toolkit source](https://github.com/paypal/Agent-Toolkit): `list_transactions`, `transactions.list` configuration, MCP SDK export. Installed version 1.11.0 was protocol-tested with a read-only configuration.
 - Catalog product before billing plan and quantity-supported plan are covered by provider request-contract tests; approval rel `approve` and `payer-action` are supported and restricted to sandbox PayPal HTTPS URLs.
-- Actual account Payouts entitlement, accepted quantities/currencies, real OAuth permission response, service availability and successful external sandbox transfers **still require the entrant’s accounts**.
+- Actual account Payouts entitlement, accepted quantities/currencies, real OAuth permission response, service availability and successful external sandbox transfers **still require your own sandbox accounts**.
