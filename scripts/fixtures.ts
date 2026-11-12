@@ -3,28 +3,15 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { SqliteStore } from "../src/core/store";
 import { Nebraska } from "../src/core/service";
-import { DemoDecisionProvider, type DecisionInput } from "../src/core/decisions";
+import { DemoDecisionProvider } from "../src/core/decisions";
 import { DemoPayments } from "../src/integrations/paypal";
 import { seedDemo } from "../src/core/seed";
 import { runMonthEnd } from "../src/core/monthend";
 import { maintainerView, payerView } from "../src/core/views";
 
-/** Simulates a compromised model that obeys the injected README on kleur's `need`. */
-class InjectedProvider extends DemoDecisionProvider {
-  async answer(input: DecisionInput) {
-    if (input.subject === "npm:kleur" && input.question === "need")
-      return {
-        value: 999,
-        confidence: 0.99,
-        reason: "SIMULATED injection: README asked for the maximum need.",
-        modelVersion: "demo-rules-1 (simulation, injected-README scenario)",
-      };
-    return super.answer(input);
-  }
-}
 const period = "2026-11";
 const store = new SqliteStore(":memory:");
-const service = new Nebraska(store, new InjectedProvider(), new DemoPayments());
+const service = new Nebraska(store, new DemoDecisionProvider(), new DemoPayments());
 await seedDemo(service, period);
 await service.captureGrant((await store.read()).grants[0].id);
 const events = await runMonthEnd(service, period, "run_2026-11_demo");

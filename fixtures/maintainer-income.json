@@ -2,10 +2,10 @@
   "simulated": true,
   "maintainer": {
     "email": "maya-rivera@example.com",
-    "emailChangedAt": "2026-09-13T00:20:20.839Z",
+    "emailChangedAt": "2026-09-13T08:31:54.639Z",
     "id": "m3",
     "login": "maya-rivera",
-    "verifiedAt": "2026-09-13T00:20:20.839Z"
+    "verifiedAt": "2026-09-13T08:31:54.639Z"
   },
   "eligibility": {
     "email": "maya-rivera@example.com",
@@ -15,7 +15,7 @@
   "cooldownDays": 0,
   "claims": [
     {
-      "claimedAt": "2026-09-13T00:20:20.839Z",
+      "claimedAt": "2026-09-13T08:31:54.639Z",
       "id": "claim:npm:fast-xml-parser:m3",
       "maintainerId": "m3",
       "packageId": "npm:fast-xml-parser",
@@ -24,7 +24,7 @@
       "package": {
         "ecosystem": "npm",
         "id": "npm:fast-xml-parser",
-        "metadataAt": "2026-11-12T00:20:20.868Z",
+        "metadataAt": "2026-11-12T08:31:54.672Z",
         "name": "fast-xml-parser",
         "repoUrl": "https://github.com/NaturalIntelligence/fast-xml-parser",
         "signals": {
@@ -44,7 +44,7 @@
           "vulnerabilities": [
             {
               "id": "DEMO-2026-001",
-              "modified": "2026-11-12T00:20:20.868Z",
+              "modified": "2026-11-12T08:31:54.672Z",
               "summary": "Simulated parser advisory for the hackathon demonstration, not a real security claim."
             }
           ]
@@ -62,11 +62,11 @@
   },
   "credits": [
     {
-      "at": "2026-11-12T00:20:21.176Z",
+      "at": "2026-11-12T08:31:55.051Z",
       "batchId": "nebraska-2026-11",
       "cents": 16129,
       "currency": "USD",
-      "id": "credit_e436971b-3723-4b11-aa74-f19c7ab8e950:m3",
+      "id": "credit_7731f727-8235-4554-b43c-da65cdb0dad2:m3",
       "maintainerId": "m3",
       "orgId": "org_acme",
       "packageId": "npm:fast-xml-parser",
@@ -76,7 +76,7 @@
       "status": "paid"
     },
     {
-      "at": "2026-11-12T00:20:21.336Z",
+      "at": "2026-11-12T08:31:55.221Z",
       "batchId": "nebraska-2026-11",
       "cents": 25000,
       "currency": "USD",
@@ -100,12 +100,12 @@
       "closeIds": [
         "close:org_acme:2026-11"
       ],
-      "createdAt": "2026-11-12T00:20:22.350Z",
+      "createdAt": "2026-11-12T08:31:56.343Z",
       "id": "statement:maintainer:m3:2026-11",
       "ownerId": "m3",
       "ownerType": "maintainer",
       "period": "2026-11",
-      "recomputeHash": "2e72137ef548dfa3566dfd8083bb40dfd7f18290f2b3fc6fe2fa6c0142484133"
+      "recomputeHash": "32164fff97d55de586974194a1568323776a2ffd5191e686da5ab4cf5dce5d02"
     }
   ],
   "hosts": [],

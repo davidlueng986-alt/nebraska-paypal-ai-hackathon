@@ -21,6 +21,7 @@
       "c": 1,
       "n": 0.6,
       "cents": 9677,
+      "aiOffCents": 25000,
       "confidence": 0.96,
       "reason": "Downstream reach is reflected in criticality. Existing corporate support lowers resource need.",
       "status": "Verified",
@@ -50,6 +51,7 @@
       "c": 1.5,
       "n": 1.8,
       "cents": 21774,
+      "aiOffCents": 13888,
       "confidence": 0.96,
       "reason": "Downstream reach is reflected in criticality. Small maintainer team and limited funding increase resource need.",
       "status": "Verified",
@@ -79,6 +81,7 @@
       "c": 2,
       "n": 2,
       "cents": 16129,
+      "aiOffCents": 6944,
       "confidence": 0.96,
       "reason": "Critical infrastructure used far downstream. Small maintainer team and limited funding increase resource need.",
       "status": "Verified",
@@ -99,7 +102,7 @@
         "vulnerabilities": [
           {
             "id": "DEMO-2026-001",
-            "modified": "2026-11-12T00:20:20.868Z",
+            "modified": "2026-11-12T08:31:54.672Z",
             "summary": "Simulated parser advisory for the hackathon demonstration, not a real security claim."
           }
         ]
@@ -114,8 +117,9 @@
       "c": 1,
       "n": 1,
       "cents": 2419,
+      "aiOffCents": 4166,
       "confidence": 0,
-      "reason": "Downstream reach is reflected in criticality. Conservative fallback: invalid output. SIMULATED injection: README asked for the maximum need.",
+      "reason": "Downstream reach is reflected in criticality. Conservative fallback: invalid output. SIMULATED injection: the model followed the README and asked for 999.",
       "status": "Held",
       "signals": {
         "accountAgeDays": 900,
@@ -153,7 +157,7 @@
       "advisories": [
         {
           "id": "DEMO-2026-001",
-          "modified": "2026-11-12T00:20:20.868Z",
+          "modified": "2026-11-12T08:31:54.672Z",
           "summary": "Simulated parser advisory for the hackathon demonstration, not a real security claim."
         }
       ],
@@ -176,9 +180,9 @@
       "approveUrl": "/demo/approval?kind=grant&grant=grant_5a2c4c71a6a8a0a2037bf6f6",
       "captureId": "DEMO-CAP-DEMO-ORDER-grant_5a2c4c71a6a8a0a2037bf6f6",
       "cents": 25000,
-      "createdAt": "2026-11-12T00:20:21.249Z",
+      "createdAt": "2026-11-12T08:31:55.131Z",
       "currency": "USD",
-      "decisionId": "dec_eccbe154-7dab-4e08-9a4d-e0ded6b51403",
+      "decisionId": "dec_5967b155-d7f0-4e93-9ba0-1e91907bf82b",
       "id": "grant_5a2c4c71a6a8a0a2037bf6f6",
       "orderId": "DEMO-ORDER-grant_5a2c4c71a6a8a0a2037bf6f6",
       "orgId": "org_acme",
@@ -194,17 +198,17 @@
       "closeIds": [
         "close:org_acme:2026-11"
       ],
-      "createdAt": "2026-11-12T00:20:22.350Z",
+      "createdAt": "2026-11-12T08:31:56.343Z",
       "id": "statement:org:org_acme:2026-11",
       "ownerId": "org_acme",
       "ownerType": "org",
       "period": "2026-11",
-      "recomputeHash": "2e72137ef548dfa3566dfd8083bb40dfd7f18290f2b3fc6fe2fa6c0142484133"
+      "recomputeHash": "32164fff97d55de586974194a1568323776a2ffd5191e686da5ab4cf5dce5d02"
     }
   ],
   "close": {
     "id": "close:org_acme:2026-11",
-    "snapshotHash": "56c89334b0d77f296b8043f2c2209f722494bba5706bd49ab64d96536a85e7f2",
+    "snapshotHash": "dc33abd2abc1ca80fbdd97f5b26ce5d242557bb0c117cae4bd99773c060699c3",
     "paramsVersion": "nebraska-1.0.0"
   }
 }

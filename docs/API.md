@@ -6,7 +6,7 @@ All data APIs return JSON except CSV export. `GET /api/health` is public. Sandbo
 
 | Method/path | Purpose | Scope |
 |---|---|---|
-| GET health | Mode/version/health | Public |
+| GET health | Mode/version/health, `demoOverrides` (sandbox-only cooldown override, else `{}`) | Public |
 | GET bootstrap | Available workspaces, own identities and public package coordinates | Authenticated |
 | GET payer?org=…&period=YYYY-MM | Budget, allocation grid, private risk report, grants/statements | Owning org/admin |
 | GET maintainer?id=…&period=… | Claims, usage counts, private income and recipient eligibility | Owning maintainer/admin |

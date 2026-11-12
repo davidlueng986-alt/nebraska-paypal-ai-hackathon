@@ -18,6 +18,24 @@ export const hash = (v: unknown) =>
   createHash("sha256").update(canonical(v)).digest("hex");
 export const id = (prefix: string) => prefix + "_" + randomUUID();
 export const now = () => new Date().toISOString();
+/**
+ * Payout-eligibility cooldown in days. 14 by default. A shortened value is honoured
+ * ONLY when NEBRASKA_MODE=sandbox and DEMO_COOLDOWN_MINUTES is a positive number;
+ * in demo or any other mode the variable is ignored.
+ */
+export function cooldownDays(): number {
+  return demoOverrides().cooldownMinutes !== undefined
+    ? demoOverrides().cooldownMinutes! / 1440
+    : 14;
+}
+export function demoOverrides(): { cooldownMinutes?: number } {
+  const raw = process.env.DEMO_COOLDOWN_MINUTES;
+  if (process.env.NEBRASKA_MODE !== "sandbox" || !raw) return {};
+  const minutes = Number(raw);
+  return Number.isFinite(minutes) && minutes > 0 && minutes < 14 * 1440
+    ? { cooldownMinutes: minutes }
+    : {};
+}
 export const periodOf = (at = now()) => at.slice(0, 7);
 export function addMonths(period: string, n: number) {
   const [y, m] = period.split("-").map(Number);

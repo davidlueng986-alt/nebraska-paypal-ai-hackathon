@@ -1,8 +1,8 @@
-import { usageUnits } from "./allocator";
+import { allocate, usageUnits } from "./allocator";
 import { recipient } from "./gate";
 import { PARAMS, type State } from "./model";
 import { type Actor, orgAccess, maintainerAccess } from "./auth";
-import { activeHold, daysSince, hash, requireRow } from "./util";
+import { activeHold, cooldownDays, daysSince, hash, requireRow } from "./util";
 export function payerView(s: State, orgId: string, period: string, a: Actor) {
   orgAccess(a, orgId);
   const org = requireRow(s.orgs.find((o) => o.id === orgId));
@@ -12,6 +12,10 @@ export function payerView(s: State, orgId: string, period: string, a: Actor) {
   const units = usageUnits(usages);
   const close = s.closes.find((c) => c.orgId === orgId && c.period === period);
   const allocations = close?.allocations ?? [];
+  // Same frozen inputs with neutral AI weights (c = n = 1): what each package would get "AI off".
+  const aiOff = close
+    ? allocate(close.budgetCents, usageUnits(close.usageSnapshot), close.decisions, false)
+    : [];
   const rows = [...units.entries()].map(([pid, u]) => {
     const p = s.packages.find((p) => p.id === pid);
     const allocation = allocations.find((x) => x.packageId === pid);
@@ -32,6 +36,7 @@ export function payerView(s: State, orgId: string, period: string, a: Actor) {
       c: allocation?.c ?? criticality?.value ?? 1,
       n: allocation?.n ?? need?.value ?? 1,
       cents: allocation?.cents ?? 0,
+      aiOffCents: aiOff.find((x) => x.packageId === pid)?.cents ?? null,
       confidence: Math.min(criticality?.confidence ?? 0, need?.confidence ?? 0),
       reason: [criticality?.reason, need?.reason].filter(Boolean).join(" "),
       status: !claims.length
@@ -138,7 +143,7 @@ export function maintainerView(
   return {
     maintainer: m,
     eligibility: recipient(s, m),
-    cooldownDays: Math.max(0, Math.ceil(14 - daysSince(m.emailChangedAt))),
+    cooldownDays: Math.max(0, Math.ceil(cooldownDays() - daysSince(m.emailChangedAt))),
     claims: claims.map((c) => ({
       ...c,
       package: s.packages.find((p) => p.id === c.packageId),

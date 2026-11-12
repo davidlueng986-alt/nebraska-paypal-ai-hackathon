@@ -101,6 +101,18 @@ export async function decide(
 export class DemoDecisionProvider implements DecisionProvider {
   async answer(input: DecisionInput): Promise<Answer> {
     const p = input.facts as Partial<Package["signals"]> & { status?: string };
+    // SIMULATION of a model that obeys an injected README: it answers out of range.
+    // decide() rejects the answer and falls back to the neutral 1.0, as in production.
+    if (
+      input.question === "need" &&
+      /ignore all previous instructions/i.test(p.readme ?? "")
+    )
+      return {
+        value: 999,
+        confidence: 0.99,
+        reason: "SIMULATED injection: the model followed the README and asked for 999.",
+        modelVersion: "demo-rules-1 (simulation)",
+      };
     let value: number | string = 1;
     let reason = "Neutral weight; no exceptional signal.";
     if (input.question === "criticality") {

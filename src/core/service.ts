@@ -21,6 +21,7 @@ import type { Store, Tx } from "./store";
 import {
   activeHold,
   addMonths,
+  cooldownDays,
   daysSince,
   DomainError,
   hash,
@@ -394,7 +395,7 @@ export class Nebraska {
             !m ||
             !recipient(tx.state, m).ready ||
             !claim ||
-            daysSince(claim.claimedAt) < 14
+            daysSince(claim.claimedAt) < cooldownDays()
           )
             continue;
           const key = `${c.maintainerId}|${c.currency}`;
