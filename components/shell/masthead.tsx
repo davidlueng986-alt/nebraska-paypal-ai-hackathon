@@ -1,5 +1,5 @@
 "use client";
-import { CalendarCheck, CircleDollarSign, FileText, Inbox, PackageCheck, Play, Rocket, Wallet } from "lucide-react";
+import { BarChart3, CalendarCheck, CircleDollarSign, FileText, Inbox, PackageCheck, Play, Rocket, Wallet } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useData, usePayer } from "../lib/data";
@@ -19,6 +19,7 @@ export function Masthead() {
       ]
     : [
         { href: "/", label: "This month", Icon: CircleDollarSign },
+        { href: "/dashboard", label: "Dashboard", Icon: BarChart3 },
         { href: "/approvals", label: "Approvals", Icon: Inbox, count: pending },
         { href: "/month-end", label: "Month-end run", Icon: Play },
         { href: `/statements/${period}`, label: "Statement", Icon: FileText, match: "/statements" },

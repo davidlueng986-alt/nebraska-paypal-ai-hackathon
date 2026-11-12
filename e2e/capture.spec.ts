@@ -79,6 +79,17 @@ test("02-month shows where the money goes and why", async ({ page }) => {
   await pause(page, 800);
 });
 
+test("02c-dashboard shows the month at a glance", async ({ page }) => {
+  await page.goto("/dashboard");
+  await expect(page.getByRole("heading", { name: /^Dashboard/ })).toBeVisible();
+  await pause(page, 3000);
+  await still(page, "02c-dashboard");
+  await page.locator('g[aria-label^="fast-xml-parser"]').first().hover();
+  await pause(page, 2500);
+  await glide(page, 520);
+  await pause(page, 3000);
+});
+
 test("03-approvals approves the $250 grant on PayPal", async ({ page }) => {
   await page.goto("/approvals");
   await expect(page.getByText("One-time grant for fast-xml-parser").first()).toBeVisible();
