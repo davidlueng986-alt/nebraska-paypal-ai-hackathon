@@ -1,4 +1,4 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import { usageSchema } from "../src/core/model";
@@ -57,6 +57,74 @@ server.registerTool(
             allocatedCents: view.metrics.allocated,
             packages: view.metrics.packages,
           }),
+        },
+      ],
+    };
+  },
+);
+server.registerTool(
+  "explain_allocation",
+  {
+    description:
+      "Read-only: explain one package's allocation (usage u, criticality c, need n, estimated USD, reason, confidence). Cannot move money or change weights.",
+    inputSchema: {
+      package: z.string().min(1).max(214),
+      period: z
+        .string()
+        .regex(/^\d{4}-(0[1-9]|1[0-2])$/)
+        .optional(),
+    },
+  },
+  async ({ package: name, period }) => {
+    const p = period ?? new Date().toISOString().slice(0, 7);
+    const view = await request(
+      `payer?org=${encodeURIComponent(org!)}&period=${p}`,
+    );
+    const row = view.rows.find(
+      (r: any) => r.name === name || r.id === name,
+    );
+    if (!row)
+      return {
+        isError: true,
+        content: [{ type: "text", text: `No usage for ${name} in ${p}` }],
+      };
+    return {
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify({
+            u: row.u,
+            c: row.c,
+            n: row.n,
+            estimate_usd: row.cents / 100,
+            reason: row.reason,
+            confidence: row.confidence,
+          }),
+        },
+      ],
+    };
+  },
+);
+server.registerResource(
+  "statements",
+  new ResourceTemplate("nebraska://statements/{period}", { list: undefined }),
+  {
+    title: "Nebraska statements",
+    description: "Read-only payer statements for a month (YYYY-MM).",
+    mimeType: "application/json",
+  },
+  async (uri, { period }) => {
+    const p = String(period);
+    if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(p)) throw new Error("Invalid period");
+    const view = await request(
+      `payer?org=${encodeURIComponent(org!)}&period=${p}`,
+    );
+    return {
+      contents: [
+        {
+          uri: uri.href,
+          mimeType: "application/json",
+          text: JSON.stringify(view.statements ?? []),
         },
       ],
     };

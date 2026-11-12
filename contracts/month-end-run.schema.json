@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon/contracts/month-end-run.schema.json",
+  "title": "Nebraska month-end run event",
+  "description": "One event of the month-end stream. The same stream drives the month-end UI, the ledger and the video. Delivered over Server-Sent Events as `event: month-end` with the JSON below in `data:`; `id:` is `seq`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_id", "seq", "at", "actor", "step", "status", "title", "detail"],
+  "properties": {
+    "run_id": { "type": "string" },
+    "seq": { "type": "integer", "minimum": 1, "description": "Strictly increasing, gap-free within a run." },
+    "at": { "type": "string", "format": "date-time" },
+    "actor": { "enum": ["treasurer", "decision", "gate", "paypal", "system"] },
+    "step": { "enum": ["snapshot", "decide", "allocate", "gate", "payout", "webhook", "statement"] },
+    "status": { "enum": ["running", "ok", "held", "rejected"] },
+    "invariant": { "enum": ["I1", "I2", "I3", "I4", "I5", "I6", "I7"], "description": "Present on gate events only: exactly one event per invariant." },
+    "title": { "type": "string", "description": "One human-readable line. The last event of a run is a system event titled 'Month-end run complete' or 'Month-end run failed'." },
+    "detail": { "type": "object", "description": "Step-specific facts. No emails, secrets or repository names." }
+  },
+  "$defs": {
+    "fixture": {
+      "type": "object",
+      "required": ["run_id", "events"],
+      "properties": {
+        "simulated": { "type": "boolean" },
+        "run_id": { "type": "string" },
+        "events": { "type": "array", "items": { "$ref": "#" } }
+      }
+    }
+  }
+}

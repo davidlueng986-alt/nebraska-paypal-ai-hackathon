@@ -42,6 +42,12 @@ import {
 } from "@/src/integrations/github";
 import { resolvePackage, queryOsv } from "@/src/integrations/metadata";
 import { Treasurer } from "@/src/core/treasurer";
+import {
+  isTerminal,
+  newRunId,
+  readRun,
+  runMonthEnd,
+} from "@/src/core/monthend";
 import { reconcile } from "@/src/integrations/reconcile";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -680,6 +686,60 @@ async function handler(req: Request): Promise<Response> {
           return { approved: true, simulation: true };
         }),
       );
+    }
+    if (path === "month-end/runs" && method === "POST") {
+      admin(a);
+      const b = z
+        .object({ period: periodSchema, execute: z.boolean().default(true) })
+        .strict()
+        .parse(body);
+      const run_id = newRunId(b.period);
+      void runMonthEnd(service, b.period, run_id, { execute: b.execute });
+      return j({ run_id, events: `/api/month-end/runs/${run_id}/events` }, 202);
+    }
+    const sse = /^month-end\/runs\/([\w:.-]+)\/events$/.exec(path);
+    if (sse && method === "GET") {
+      admin(a);
+      const runId = sse[1];
+      const replay = url.searchParams.get("replay") === "1";
+      const delay = replay
+        ? Math.min(5000, Number(url.searchParams.get("delay_ms") ?? 600) || 0)
+        : 0;
+      const enc = new TextEncoder();
+      let sent = 0;
+      const stream = new ReadableStream({
+        async start(controller) {
+          const started = Date.now();
+          const deadline = started + 10 * 60_000;
+          try {
+            for (;;) {
+              const events = await readRun(service, runId);
+              if (!events.length && Date.now() - started > 20_000)
+                throw new Error("Unknown run");
+              for (const e of events.slice(sent)) {
+                controller.enqueue(
+                  enc.encode(`id: ${e.seq}\nevent: month-end\ndata: ${JSON.stringify(e)}\n\n`),
+                );
+                sent = e.seq;
+                if (delay) await new Promise((r) => setTimeout(r, delay));
+              }
+              if (events.at(-1) && isTerminal(events.at(-1)!)) break;
+              if (Date.now() > deadline) break;
+              await new Promise((r) => setTimeout(r, 250));
+            }
+          } catch {
+            controller.enqueue(enc.encode("event: error\ndata: {\"error\":\"run not found\"}\n\n"));
+          }
+          controller.close();
+        },
+      });
+      return new Response(stream, {
+        headers: {
+          "Content-Type": "text/event-stream",
+          "Cache-Control": "no-store, no-transform",
+          Connection: "keep-alive",
+        },
+      });
     }
     if (path === "treasurer" && method === "POST") {
       admin(a);

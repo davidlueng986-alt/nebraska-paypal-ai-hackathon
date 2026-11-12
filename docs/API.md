@@ -40,6 +40,7 @@ All data APIs return JSON except CSV export. `GET /api/health` is public. Sandbo
 | grants/propose | `{orgId,packageId,period}` | Owning org/admin |
 | grants/decline | `{grantId}` | Owning org/admin |
 | treasurer | `{period,execute?}` | Admin |
+| month-end/runs | `{period,execute?}` → `202 {run_id}`; stream at `GET month-end/runs/{id}/events` (SSE, `?replay=1&delay_ms=`) | Admin |
 | analyze | `{period}` | Admin |
 | payout/sync | `{batchId}` | Admin |
 | payout/cancel-unclaimed | `{batchId,itemId}` | Admin; UNCLAIMED only |

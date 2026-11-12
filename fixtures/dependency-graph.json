@@ -1,0 +1,4858 @@
+{
+  "source": "package-lock.json",
+  "ecosystem": "npm",
+  "nodes": [
+    {
+      "id": "@echogarden/espeak-ng-emscripten@0.3.5",
+      "name": "@echogarden/espeak-ng-emscripten",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "@modelcontextprotocol/sdk@1.32.2",
+      "name": "@modelcontextprotocol/sdk",
+      "depth": 0,
+      "dependents": 1
+    },
+    {
+      "id": "@paypal/agent-toolkit@1.11.0",
+      "name": "@paypal/agent-toolkit",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "@types/node@24.19.2",
+      "name": "@types/node",
+      "depth": 0,
+      "dependents": 2
+    },
+    {
+      "id": "@types/pg@8.23.1",
+      "name": "@types/pg",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "@types/react-dom@19.3.0",
+      "name": "@types/react-dom",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "@types/react@19.3.0",
+      "name": "@types/react",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "ag-grid-community@34.3.1",
+      "name": "ag-grid-community",
+      "depth": 0,
+      "dependents": 1
+    },
+    {
+      "id": "ag-grid-react@34.3.1",
+      "name": "ag-grid-react",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "lucide-react@0.468.0",
+      "name": "lucide-react",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "next@16.4.6",
+      "name": "next",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "pg@8.23.1",
+      "name": "pg",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "react-dom@19.3.1",
+      "name": "react-dom",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "react@19.3.1",
+      "name": "react",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "smol-toml@1.9.1",
+      "name": "smol-toml",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "tsx@4.23.15",
+      "name": "tsx",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "typescript@5.9.3",
+      "name": "typescript",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "vitest@3.2.7",
+      "name": "vitest",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "yaml@2.9.1",
+      "name": "yaml",
+      "depth": 0,
+      "dependents": 0
+    },
+    {
+      "id": "zod@3.25.76",
+      "name": "zod",
+      "depth": 0,
+      "dependents": 3
+    },
+    {
+      "id": "@dotenvx/dotenvx@1.75.1",
+      "name": "@dotenvx/dotenvx",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@hono/node-server@2.1.6",
+      "name": "@hono/node-server",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@langchain/core@0.3.6",
+      "name": "@langchain/core",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@next/env@16.4.6",
+      "name": "@next/env",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@next/swc-darwin-arm64@16.4.6",
+      "name": "@next/swc-darwin-arm64",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@next/swc-darwin-x64@16.4.6",
+      "name": "@next/swc-darwin-x64",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@next/swc-linux-arm64-gnu@16.4.6",
+      "name": "@next/swc-linux-arm64-gnu",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@next/swc-linux-arm64-musl@16.4.6",
+      "name": "@next/swc-linux-arm64-musl",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@next/swc-linux-x64-gnu@16.4.6",
+      "name": "@next/swc-linux-x64-gnu",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@next/swc-linux-x64-musl@16.4.6",
+      "name": "@next/swc-linux-x64-musl",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@next/swc-win32-arm64-msvc@16.4.6",
+      "name": "@next/swc-win32-arm64-msvc",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@next/swc-win32-x64-msvc@16.4.6",
+      "name": "@next/swc-win32-x64-msvc",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@paypal/paypal-server-sdk@1.1.0",
+      "name": "@paypal/paypal-server-sdk",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@swc/helpers@0.5.23",
+      "name": "@swc/helpers",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@types/chai@5.2.3",
+      "name": "@types/chai",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "@vitest/expect@3.2.7",
+      "name": "@vitest/expect",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@vitest/mocker@3.2.7",
+      "name": "@vitest/mocker",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@vitest/pretty-format@3.2.7",
+      "name": "@vitest/pretty-format",
+      "depth": 1,
+      "dependents": 3
+    },
+    {
+      "id": "@vitest/runner@3.2.7",
+      "name": "@vitest/runner",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@vitest/snapshot@3.2.7",
+      "name": "@vitest/snapshot",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "@vitest/spy@3.2.7",
+      "name": "@vitest/spy",
+      "depth": 1,
+      "dependents": 3
+    },
+    {
+      "id": "@vitest/utils@3.2.7",
+      "name": "@vitest/utils",
+      "depth": 1,
+      "dependents": 3
+    },
+    {
+      "id": "ag-charts-types@12.3.1",
+      "name": "ag-charts-types",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "ai@4.3.19",
+      "name": "ai",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "ajv-formats@3.0.1",
+      "name": "ajv-formats",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "ajv@8.20.0",
+      "name": "ajv",
+      "depth": 1,
+      "dependents": 4
+    },
+    {
+      "id": "axios@1.21.1",
+      "name": "axios",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "baseline-browser-mapping@2.11.35",
+      "name": "baseline-browser-mapping",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "caniuse-lite@1.0.30001823",
+      "name": "caniuse-lite",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "chai@5.3.3",
+      "name": "chai",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "content-type@1.0.5",
+      "name": "content-type",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "cors@2.8.6",
+      "name": "cors",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "cross-spawn@7.0.6",
+      "name": "cross-spawn",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "csstype@3.2.3",
+      "name": "csstype",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "debug@4.4.3",
+      "name": "debug",
+      "depth": 1,
+      "dependents": 13
+    },
+    {
+      "id": "esbuild@0.28.2",
+      "name": "esbuild",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "eventsource-parser@3.1.1",
+      "name": "eventsource-parser",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "eventsource@3.0.7",
+      "name": "eventsource",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "expect-type@1.4.0",
+      "name": "expect-type",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "express-rate-limit@8.7.4",
+      "name": "express-rate-limit",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "express@5.3.0",
+      "name": "express",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "fast-json-patch@3.1.1",
+      "name": "fast-json-patch",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "fsevents@2.3.3",
+      "name": "fsevents",
+      "depth": 1,
+      "dependents": 3
+    },
+    {
+      "id": "hono@4.13.17",
+      "name": "hono",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "jose@6.2.17",
+      "name": "jose",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "json-schema-typed@8.0.2",
+      "name": "json-schema-typed",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "lodash@4.18.1",
+      "name": "lodash",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "magic-string@0.30.21",
+      "name": "magic-string",
+      "depth": 1,
+      "dependents": 3
+    },
+    {
+      "id": "mathjs@14.9.1",
+      "name": "mathjs",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "openai@4.86.1",
+      "name": "openai",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "os@0.1.2",
+      "name": "os",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "pathe@2.0.3",
+      "name": "pathe",
+      "depth": 1,
+      "dependents": 4
+    },
+    {
+      "id": "pg-cloudflare@1.4.1",
+      "name": "pg-cloudflare",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "pg-connection-string@2.14.1",
+      "name": "pg-connection-string",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "pg-pool@3.14.0",
+      "name": "pg-pool",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "pg-protocol@1.16.1",
+      "name": "pg-protocol",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "pg-types@2.2.0",
+      "name": "pg-types",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "pgpass@1.0.5",
+      "name": "pgpass",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "picomatch@4.0.7",
+      "name": "picomatch",
+      "depth": 1,
+      "dependents": 4
+    },
+    {
+      "id": "pkce-challenge@5.0.1",
+      "name": "pkce-challenge",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "postcss@8.5.23",
+      "name": "postcss",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "prop-types@15.8.1",
+      "name": "prop-types",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "raw-body@3.0.2",
+      "name": "raw-body",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "scheduler@0.28.0",
+      "name": "scheduler",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "sharp@0.35.5",
+      "name": "sharp",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "std-env@3.10.0",
+      "name": "std-env",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "styled-jsx@5.1.6",
+      "name": "styled-jsx",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "tinybench@2.9.0",
+      "name": "tinybench",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "tinyexec@0.3.2",
+      "name": "tinyexec",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "tinyglobby@0.2.17",
+      "name": "tinyglobby",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "tinypool@1.1.1",
+      "name": "tinypool",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "tinyrainbow@2.0.0",
+      "name": "tinyrainbow",
+      "depth": 1,
+      "dependents": 4
+    },
+    {
+      "id": "undici-types@7.24.6",
+      "name": "undici-types",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "vite-node@3.2.4",
+      "name": "vite-node",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "vite@7.3.8",
+      "name": "vite",
+      "depth": 1,
+      "dependents": 2
+    },
+    {
+      "id": "why-is-node-running@2.3.0",
+      "name": "why-is-node-running",
+      "depth": 1,
+      "dependents": 1
+    },
+    {
+      "id": "zod-to-json-schema@3.25.2",
+      "name": "zod-to-json-schema",
+      "depth": 1,
+      "dependents": 3
+    },
+    {
+      "id": "@ai-sdk/provider-utils@2.2.8",
+      "name": "@ai-sdk/provider-utils",
+      "depth": 2,
+      "dependents": 3
+    },
+    {
+      "id": "@ai-sdk/provider@1.1.3",
+      "name": "@ai-sdk/provider",
+      "depth": 2,
+      "dependents": 3
+    },
+    {
+      "id": "@ai-sdk/react@1.2.12",
+      "name": "@ai-sdk/react",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@ai-sdk/ui-utils@1.2.11",
+      "name": "@ai-sdk/ui-utils",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@apimatic/authentication-adapters@0.5.14",
+      "name": "@apimatic/authentication-adapters",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@apimatic/axios-client-adapter@0.3.21",
+      "name": "@apimatic/axios-client-adapter",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@apimatic/core@0.10.30",
+      "name": "@apimatic/core",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@apimatic/oauth-adapters@0.4.18",
+      "name": "@apimatic/oauth-adapters",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@apimatic/schema@0.7.21",
+      "name": "@apimatic/schema",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@babel/runtime@7.29.13",
+      "name": "@babel/runtime",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@dotenvx/primitives@0.8.0",
+      "name": "@dotenvx/primitives",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/aix-ppc64@0.28.2",
+      "name": "@esbuild/aix-ppc64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/android-arm@0.28.2",
+      "name": "@esbuild/android-arm",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/android-arm64@0.28.2",
+      "name": "@esbuild/android-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/android-x64@0.28.2",
+      "name": "@esbuild/android-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/darwin-arm64@0.28.2",
+      "name": "@esbuild/darwin-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/darwin-x64@0.28.2",
+      "name": "@esbuild/darwin-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/freebsd-arm64@0.28.2",
+      "name": "@esbuild/freebsd-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/freebsd-x64@0.28.2",
+      "name": "@esbuild/freebsd-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/linux-arm@0.28.2",
+      "name": "@esbuild/linux-arm",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/linux-arm64@0.28.2",
+      "name": "@esbuild/linux-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/linux-ia32@0.28.2",
+      "name": "@esbuild/linux-ia32",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/linux-loong64@0.28.2",
+      "name": "@esbuild/linux-loong64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/linux-mips64el@0.28.2",
+      "name": "@esbuild/linux-mips64el",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/linux-ppc64@0.28.2",
+      "name": "@esbuild/linux-ppc64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/linux-riscv64@0.28.2",
+      "name": "@esbuild/linux-riscv64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/linux-s390x@0.28.2",
+      "name": "@esbuild/linux-s390x",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/linux-x64@0.28.2",
+      "name": "@esbuild/linux-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/netbsd-arm64@0.28.2",
+      "name": "@esbuild/netbsd-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/netbsd-x64@0.28.2",
+      "name": "@esbuild/netbsd-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/openbsd-arm64@0.28.2",
+      "name": "@esbuild/openbsd-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/openbsd-x64@0.28.2",
+      "name": "@esbuild/openbsd-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/openharmony-arm64@0.28.2",
+      "name": "@esbuild/openharmony-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/sunos-x64@0.28.2",
+      "name": "@esbuild/sunos-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/win32-arm64@0.28.2",
+      "name": "@esbuild/win32-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/win32-ia32@0.28.2",
+      "name": "@esbuild/win32-ia32",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@esbuild/win32-x64@0.28.2",
+      "name": "@esbuild/win32-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/colour@1.1.0",
+      "name": "@img/colour",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-darwin-arm64@0.35.5",
+      "name": "@img/sharp-darwin-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-darwin-x64@0.35.5",
+      "name": "@img/sharp-darwin-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-freebsd-wasm32@0.35.5",
+      "name": "@img/sharp-freebsd-wasm32",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-libvips-darwin-arm64@1.3.4",
+      "name": "@img/sharp-libvips-darwin-arm64",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@img/sharp-libvips-darwin-x64@1.3.4",
+      "name": "@img/sharp-libvips-darwin-x64",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@img/sharp-libvips-linux-arm@1.3.4",
+      "name": "@img/sharp-libvips-linux-arm",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@img/sharp-libvips-linux-arm64@1.3.4",
+      "name": "@img/sharp-libvips-linux-arm64",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@img/sharp-libvips-linux-ppc64@1.3.4",
+      "name": "@img/sharp-libvips-linux-ppc64",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@img/sharp-libvips-linux-riscv64@1.3.4",
+      "name": "@img/sharp-libvips-linux-riscv64",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@img/sharp-libvips-linux-s390x@1.3.4",
+      "name": "@img/sharp-libvips-linux-s390x",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@img/sharp-libvips-linux-x64@1.3.4",
+      "name": "@img/sharp-libvips-linux-x64",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@img/sharp-libvips-linuxmusl-arm64@1.3.4",
+      "name": "@img/sharp-libvips-linuxmusl-arm64",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@img/sharp-libvips-linuxmusl-x64@1.3.4",
+      "name": "@img/sharp-libvips-linuxmusl-x64",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "@img/sharp-linux-arm@0.35.5",
+      "name": "@img/sharp-linux-arm",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-linux-arm64@0.35.5",
+      "name": "@img/sharp-linux-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-linux-ppc64@0.35.5",
+      "name": "@img/sharp-linux-ppc64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-linux-riscv64@0.35.5",
+      "name": "@img/sharp-linux-riscv64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-linux-s390x@0.35.5",
+      "name": "@img/sharp-linux-s390x",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-linux-x64@0.35.5",
+      "name": "@img/sharp-linux-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-linuxmusl-arm64@0.35.5",
+      "name": "@img/sharp-linuxmusl-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-linuxmusl-x64@0.35.5",
+      "name": "@img/sharp-linuxmusl-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-webcontainers-wasm32@0.35.5",
+      "name": "@img/sharp-webcontainers-wasm32",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-win32-arm64@0.35.5",
+      "name": "@img/sharp-win32-arm64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-win32-ia32@0.35.5",
+      "name": "@img/sharp-win32-ia32",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-win32-x64@0.35.5",
+      "name": "@img/sharp-win32-x64",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@jridgewell/sourcemap-codec@1.6.0",
+      "name": "@jridgewell/sourcemap-codec",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@opentelemetry/api@1.9.0",
+      "name": "@opentelemetry/api",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@types/deep-eql@4.0.2",
+      "name": "@types/deep-eql",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@types/node-fetch@2.6.13",
+      "name": "@types/node-fetch",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@types/node@18.19.130",
+      "name": "@types/node",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "abort-controller@3.0.0",
+      "name": "abort-controller",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "accepts@2.0.0",
+      "name": "accepts",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "agentkeepalive@4.6.0",
+      "name": "agentkeepalive",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "ansi-styles@5.2.0",
+      "name": "ansi-styles",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "assertion-error@2.0.1",
+      "name": "assertion-error",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "body-parser@2.4.0",
+      "name": "body-parser",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "bytes@3.1.2",
+      "name": "bytes",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "cac@6.7.14",
+      "name": "cac",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "camelcase@6.3.0",
+      "name": "camelcase",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "check-error@2.1.3",
+      "name": "check-error",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "client-only@0.0.1",
+      "name": "client-only",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "commander@11.1.0",
+      "name": "commander",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "complex.js@2.4.3",
+      "name": "complex.js",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "conf@10.2.0",
+      "name": "conf",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "content-disposition@2.0.1",
+      "name": "content-disposition",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "cookie-signature@1.2.2",
+      "name": "cookie-signature",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "cookie@0.7.2",
+      "name": "cookie",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "decamelize@1.2.0",
+      "name": "decamelize",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "decimal.js@10.6.0",
+      "name": "decimal.js",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "deep-eql@5.0.2",
+      "name": "deep-eql",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "depd@2.0.0",
+      "name": "depd",
+      "depth": 2,
+      "dependents": 3
+    },
+    {
+      "id": "detect-libc@2.1.2",
+      "name": "detect-libc",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "dotenv@17.4.2",
+      "name": "dotenv",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "encodeurl@2.0.1",
+      "name": "encodeurl",
+      "depth": 2,
+      "dependents": 4
+    },
+    {
+      "id": "enquirer@2.4.1",
+      "name": "enquirer",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "env-paths@2.2.1",
+      "name": "env-paths",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "es-module-lexer@1.7.0",
+      "name": "es-module-lexer",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "escape-html@1.0.3",
+      "name": "escape-html",
+      "depth": 2,
+      "dependents": 4
+    },
+    {
+      "id": "escape-latex@1.2.0",
+      "name": "escape-latex",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "estree-walker@3.0.3",
+      "name": "estree-walker",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "etag@1.8.1",
+      "name": "etag",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "execa@5.1.1",
+      "name": "execa",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "fast-deep-equal@3.1.3",
+      "name": "fast-deep-equal",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "fast-uri@3.1.9",
+      "name": "fast-uri",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "fdir@6.5.0",
+      "name": "fdir",
+      "depth": 2,
+      "dependents": 3
+    },
+    {
+      "id": "finalhandler@2.1.1",
+      "name": "finalhandler",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "follow-redirects@1.16.3",
+      "name": "follow-redirects",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "form-data-encoder@1.7.2",
+      "name": "form-data-encoder",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "form-data@4.0.6",
+      "name": "form-data",
+      "depth": 2,
+      "dependents": 4
+    },
+    {
+      "id": "formdata-node@4.4.1",
+      "name": "formdata-node",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "fraction.js@5.3.4",
+      "name": "fraction.js",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "fresh@2.0.0",
+      "name": "fresh",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "http-errors@2.0.1",
+      "name": "http-errors",
+      "depth": 2,
+      "dependents": 4
+    },
+    {
+      "id": "https-proxy-agent@5.0.1",
+      "name": "https-proxy-agent",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "iconv-lite@0.7.3",
+      "name": "iconv-lite",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "ignore@5.3.2",
+      "name": "ignore",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "ip-address@10.7.6",
+      "name": "ip-address",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "javascript-natural-sort@0.7.1",
+      "name": "javascript-natural-sort",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "js-tiktoken@1.0.21",
+      "name": "js-tiktoken",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "json-schema-traverse@1.0.0",
+      "name": "json-schema-traverse",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "jsondiffpatch@0.6.0",
+      "name": "jsondiffpatch",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "langsmith@0.1.68",
+      "name": "langsmith",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "loose-envify@1.4.0",
+      "name": "loose-envify",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "loupe@3.2.1",
+      "name": "loupe",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "merge-descriptors@2.0.0",
+      "name": "merge-descriptors",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "mime-types@3.0.2",
+      "name": "mime-types",
+      "depth": 2,
+      "dependents": 4
+    },
+    {
+      "id": "ms@2.1.3",
+      "name": "ms",
+      "depth": 2,
+      "dependents": 3
+    },
+    {
+      "id": "mustache@4.2.0",
+      "name": "mustache",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "nanoid@3.3.20",
+      "name": "nanoid",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "node-fetch@2.7.0",
+      "name": "node-fetch",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "object-assign@4.1.1",
+      "name": "object-assign",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "object-treeify@1.1.33",
+      "name": "object-treeify",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "on-finished@2.4.2",
+      "name": "on-finished",
+      "depth": 2,
+      "dependents": 4
+    },
+    {
+      "id": "once@1.4.0",
+      "name": "once",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "open@8.4.2",
+      "name": "open",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "p-queue@6.6.2",
+      "name": "p-queue",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "p-retry@4.6.2",
+      "name": "p-retry",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "parseurl@1.3.3",
+      "name": "parseurl",
+      "depth": 2,
+      "dependents": 4
+    },
+    {
+      "id": "path-key@3.1.1",
+      "name": "path-key",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "pathval@2.0.1",
+      "name": "pathval",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "pg-int8@1.0.1",
+      "name": "pg-int8",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "picocolors@1.1.1",
+      "name": "picocolors",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "postgres-array@2.0.0",
+      "name": "postgres-array",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "postgres-bytea@1.0.1",
+      "name": "postgres-bytea",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "postgres-date@1.0.7",
+      "name": "postgres-date",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "postgres-interval@1.2.0",
+      "name": "postgres-interval",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "proxy-addr@2.0.8",
+      "name": "proxy-addr",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "proxy-from-env@2.1.0",
+      "name": "proxy-from-env",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "qs@6.17.1",
+      "name": "qs",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "range-parser@1.3.0",
+      "name": "range-parser",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "react-is@16.13.1",
+      "name": "react-is",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "require-from-string@2.0.2",
+      "name": "require-from-string",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "rollup@4.68.2",
+      "name": "rollup",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "router@2.2.0",
+      "name": "router",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "seedrandom@3.0.5",
+      "name": "seedrandom",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "semver@7.8.6",
+      "name": "semver",
+      "depth": 2,
+      "dependents": 3
+    },
+    {
+      "id": "send@1.2.1",
+      "name": "send",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "serve-static@2.2.1",
+      "name": "serve-static",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "shebang-command@2.0.0",
+      "name": "shebang-command",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "siginfo@2.0.0",
+      "name": "siginfo",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "source-map-js@1.2.2",
+      "name": "source-map-js",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "split2@4.2.0",
+      "name": "split2",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "stackback@0.0.2",
+      "name": "stackback",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "statuses@2.0.2",
+      "name": "statuses",
+      "depth": 2,
+      "dependents": 4
+    },
+    {
+      "id": "strip-literal@3.1.0",
+      "name": "strip-literal",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "systeminformation@5.33.19",
+      "name": "systeminformation",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "tiny-emitter@2.1.0",
+      "name": "tiny-emitter",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "tinyspy@4.0.6",
+      "name": "tinyspy",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "tslib@2.9.1",
+      "name": "tslib",
+      "depth": 2,
+      "dependents": 9
+    },
+    {
+      "id": "type-is@2.1.0",
+      "name": "type-is",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "typed-function@4.2.2",
+      "name": "typed-function",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "undici@7.30.2",
+      "name": "undici",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "unpipe@1.0.0",
+      "name": "unpipe",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "uuid@10.0.0",
+      "name": "uuid",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "vary@1.1.2",
+      "name": "vary",
+      "depth": 2,
+      "dependents": 2
+    },
+    {
+      "id": "which@2.0.2",
+      "name": "which",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "which@4.0.0",
+      "name": "which",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "yocto-spinner@1.2.2",
+      "name": "yocto-spinner",
+      "depth": 2,
+      "dependents": 1
+    },
+    {
+      "id": "@apimatic/convert-to-stream@0.1.9",
+      "name": "@apimatic/convert-to-stream",
+      "depth": 3,
+      "dependents": 2
+    },
+    {
+      "id": "@apimatic/core-interfaces@0.2.14",
+      "name": "@apimatic/core-interfaces",
+      "depth": 3,
+      "dependents": 5
+    },
+    {
+      "id": "@apimatic/file-wrapper@0.3.9",
+      "name": "@apimatic/file-wrapper",
+      "depth": 3,
+      "dependents": 5
+    },
+    {
+      "id": "@apimatic/http-headers@0.3.8",
+      "name": "@apimatic/http-headers",
+      "depth": 3,
+      "dependents": 4
+    },
+    {
+      "id": "@apimatic/http-query@0.3.9",
+      "name": "@apimatic/http-query",
+      "depth": 3,
+      "dependents": 3
+    },
+    {
+      "id": "@apimatic/json-bigint@1.2.0",
+      "name": "@apimatic/json-bigint",
+      "depth": 3,
+      "dependents": 3
+    },
+    {
+      "id": "@apimatic/proxy@0.1.4",
+      "name": "@apimatic/proxy",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@img/sharp-wasm32@0.35.5",
+      "name": "@img/sharp-wasm32",
+      "depth": 3,
+      "dependents": 2
+    },
+    {
+      "id": "@rollup/rollup-android-arm-eabi@4.68.2",
+      "name": "@rollup/rollup-android-arm-eabi",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-android-arm64@4.68.2",
+      "name": "@rollup/rollup-android-arm64",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-android-x64@4.68.2",
+      "name": "@rollup/rollup-android-x64",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-darwin-arm64@4.68.2",
+      "name": "@rollup/rollup-darwin-arm64",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-darwin-x64@4.68.2",
+      "name": "@rollup/rollup-darwin-x64",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-freebsd-arm64@4.68.2",
+      "name": "@rollup/rollup-freebsd-arm64",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-freebsd-x64@4.68.2",
+      "name": "@rollup/rollup-freebsd-x64",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-arm-gnueabihf@4.68.2",
+      "name": "@rollup/rollup-linux-arm-gnueabihf",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-arm-musleabihf@4.68.2",
+      "name": "@rollup/rollup-linux-arm-musleabihf",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-arm64-gnu@4.68.2",
+      "name": "@rollup/rollup-linux-arm64-gnu",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-arm64-musl@4.68.2",
+      "name": "@rollup/rollup-linux-arm64-musl",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-loong64-gnu@4.68.2",
+      "name": "@rollup/rollup-linux-loong64-gnu",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-loong64-musl@4.68.2",
+      "name": "@rollup/rollup-linux-loong64-musl",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-ppc64-gnu@4.68.2",
+      "name": "@rollup/rollup-linux-ppc64-gnu",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-ppc64-musl@4.68.2",
+      "name": "@rollup/rollup-linux-ppc64-musl",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-riscv64-gnu@4.68.2",
+      "name": "@rollup/rollup-linux-riscv64-gnu",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-riscv64-musl@4.68.2",
+      "name": "@rollup/rollup-linux-riscv64-musl",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-s390x-gnu@4.68.2",
+      "name": "@rollup/rollup-linux-s390x-gnu",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-x64-gnu@4.68.2",
+      "name": "@rollup/rollup-linux-x64-gnu",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-linux-x64-musl@4.68.2",
+      "name": "@rollup/rollup-linux-x64-musl",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-openbsd-x64@4.68.2",
+      "name": "@rollup/rollup-openbsd-x64",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-openharmony-arm64@4.68.2",
+      "name": "@rollup/rollup-openharmony-arm64",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-win32-arm64-msvc@4.68.2",
+      "name": "@rollup/rollup-win32-arm64-msvc",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-win32-ia32-msvc@4.68.2",
+      "name": "@rollup/rollup-win32-ia32-msvc",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-win32-x64-gnu@4.68.2",
+      "name": "@rollup/rollup-win32-x64-gnu",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@rollup/rollup-win32-x64-msvc@4.68.2",
+      "name": "@rollup/rollup-win32-x64-msvc",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@types/diff-match-patch@1.0.36",
+      "name": "@types/diff-match-patch",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@types/estree@1.0.10",
+      "name": "@types/estree",
+      "depth": 3,
+      "dependents": 2
+    },
+    {
+      "id": "@types/retry@0.12.0",
+      "name": "@types/retry",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@types/uuid@10.0.0",
+      "name": "@types/uuid",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "agent-base@6.0.2",
+      "name": "agent-base",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "ajv-formats@2.1.1",
+      "name": "ajv-formats",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "ansi-colors@4.1.3",
+      "name": "ansi-colors",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "asynckit@0.4.0",
+      "name": "asynckit",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "atomically@1.7.0",
+      "name": "atomically",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "base64-js@1.5.1",
+      "name": "base64-js",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "chalk@5.6.2",
+      "name": "chalk",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "combined-stream@1.0.8",
+      "name": "combined-stream",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "commander@10.0.1",
+      "name": "commander",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "debounce-fn@4.0.0",
+      "name": "debounce-fn",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "define-lazy-prop@2.0.0",
+      "name": "define-lazy-prop",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "detect-browser@5.3.0",
+      "name": "detect-browser",
+      "depth": 3,
+      "dependents": 2
+    },
+    {
+      "id": "detect-node@2.1.0",
+      "name": "detect-node",
+      "depth": 3,
+      "dependents": 2
+    },
+    {
+      "id": "diff-match-patch@1.0.5",
+      "name": "diff-match-patch",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "dot-prop@6.0.1",
+      "name": "dot-prop",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "ee-first@1.1.1",
+      "name": "ee-first",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "es-define-property@1.0.1",
+      "name": "es-define-property",
+      "depth": 3,
+      "dependents": 2
+    },
+    {
+      "id": "es-set-tostringtag@2.1.0",
+      "name": "es-set-tostringtag",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "event-target-shim@5.0.1",
+      "name": "event-target-shim",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "eventemitter3@4.0.7",
+      "name": "eventemitter3",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "forwarded@0.2.0",
+      "name": "forwarded",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "get-stream@6.0.1",
+      "name": "get-stream",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "hasown@2.0.4",
+      "name": "hasown",
+      "depth": 3,
+      "dependents": 3
+    },
+    {
+      "id": "human-signals@2.1.0",
+      "name": "human-signals",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "humanize-ms@1.2.1",
+      "name": "humanize-ms",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "inherits@2.0.4",
+      "name": "inherits",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "ipaddr.js@1.9.1",
+      "name": "ipaddr.js",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "is-docker@2.2.1",
+      "name": "is-docker",
+      "depth": 3,
+      "dependents": 2
+    },
+    {
+      "id": "is-promise@4.0.0",
+      "name": "is-promise",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "is-stream@2.0.1",
+      "name": "is-stream",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "is-wsl@2.2.0",
+      "name": "is-wsl",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "isexe@2.0.0",
+      "name": "isexe",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "isexe@3.1.5",
+      "name": "isexe",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "js-tokens@4.0.0",
+      "name": "js-tokens",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "js-tokens@9.0.1",
+      "name": "js-tokens",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "json-schema-typed@7.0.3",
+      "name": "json-schema-typed",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "json-schema@0.4.0",
+      "name": "json-schema",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "lodash.defaultsdeep@4.6.1",
+      "name": "lodash.defaultsdeep",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "lodash.flatmap@4.5.0",
+      "name": "lodash.flatmap",
+      "depth": 3,
+      "dependents": 2
+    },
+    {
+      "id": "media-typer@1.1.1",
+      "name": "media-typer",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "merge-stream@2.0.0",
+      "name": "merge-stream",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "mime-db@1.54.0",
+      "name": "mime-db",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "mime-types@2.1.35",
+      "name": "mime-types",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "negotiator@1.1.0",
+      "name": "negotiator",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "node-domexception@1.0.0",
+      "name": "node-domexception",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "npm-run-path@4.0.1",
+      "name": "npm-run-path",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "onetime@5.1.2",
+      "name": "onetime",
+      "depth": 3,
+      "dependents": 2
+    },
+    {
+      "id": "p-timeout@3.2.0",
+      "name": "p-timeout",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "path-to-regexp@8.4.2",
+      "name": "path-to-regexp",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "pkg-up@3.1.0",
+      "name": "pkg-up",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "retry@0.13.1",
+      "name": "retry",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "safer-buffer@2.1.2",
+      "name": "safer-buffer",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "secure-json-parse@2.7.0",
+      "name": "secure-json-parse",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "setprototypeof@1.2.0",
+      "name": "setprototypeof",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "shebang-regex@3.0.0",
+      "name": "shebang-regex",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "side-channel@1.1.1",
+      "name": "side-channel",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "signal-exit@3.0.7",
+      "name": "signal-exit",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "strip-ansi@6.0.1",
+      "name": "strip-ansi",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "strip-final-newline@2.0.0",
+      "name": "strip-final-newline",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "swr@2.5.1",
+      "name": "swr",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "throttleit@2.1.0",
+      "name": "throttleit",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "tiny-warning@1.0.3",
+      "name": "tiny-warning",
+      "depth": 3,
+      "dependents": 2
+    },
+    {
+      "id": "toidentifier@1.0.1",
+      "name": "toidentifier",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "undici-types@5.26.5",
+      "name": "undici-types",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "web-streams-polyfill@4.0.0-beta.3",
+      "name": "web-streams-polyfill",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "whatwg-url@5.0.0",
+      "name": "whatwg-url",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "wrappy@1.0.2",
+      "name": "wrappy",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "xtend@4.0.2",
+      "name": "xtend",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "yoctocolors@2.2.0",
+      "name": "yoctocolors",
+      "depth": 3,
+      "dependents": 1
+    },
+    {
+      "id": "@emnapi/runtime@1.11.3",
+      "name": "@emnapi/runtime",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "ansi-regex@5.0.1",
+      "name": "ansi-regex",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "content-type@2.1.0",
+      "name": "content-type",
+      "depth": 4,
+      "dependents": 4
+    },
+    {
+      "id": "delayed-stream@1.0.0",
+      "name": "delayed-stream",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "dequal@2.0.3",
+      "name": "dequal",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "es-errors@1.3.0",
+      "name": "es-errors",
+      "depth": 4,
+      "dependents": 9
+    },
+    {
+      "id": "find-up@3.0.0",
+      "name": "find-up",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "function-bind@1.1.2",
+      "name": "function-bind",
+      "depth": 4,
+      "dependents": 3
+    },
+    {
+      "id": "get-intrinsic@1.3.0",
+      "name": "get-intrinsic",
+      "depth": 4,
+      "dependents": 4
+    },
+    {
+      "id": "has-tostringtag@1.0.2",
+      "name": "has-tostringtag",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "http-proxy-agent@7.0.2",
+      "name": "http-proxy-agent",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "https-proxy-agent@7.0.6",
+      "name": "https-proxy-agent",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "is-obj@2.0.0",
+      "name": "is-obj",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "mime-db@1.52.0",
+      "name": "mime-db",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "mimic-fn@2.1.0",
+      "name": "mimic-fn",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "mimic-fn@3.1.0",
+      "name": "mimic-fn",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "object-inspect@1.13.4",
+      "name": "object-inspect",
+      "depth": 4,
+      "dependents": 4
+    },
+    {
+      "id": "p-finally@1.0.0",
+      "name": "p-finally",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "side-channel-list@1.0.1",
+      "name": "side-channel-list",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "side-channel-map@1.0.1",
+      "name": "side-channel-map",
+      "depth": 4,
+      "dependents": 2
+    },
+    {
+      "id": "side-channel-weakmap@1.0.2",
+      "name": "side-channel-weakmap",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "tr46@0.0.3",
+      "name": "tr46",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "tslib@2.8.1",
+      "name": "tslib",
+      "depth": 4,
+      "dependents": 3
+    },
+    {
+      "id": "use-sync-external-store@1.7.0",
+      "name": "use-sync-external-store",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "webidl-conversions@3.0.1",
+      "name": "webidl-conversions",
+      "depth": 4,
+      "dependents": 1
+    },
+    {
+      "id": "agent-base@7.1.4",
+      "name": "agent-base",
+      "depth": 5,
+      "dependents": 2
+    },
+    {
+      "id": "call-bind-apply-helpers@1.0.2",
+      "name": "call-bind-apply-helpers",
+      "depth": 5,
+      "dependents": 3
+    },
+    {
+      "id": "call-bound@1.0.4",
+      "name": "call-bound",
+      "depth": 5,
+      "dependents": 2
+    },
+    {
+      "id": "es-object-atoms@1.1.2",
+      "name": "es-object-atoms",
+      "depth": 5,
+      "dependents": 2
+    },
+    {
+      "id": "get-proto@1.0.1",
+      "name": "get-proto",
+      "depth": 5,
+      "dependents": 1
+    },
+    {
+      "id": "gopd@1.2.0",
+      "name": "gopd",
+      "depth": 5,
+      "dependents": 2
+    },
+    {
+      "id": "has-symbols@1.1.0",
+      "name": "has-symbols",
+      "depth": 5,
+      "dependents": 2
+    },
+    {
+      "id": "locate-path@3.0.0",
+      "name": "locate-path",
+      "depth": 5,
+      "dependents": 1
+    },
+    {
+      "id": "math-intrinsics@1.1.0",
+      "name": "math-intrinsics",
+      "depth": 5,
+      "dependents": 1
+    },
+    {
+      "id": "dunder-proto@1.0.1",
+      "name": "dunder-proto",
+      "depth": 6,
+      "dependents": 1
+    },
+    {
+      "id": "p-locate@3.0.0",
+      "name": "p-locate",
+      "depth": 6,
+      "dependents": 1
+    },
+    {
+      "id": "path-exists@3.0.0",
+      "name": "path-exists",
+      "depth": 6,
+      "dependents": 1
+    },
+    {
+      "id": "p-limit@2.3.0",
+      "name": "p-limit",
+      "depth": 7,
+      "dependents": 1
+    },
+    {
+      "id": "p-try@2.2.0",
+      "name": "p-try",
+      "depth": 8,
+      "dependents": 1
+    }
+  ],
+  "edges": [
+    {
+      "from": "@ai-sdk/provider@1.1.3",
+      "to": "json-schema@0.4.0"
+    },
+    {
+      "from": "@ai-sdk/provider-utils@2.2.8",
+      "to": "@ai-sdk/provider@1.1.3"
+    },
+    {
+      "from": "@ai-sdk/provider-utils@2.2.8",
+      "to": "nanoid@3.3.20"
+    },
+    {
+      "from": "@ai-sdk/provider-utils@2.2.8",
+      "to": "secure-json-parse@2.7.0"
+    },
+    {
+      "from": "@ai-sdk/react@1.2.12",
+      "to": "@ai-sdk/provider-utils@2.2.8"
+    },
+    {
+      "from": "@ai-sdk/react@1.2.12",
+      "to": "@ai-sdk/ui-utils@1.2.11"
+    },
+    {
+      "from": "@ai-sdk/react@1.2.12",
+      "to": "swr@2.5.1"
+    },
+    {
+      "from": "@ai-sdk/react@1.2.12",
+      "to": "throttleit@2.1.0"
+    },
+    {
+      "from": "@ai-sdk/ui-utils@1.2.11",
+      "to": "@ai-sdk/provider@1.1.3"
+    },
+    {
+      "from": "@ai-sdk/ui-utils@1.2.11",
+      "to": "@ai-sdk/provider-utils@2.2.8"
+    },
+    {
+      "from": "@ai-sdk/ui-utils@1.2.11",
+      "to": "zod-to-json-schema@3.25.2"
+    },
+    {
+      "from": "@apimatic/authentication-adapters@0.5.14",
+      "to": "@apimatic/core-interfaces@0.2.14"
+    },
+    {
+      "from": "@apimatic/authentication-adapters@0.5.14",
+      "to": "@apimatic/http-headers@0.3.8"
+    },
+    {
+      "from": "@apimatic/authentication-adapters@0.5.14",
+      "to": "@apimatic/http-query@0.3.9"
+    },
+    {
+      "from": "@apimatic/authentication-adapters@0.5.14",
+      "to": "tslib@2.9.1"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "@apimatic/convert-to-stream@0.1.9"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "@apimatic/core-interfaces@0.2.14"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "@apimatic/file-wrapper@0.3.9"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "@apimatic/http-headers@0.3.8"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "@apimatic/http-query@0.3.9"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "@apimatic/json-bigint@1.2.0"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "@apimatic/proxy@0.1.4"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "axios@1.21.1"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "detect-browser@5.3.0"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "detect-node@2.1.0"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "form-data@4.0.6"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "lodash.flatmap@4.5.0"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "tiny-warning@1.0.3"
+    },
+    {
+      "from": "@apimatic/axios-client-adapter@0.3.21",
+      "to": "tslib@2.9.1"
+    },
+    {
+      "from": "@apimatic/convert-to-stream@0.1.9",
+      "to": "tslib@2.8.1"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "@apimatic/convert-to-stream@0.1.9"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "@apimatic/core-interfaces@0.2.14"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "@apimatic/file-wrapper@0.3.9"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "@apimatic/http-headers@0.3.8"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "@apimatic/http-query@0.3.9"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "@apimatic/json-bigint@1.2.0"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "@apimatic/schema@0.7.21"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "detect-browser@5.3.0"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "detect-node@2.1.0"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "form-data@4.0.6"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "lodash.defaultsdeep@4.6.1"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "lodash.flatmap@4.5.0"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "tiny-warning@1.0.3"
+    },
+    {
+      "from": "@apimatic/core@0.10.30",
+      "to": "tslib@2.9.1"
+    },
+    {
+      "from": "@apimatic/core-interfaces@0.2.14",
+      "to": "@apimatic/file-wrapper@0.3.9"
+    },
+    {
+      "from": "@apimatic/core-interfaces@0.2.14",
+      "to": "@apimatic/json-bigint@1.2.0"
+    },
+    {
+      "from": "@apimatic/core-interfaces@0.2.14",
+      "to": "tslib@2.9.1"
+    },
+    {
+      "from": "@apimatic/file-wrapper@0.3.9",
+      "to": "tslib@2.8.1"
+    },
+    {
+      "from": "@apimatic/http-headers@0.3.8",
+      "to": "tslib@2.8.1"
+    },
+    {
+      "from": "@apimatic/http-query@0.3.9",
+      "to": "@apimatic/core-interfaces@0.2.14"
+    },
+    {
+      "from": "@apimatic/http-query@0.3.9",
+      "to": "@apimatic/file-wrapper@0.3.9"
+    },
+    {
+      "from": "@apimatic/http-query@0.3.9",
+      "to": "tslib@2.9.1"
+    },
+    {
+      "from": "@apimatic/oauth-adapters@0.4.18",
+      "to": "@apimatic/core-interfaces@0.2.14"
+    },
+    {
+      "from": "@apimatic/oauth-adapters@0.4.18",
+      "to": "@apimatic/file-wrapper@0.3.9"
+    },
+    {
+      "from": "@apimatic/oauth-adapters@0.4.18",
+      "to": "@apimatic/http-headers@0.3.8"
+    },
+    {
+      "from": "@apimatic/oauth-adapters@0.4.18",
+      "to": "tslib@2.9.1"
+    },
+    {
+      "from": "@apimatic/proxy@0.1.4",
+      "to": "http-proxy-agent@7.0.2"
+    },
+    {
+      "from": "@apimatic/proxy@0.1.4",
+      "to": "https-proxy-agent@7.0.6"
+    },
+    {
+      "from": "@apimatic/schema@0.7.21",
+      "to": "tslib@2.9.1"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "@dotenvx/primitives@0.8.0"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "commander@11.1.0"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "conf@10.2.0"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "dotenv@17.4.2"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "enquirer@2.4.1"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "env-paths@2.2.1"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "execa@5.1.1"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "fdir@6.5.0"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "ignore@5.3.2"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "object-treeify@1.1.33"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "open@8.4.2"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "picomatch@4.0.7"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "systeminformation@5.33.19"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "undici@7.30.2"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "which@4.0.0"
+    },
+    {
+      "from": "@dotenvx/dotenvx@1.75.1",
+      "to": "yocto-spinner@1.2.2"
+    },
+    {
+      "from": "which@4.0.0",
+      "to": "isexe@3.1.5"
+    },
+    {
+      "from": "@emnapi/runtime@1.11.3",
+      "to": "tslib@2.9.1"
+    },
+    {
+      "from": "@img/sharp-darwin-arm64@0.35.5",
+      "to": "@img/sharp-libvips-darwin-arm64@1.3.4"
+    },
+    {
+      "from": "@img/sharp-darwin-x64@0.35.5",
+      "to": "@img/sharp-libvips-darwin-x64@1.3.4"
+    },
+    {
+      "from": "@img/sharp-freebsd-wasm32@0.35.5",
+      "to": "@img/sharp-wasm32@0.35.5"
+    },
+    {
+      "from": "@img/sharp-linux-arm@0.35.5",
+      "to": "@img/sharp-libvips-linux-arm@1.3.4"
+    },
+    {
+      "from": "@img/sharp-linux-arm64@0.35.5",
+      "to": "@img/sharp-libvips-linux-arm64@1.3.4"
+    },
+    {
+      "from": "@img/sharp-linux-ppc64@0.35.5",
+      "to": "@img/sharp-libvips-linux-ppc64@1.3.4"
+    },
+    {
+      "from": "@img/sharp-linux-riscv64@0.35.5",
+      "to": "@img/sharp-libvips-linux-riscv64@1.3.4"
+    },
+    {
+      "from": "@img/sharp-linux-s390x@0.35.5",
+      "to": "@img/sharp-libvips-linux-s390x@1.3.4"
+    },
+    {
+      "from": "@img/sharp-linux-x64@0.35.5",
+      "to": "@img/sharp-libvips-linux-x64@1.3.4"
+    },
+    {
+      "from": "@img/sharp-linuxmusl-arm64@0.35.5",
+      "to": "@img/sharp-libvips-linuxmusl-arm64@1.3.4"
+    },
+    {
+      "from": "@img/sharp-linuxmusl-x64@0.35.5",
+      "to": "@img/sharp-libvips-linuxmusl-x64@1.3.4"
+    },
+    {
+      "from": "@img/sharp-wasm32@0.35.5",
+      "to": "@emnapi/runtime@1.11.3"
+    },
+    {
+      "from": "@img/sharp-webcontainers-wasm32@0.35.5",
+      "to": "@img/sharp-wasm32@0.35.5"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "ansi-styles@5.2.0"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "camelcase@6.3.0"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "decamelize@1.2.0"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "js-tiktoken@1.0.21"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "langsmith@0.1.68"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "mustache@4.2.0"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "p-queue@6.6.2"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "p-retry@4.6.2"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "uuid@10.0.0"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "zod@3.25.76"
+    },
+    {
+      "from": "@langchain/core@0.3.6",
+      "to": "zod-to-json-schema@3.25.2"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "@hono/node-server@2.1.6"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "ajv@8.20.0"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "ajv-formats@3.0.1"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "content-type@1.0.5"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "cors@2.8.6"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "cross-spawn@7.0.6"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "eventsource@3.0.7"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "eventsource-parser@3.1.1"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "express@5.3.0"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "express-rate-limit@8.7.4"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "hono@4.13.17"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "jose@6.2.17"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "json-schema-typed@8.0.2"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "pkce-challenge@5.0.1"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "raw-body@3.0.2"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "zod@3.25.76"
+    },
+    {
+      "from": "@modelcontextprotocol/sdk@1.32.2",
+      "to": "zod-to-json-schema@3.25.2"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "@dotenvx/dotenvx@1.75.1"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "@langchain/core@0.3.6"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "@modelcontextprotocol/sdk@1.32.2"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "@paypal/paypal-server-sdk@1.1.0"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "ai@4.3.19"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "axios@1.21.1"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "fast-json-patch@3.1.1"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "lodash@4.18.1"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "mathjs@14.9.1"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "openai@4.86.1"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "os@0.1.2"
+    },
+    {
+      "from": "@paypal/agent-toolkit@1.11.0",
+      "to": "zod@3.25.76"
+    },
+    {
+      "from": "@paypal/paypal-server-sdk@1.1.0",
+      "to": "@apimatic/authentication-adapters@0.5.14"
+    },
+    {
+      "from": "@paypal/paypal-server-sdk@1.1.0",
+      "to": "@apimatic/axios-client-adapter@0.3.21"
+    },
+    {
+      "from": "@paypal/paypal-server-sdk@1.1.0",
+      "to": "@apimatic/core@0.10.30"
+    },
+    {
+      "from": "@paypal/paypal-server-sdk@1.1.0",
+      "to": "@apimatic/oauth-adapters@0.4.18"
+    },
+    {
+      "from": "@paypal/paypal-server-sdk@1.1.0",
+      "to": "@apimatic/schema@0.7.21"
+    },
+    {
+      "from": "@swc/helpers@0.5.23",
+      "to": "tslib@2.9.1"
+    },
+    {
+      "from": "@types/chai@5.2.3",
+      "to": "@types/deep-eql@4.0.2"
+    },
+    {
+      "from": "@types/chai@5.2.3",
+      "to": "assertion-error@2.0.1"
+    },
+    {
+      "from": "@types/node@24.19.2",
+      "to": "undici-types@7.24.6"
+    },
+    {
+      "from": "@types/node-fetch@2.6.13",
+      "to": "@types/node@24.19.2"
+    },
+    {
+      "from": "@types/node-fetch@2.6.13",
+      "to": "form-data@4.0.6"
+    },
+    {
+      "from": "@types/pg@8.23.1",
+      "to": "@types/node@24.19.2"
+    },
+    {
+      "from": "@types/pg@8.23.1",
+      "to": "pg-protocol@1.16.1"
+    },
+    {
+      "from": "@types/pg@8.23.1",
+      "to": "pg-types@2.2.0"
+    },
+    {
+      "from": "@types/react@19.3.0",
+      "to": "csstype@3.2.3"
+    },
+    {
+      "from": "@vitest/expect@3.2.7",
+      "to": "@types/chai@5.2.3"
+    },
+    {
+      "from": "@vitest/expect@3.2.7",
+      "to": "@vitest/spy@3.2.7"
+    },
+    {
+      "from": "@vitest/expect@3.2.7",
+      "to": "@vitest/utils@3.2.7"
+    },
+    {
+      "from": "@vitest/expect@3.2.7",
+      "to": "chai@5.3.3"
+    },
+    {
+      "from": "@vitest/expect@3.2.7",
+      "to": "tinyrainbow@2.0.0"
+    },
+    {
+      "from": "@vitest/mocker@3.2.7",
+      "to": "@vitest/spy@3.2.7"
+    },
+    {
+      "from": "@vitest/mocker@3.2.7",
+      "to": "estree-walker@3.0.3"
+    },
+    {
+      "from": "@vitest/mocker@3.2.7",
+      "to": "magic-string@0.30.21"
+    },
+    {
+      "from": "@vitest/pretty-format@3.2.7",
+      "to": "tinyrainbow@2.0.0"
+    },
+    {
+      "from": "@vitest/runner@3.2.7",
+      "to": "@vitest/utils@3.2.7"
+    },
+    {
+      "from": "@vitest/runner@3.2.7",
+      "to": "pathe@2.0.3"
+    },
+    {
+      "from": "@vitest/runner@3.2.7",
+      "to": "strip-literal@3.1.0"
+    },
+    {
+      "from": "@vitest/snapshot@3.2.7",
+      "to": "@vitest/pretty-format@3.2.7"
+    },
+    {
+      "from": "@vitest/snapshot@3.2.7",
+      "to": "magic-string@0.30.21"
+    },
+    {
+      "from": "@vitest/snapshot@3.2.7",
+      "to": "pathe@2.0.3"
+    },
+    {
+      "from": "@vitest/spy@3.2.7",
+      "to": "tinyspy@4.0.6"
+    },
+    {
+      "from": "@vitest/utils@3.2.7",
+      "to": "@vitest/pretty-format@3.2.7"
+    },
+    {
+      "from": "@vitest/utils@3.2.7",
+      "to": "loupe@3.2.1"
+    },
+    {
+      "from": "@vitest/utils@3.2.7",
+      "to": "tinyrainbow@2.0.0"
+    },
+    {
+      "from": "abort-controller@3.0.0",
+      "to": "event-target-shim@5.0.1"
+    },
+    {
+      "from": "accepts@2.0.0",
+      "to": "mime-types@3.0.2"
+    },
+    {
+      "from": "accepts@2.0.0",
+      "to": "negotiator@1.1.0"
+    },
+    {
+      "from": "ag-grid-community@34.3.1",
+      "to": "ag-charts-types@12.3.1"
+    },
+    {
+      "from": "ag-grid-react@34.3.1",
+      "to": "ag-grid-community@34.3.1"
+    },
+    {
+      "from": "ag-grid-react@34.3.1",
+      "to": "prop-types@15.8.1"
+    },
+    {
+      "from": "agentkeepalive@4.6.0",
+      "to": "humanize-ms@1.2.1"
+    },
+    {
+      "from": "ai@4.3.19",
+      "to": "@ai-sdk/provider@1.1.3"
+    },
+    {
+      "from": "ai@4.3.19",
+      "to": "@ai-sdk/provider-utils@2.2.8"
+    },
+    {
+      "from": "ai@4.3.19",
+      "to": "@ai-sdk/react@1.2.12"
+    },
+    {
+      "from": "ai@4.3.19",
+      "to": "@ai-sdk/ui-utils@1.2.11"
+    },
+    {
+      "from": "ai@4.3.19",
+      "to": "@opentelemetry/api@1.9.0"
+    },
+    {
+      "from": "ai@4.3.19",
+      "to": "jsondiffpatch@0.6.0"
+    },
+    {
+      "from": "ajv@8.20.0",
+      "to": "fast-deep-equal@3.1.3"
+    },
+    {
+      "from": "ajv@8.20.0",
+      "to": "fast-uri@3.1.9"
+    },
+    {
+      "from": "ajv@8.20.0",
+      "to": "json-schema-traverse@1.0.0"
+    },
+    {
+      "from": "ajv@8.20.0",
+      "to": "require-from-string@2.0.2"
+    },
+    {
+      "from": "ajv-formats@3.0.1",
+      "to": "ajv@8.20.0"
+    },
+    {
+      "from": "axios@1.21.1",
+      "to": "follow-redirects@1.16.3"
+    },
+    {
+      "from": "axios@1.21.1",
+      "to": "form-data@4.0.6"
+    },
+    {
+      "from": "axios@1.21.1",
+      "to": "https-proxy-agent@5.0.1"
+    },
+    {
+      "from": "axios@1.21.1",
+      "to": "proxy-from-env@2.1.0"
+    },
+    {
+      "from": "agent-base@6.0.2",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "https-proxy-agent@5.0.1",
+      "to": "agent-base@6.0.2"
+    },
+    {
+      "from": "https-proxy-agent@5.0.1",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "body-parser@2.4.0",
+      "to": "bytes@3.1.2"
+    },
+    {
+      "from": "body-parser@2.4.0",
+      "to": "content-type@2.1.0"
+    },
+    {
+      "from": "body-parser@2.4.0",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "body-parser@2.4.0",
+      "to": "http-errors@2.0.1"
+    },
+    {
+      "from": "body-parser@2.4.0",
+      "to": "iconv-lite@0.7.3"
+    },
+    {
+      "from": "body-parser@2.4.0",
+      "to": "on-finished@2.4.2"
+    },
+    {
+      "from": "body-parser@2.4.0",
+      "to": "qs@6.17.1"
+    },
+    {
+      "from": "body-parser@2.4.0",
+      "to": "raw-body@3.0.2"
+    },
+    {
+      "from": "body-parser@2.4.0",
+      "to": "type-is@2.1.0"
+    },
+    {
+      "from": "call-bind-apply-helpers@1.0.2",
+      "to": "es-errors@1.3.0"
+    },
+    {
+      "from": "call-bind-apply-helpers@1.0.2",
+      "to": "function-bind@1.1.2"
+    },
+    {
+      "from": "call-bound@1.0.4",
+      "to": "call-bind-apply-helpers@1.0.2"
+    },
+    {
+      "from": "call-bound@1.0.4",
+      "to": "get-intrinsic@1.3.0"
+    },
+    {
+      "from": "chai@5.3.3",
+      "to": "assertion-error@2.0.1"
+    },
+    {
+      "from": "chai@5.3.3",
+      "to": "check-error@2.1.3"
+    },
+    {
+      "from": "chai@5.3.3",
+      "to": "deep-eql@5.0.2"
+    },
+    {
+      "from": "chai@5.3.3",
+      "to": "loupe@3.2.1"
+    },
+    {
+      "from": "chai@5.3.3",
+      "to": "pathval@2.0.1"
+    },
+    {
+      "from": "combined-stream@1.0.8",
+      "to": "delayed-stream@1.0.0"
+    },
+    {
+      "from": "conf@10.2.0",
+      "to": "ajv@8.20.0"
+    },
+    {
+      "from": "conf@10.2.0",
+      "to": "ajv-formats@2.1.1"
+    },
+    {
+      "from": "conf@10.2.0",
+      "to": "atomically@1.7.0"
+    },
+    {
+      "from": "conf@10.2.0",
+      "to": "debounce-fn@4.0.0"
+    },
+    {
+      "from": "conf@10.2.0",
+      "to": "dot-prop@6.0.1"
+    },
+    {
+      "from": "conf@10.2.0",
+      "to": "env-paths@2.2.1"
+    },
+    {
+      "from": "conf@10.2.0",
+      "to": "json-schema-typed@7.0.3"
+    },
+    {
+      "from": "conf@10.2.0",
+      "to": "onetime@5.1.2"
+    },
+    {
+      "from": "conf@10.2.0",
+      "to": "pkg-up@3.1.0"
+    },
+    {
+      "from": "conf@10.2.0",
+      "to": "semver@7.8.6"
+    },
+    {
+      "from": "ajv-formats@2.1.1",
+      "to": "ajv@8.20.0"
+    },
+    {
+      "from": "cors@2.8.6",
+      "to": "object-assign@4.1.1"
+    },
+    {
+      "from": "cors@2.8.6",
+      "to": "vary@1.1.2"
+    },
+    {
+      "from": "cross-spawn@7.0.6",
+      "to": "path-key@3.1.1"
+    },
+    {
+      "from": "cross-spawn@7.0.6",
+      "to": "shebang-command@2.0.0"
+    },
+    {
+      "from": "cross-spawn@7.0.6",
+      "to": "which@2.0.2"
+    },
+    {
+      "from": "debounce-fn@4.0.0",
+      "to": "mimic-fn@3.1.0"
+    },
+    {
+      "from": "debug@4.4.3",
+      "to": "ms@2.1.3"
+    },
+    {
+      "from": "dot-prop@6.0.1",
+      "to": "is-obj@2.0.0"
+    },
+    {
+      "from": "dunder-proto@1.0.1",
+      "to": "call-bind-apply-helpers@1.0.2"
+    },
+    {
+      "from": "dunder-proto@1.0.1",
+      "to": "es-errors@1.3.0"
+    },
+    {
+      "from": "dunder-proto@1.0.1",
+      "to": "gopd@1.2.0"
+    },
+    {
+      "from": "enquirer@2.4.1",
+      "to": "ansi-colors@4.1.3"
+    },
+    {
+      "from": "enquirer@2.4.1",
+      "to": "strip-ansi@6.0.1"
+    },
+    {
+      "from": "es-object-atoms@1.1.2",
+      "to": "es-errors@1.3.0"
+    },
+    {
+      "from": "es-set-tostringtag@2.1.0",
+      "to": "es-errors@1.3.0"
+    },
+    {
+      "from": "es-set-tostringtag@2.1.0",
+      "to": "get-intrinsic@1.3.0"
+    },
+    {
+      "from": "es-set-tostringtag@2.1.0",
+      "to": "has-tostringtag@1.0.2"
+    },
+    {
+      "from": "es-set-tostringtag@2.1.0",
+      "to": "hasown@2.0.4"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/aix-ppc64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/android-arm@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/android-arm64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/android-x64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/darwin-arm64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/darwin-x64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/freebsd-arm64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/freebsd-x64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/linux-arm@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/linux-arm64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/linux-ia32@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/linux-loong64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/linux-mips64el@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/linux-ppc64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/linux-riscv64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/linux-s390x@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/linux-x64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/netbsd-arm64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/netbsd-x64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/openbsd-arm64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/openbsd-x64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/openharmony-arm64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/sunos-x64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/win32-arm64@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/win32-ia32@0.28.2"
+    },
+    {
+      "from": "esbuild@0.28.2",
+      "to": "@esbuild/win32-x64@0.28.2"
+    },
+    {
+      "from": "estree-walker@3.0.3",
+      "to": "@types/estree@1.0.10"
+    },
+    {
+      "from": "eventsource@3.0.7",
+      "to": "eventsource-parser@3.1.1"
+    },
+    {
+      "from": "execa@5.1.1",
+      "to": "cross-spawn@7.0.6"
+    },
+    {
+      "from": "execa@5.1.1",
+      "to": "get-stream@6.0.1"
+    },
+    {
+      "from": "execa@5.1.1",
+      "to": "human-signals@2.1.0"
+    },
+    {
+      "from": "execa@5.1.1",
+      "to": "is-stream@2.0.1"
+    },
+    {
+      "from": "execa@5.1.1",
+      "to": "merge-stream@2.0.0"
+    },
+    {
+      "from": "execa@5.1.1",
+      "to": "npm-run-path@4.0.1"
+    },
+    {
+      "from": "execa@5.1.1",
+      "to": "onetime@5.1.2"
+    },
+    {
+      "from": "execa@5.1.1",
+      "to": "signal-exit@3.0.7"
+    },
+    {
+      "from": "execa@5.1.1",
+      "to": "strip-final-newline@2.0.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "accepts@2.0.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "body-parser@2.4.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "content-disposition@2.0.1"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "content-type@2.1.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "cookie@0.7.2"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "cookie-signature@1.2.2"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "depd@2.0.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "encodeurl@2.0.1"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "escape-html@1.0.3"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "etag@1.8.1"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "finalhandler@2.1.1"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "fresh@2.0.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "http-errors@2.0.1"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "merge-descriptors@2.0.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "mime-types@3.0.2"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "on-finished@2.4.2"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "once@1.4.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "parseurl@1.3.3"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "proxy-addr@2.0.8"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "qs@6.17.1"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "range-parser@1.3.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "router@2.2.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "send@1.2.1"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "serve-static@2.2.1"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "statuses@2.0.2"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "type-is@2.1.0"
+    },
+    {
+      "from": "express@5.3.0",
+      "to": "vary@1.1.2"
+    },
+    {
+      "from": "express-rate-limit@8.7.4",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "express-rate-limit@8.7.4",
+      "to": "ip-address@10.7.6"
+    },
+    {
+      "from": "finalhandler@2.1.1",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "finalhandler@2.1.1",
+      "to": "encodeurl@2.0.1"
+    },
+    {
+      "from": "finalhandler@2.1.1",
+      "to": "escape-html@1.0.3"
+    },
+    {
+      "from": "finalhandler@2.1.1",
+      "to": "on-finished@2.4.2"
+    },
+    {
+      "from": "finalhandler@2.1.1",
+      "to": "parseurl@1.3.3"
+    },
+    {
+      "from": "finalhandler@2.1.1",
+      "to": "statuses@2.0.2"
+    },
+    {
+      "from": "find-up@3.0.0",
+      "to": "locate-path@3.0.0"
+    },
+    {
+      "from": "form-data@4.0.6",
+      "to": "asynckit@0.4.0"
+    },
+    {
+      "from": "form-data@4.0.6",
+      "to": "combined-stream@1.0.8"
+    },
+    {
+      "from": "form-data@4.0.6",
+      "to": "es-set-tostringtag@2.1.0"
+    },
+    {
+      "from": "form-data@4.0.6",
+      "to": "hasown@2.0.4"
+    },
+    {
+      "from": "form-data@4.0.6",
+      "to": "mime-types@2.1.35"
+    },
+    {
+      "from": "mime-types@2.1.35",
+      "to": "mime-db@1.52.0"
+    },
+    {
+      "from": "formdata-node@4.4.1",
+      "to": "node-domexception@1.0.0"
+    },
+    {
+      "from": "formdata-node@4.4.1",
+      "to": "web-streams-polyfill@4.0.0-beta.3"
+    },
+    {
+      "from": "get-intrinsic@1.3.0",
+      "to": "call-bind-apply-helpers@1.0.2"
+    },
+    {
+      "from": "get-intrinsic@1.3.0",
+      "to": "es-define-property@1.0.1"
+    },
+    {
+      "from": "get-intrinsic@1.3.0",
+      "to": "es-errors@1.3.0"
+    },
+    {
+      "from": "get-intrinsic@1.3.0",
+      "to": "es-object-atoms@1.1.2"
+    },
+    {
+      "from": "get-intrinsic@1.3.0",
+      "to": "function-bind@1.1.2"
+    },
+    {
+      "from": "get-intrinsic@1.3.0",
+      "to": "get-proto@1.0.1"
+    },
+    {
+      "from": "get-intrinsic@1.3.0",
+      "to": "gopd@1.2.0"
+    },
+    {
+      "from": "get-intrinsic@1.3.0",
+      "to": "has-symbols@1.1.0"
+    },
+    {
+      "from": "get-intrinsic@1.3.0",
+      "to": "hasown@2.0.4"
+    },
+    {
+      "from": "get-intrinsic@1.3.0",
+      "to": "math-intrinsics@1.1.0"
+    },
+    {
+      "from": "get-proto@1.0.1",
+      "to": "dunder-proto@1.0.1"
+    },
+    {
+      "from": "get-proto@1.0.1",
+      "to": "es-object-atoms@1.1.2"
+    },
+    {
+      "from": "has-tostringtag@1.0.2",
+      "to": "has-symbols@1.1.0"
+    },
+    {
+      "from": "hasown@2.0.4",
+      "to": "function-bind@1.1.2"
+    },
+    {
+      "from": "http-errors@2.0.1",
+      "to": "depd@2.0.0"
+    },
+    {
+      "from": "http-errors@2.0.1",
+      "to": "inherits@2.0.4"
+    },
+    {
+      "from": "http-errors@2.0.1",
+      "to": "setprototypeof@1.2.0"
+    },
+    {
+      "from": "http-errors@2.0.1",
+      "to": "statuses@2.0.2"
+    },
+    {
+      "from": "http-errors@2.0.1",
+      "to": "toidentifier@1.0.1"
+    },
+    {
+      "from": "http-proxy-agent@7.0.2",
+      "to": "agent-base@7.1.4"
+    },
+    {
+      "from": "http-proxy-agent@7.0.2",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "https-proxy-agent@7.0.6",
+      "to": "agent-base@7.1.4"
+    },
+    {
+      "from": "https-proxy-agent@7.0.6",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "humanize-ms@1.2.1",
+      "to": "ms@2.1.3"
+    },
+    {
+      "from": "iconv-lite@0.7.3",
+      "to": "safer-buffer@2.1.2"
+    },
+    {
+      "from": "is-wsl@2.2.0",
+      "to": "is-docker@2.2.1"
+    },
+    {
+      "from": "js-tiktoken@1.0.21",
+      "to": "base64-js@1.5.1"
+    },
+    {
+      "from": "jsondiffpatch@0.6.0",
+      "to": "@types/diff-match-patch@1.0.36"
+    },
+    {
+      "from": "jsondiffpatch@0.6.0",
+      "to": "chalk@5.6.2"
+    },
+    {
+      "from": "jsondiffpatch@0.6.0",
+      "to": "diff-match-patch@1.0.5"
+    },
+    {
+      "from": "langsmith@0.1.68",
+      "to": "@types/uuid@10.0.0"
+    },
+    {
+      "from": "langsmith@0.1.68",
+      "to": "commander@10.0.1"
+    },
+    {
+      "from": "langsmith@0.1.68",
+      "to": "p-queue@6.6.2"
+    },
+    {
+      "from": "langsmith@0.1.68",
+      "to": "p-retry@4.6.2"
+    },
+    {
+      "from": "langsmith@0.1.68",
+      "to": "semver@7.8.6"
+    },
+    {
+      "from": "langsmith@0.1.68",
+      "to": "uuid@10.0.0"
+    },
+    {
+      "from": "locate-path@3.0.0",
+      "to": "p-locate@3.0.0"
+    },
+    {
+      "from": "locate-path@3.0.0",
+      "to": "path-exists@3.0.0"
+    },
+    {
+      "from": "loose-envify@1.4.0",
+      "to": "js-tokens@4.0.0"
+    },
+    {
+      "from": "magic-string@0.30.21",
+      "to": "@jridgewell/sourcemap-codec@1.6.0"
+    },
+    {
+      "from": "mathjs@14.9.1",
+      "to": "@babel/runtime@7.29.13"
+    },
+    {
+      "from": "mathjs@14.9.1",
+      "to": "complex.js@2.4.3"
+    },
+    {
+      "from": "mathjs@14.9.1",
+      "to": "decimal.js@10.6.0"
+    },
+    {
+      "from": "mathjs@14.9.1",
+      "to": "escape-latex@1.2.0"
+    },
+    {
+      "from": "mathjs@14.9.1",
+      "to": "fraction.js@5.3.4"
+    },
+    {
+      "from": "mathjs@14.9.1",
+      "to": "javascript-natural-sort@0.7.1"
+    },
+    {
+      "from": "mathjs@14.9.1",
+      "to": "seedrandom@3.0.5"
+    },
+    {
+      "from": "mathjs@14.9.1",
+      "to": "tiny-emitter@2.1.0"
+    },
+    {
+      "from": "mathjs@14.9.1",
+      "to": "typed-function@4.2.2"
+    },
+    {
+      "from": "mime-types@3.0.2",
+      "to": "mime-db@1.54.0"
+    },
+    {
+      "from": "negotiator@1.1.0",
+      "to": "content-type@2.1.0"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "@next/env@16.4.6"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "@swc/helpers@0.5.23"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "baseline-browser-mapping@2.11.35"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "caniuse-lite@1.0.30001823"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "postcss@8.5.23"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "styled-jsx@5.1.6"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "@next/swc-darwin-arm64@16.4.6"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "@next/swc-darwin-x64@16.4.6"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "@next/swc-linux-arm64-gnu@16.4.6"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "@next/swc-linux-arm64-musl@16.4.6"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "@next/swc-linux-x64-gnu@16.4.6"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "@next/swc-linux-x64-musl@16.4.6"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "@next/swc-win32-arm64-msvc@16.4.6"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "@next/swc-win32-x64-msvc@16.4.6"
+    },
+    {
+      "from": "next@16.4.6",
+      "to": "sharp@0.35.5"
+    },
+    {
+      "from": "node-fetch@2.7.0",
+      "to": "whatwg-url@5.0.0"
+    },
+    {
+      "from": "npm-run-path@4.0.1",
+      "to": "path-key@3.1.1"
+    },
+    {
+      "from": "on-finished@2.4.2",
+      "to": "ee-first@1.1.1"
+    },
+    {
+      "from": "once@1.4.0",
+      "to": "wrappy@1.0.2"
+    },
+    {
+      "from": "onetime@5.1.2",
+      "to": "mimic-fn@2.1.0"
+    },
+    {
+      "from": "open@8.4.2",
+      "to": "define-lazy-prop@2.0.0"
+    },
+    {
+      "from": "open@8.4.2",
+      "to": "is-docker@2.2.1"
+    },
+    {
+      "from": "open@8.4.2",
+      "to": "is-wsl@2.2.0"
+    },
+    {
+      "from": "openai@4.86.1",
+      "to": "@types/node@18.19.130"
+    },
+    {
+      "from": "openai@4.86.1",
+      "to": "@types/node-fetch@2.6.13"
+    },
+    {
+      "from": "openai@4.86.1",
+      "to": "abort-controller@3.0.0"
+    },
+    {
+      "from": "openai@4.86.1",
+      "to": "agentkeepalive@4.6.0"
+    },
+    {
+      "from": "openai@4.86.1",
+      "to": "form-data-encoder@1.7.2"
+    },
+    {
+      "from": "openai@4.86.1",
+      "to": "formdata-node@4.4.1"
+    },
+    {
+      "from": "openai@4.86.1",
+      "to": "node-fetch@2.7.0"
+    },
+    {
+      "from": "@types/node@18.19.130",
+      "to": "undici-types@5.26.5"
+    },
+    {
+      "from": "p-limit@2.3.0",
+      "to": "p-try@2.2.0"
+    },
+    {
+      "from": "p-locate@3.0.0",
+      "to": "p-limit@2.3.0"
+    },
+    {
+      "from": "p-queue@6.6.2",
+      "to": "eventemitter3@4.0.7"
+    },
+    {
+      "from": "p-queue@6.6.2",
+      "to": "p-timeout@3.2.0"
+    },
+    {
+      "from": "p-retry@4.6.2",
+      "to": "@types/retry@0.12.0"
+    },
+    {
+      "from": "p-retry@4.6.2",
+      "to": "retry@0.13.1"
+    },
+    {
+      "from": "p-timeout@3.2.0",
+      "to": "p-finally@1.0.0"
+    },
+    {
+      "from": "pg@8.23.1",
+      "to": "pg-connection-string@2.14.1"
+    },
+    {
+      "from": "pg@8.23.1",
+      "to": "pg-pool@3.14.0"
+    },
+    {
+      "from": "pg@8.23.1",
+      "to": "pg-protocol@1.16.1"
+    },
+    {
+      "from": "pg@8.23.1",
+      "to": "pg-types@2.2.0"
+    },
+    {
+      "from": "pg@8.23.1",
+      "to": "pgpass@1.0.5"
+    },
+    {
+      "from": "pg@8.23.1",
+      "to": "pg-cloudflare@1.4.1"
+    },
+    {
+      "from": "pg-types@2.2.0",
+      "to": "pg-int8@1.0.1"
+    },
+    {
+      "from": "pg-types@2.2.0",
+      "to": "postgres-array@2.0.0"
+    },
+    {
+      "from": "pg-types@2.2.0",
+      "to": "postgres-bytea@1.0.1"
+    },
+    {
+      "from": "pg-types@2.2.0",
+      "to": "postgres-date@1.0.7"
+    },
+    {
+      "from": "pg-types@2.2.0",
+      "to": "postgres-interval@1.2.0"
+    },
+    {
+      "from": "pgpass@1.0.5",
+      "to": "split2@4.2.0"
+    },
+    {
+      "from": "pkg-up@3.1.0",
+      "to": "find-up@3.0.0"
+    },
+    {
+      "from": "postcss@8.5.23",
+      "to": "nanoid@3.3.20"
+    },
+    {
+      "from": "postcss@8.5.23",
+      "to": "picocolors@1.1.1"
+    },
+    {
+      "from": "postcss@8.5.23",
+      "to": "source-map-js@1.2.2"
+    },
+    {
+      "from": "postgres-interval@1.2.0",
+      "to": "xtend@4.0.2"
+    },
+    {
+      "from": "prop-types@15.8.1",
+      "to": "loose-envify@1.4.0"
+    },
+    {
+      "from": "prop-types@15.8.1",
+      "to": "object-assign@4.1.1"
+    },
+    {
+      "from": "prop-types@15.8.1",
+      "to": "react-is@16.13.1"
+    },
+    {
+      "from": "proxy-addr@2.0.8",
+      "to": "forwarded@0.2.0"
+    },
+    {
+      "from": "proxy-addr@2.0.8",
+      "to": "ipaddr.js@1.9.1"
+    },
+    {
+      "from": "qs@6.17.1",
+      "to": "es-define-property@1.0.1"
+    },
+    {
+      "from": "qs@6.17.1",
+      "to": "side-channel@1.1.1"
+    },
+    {
+      "from": "raw-body@3.0.2",
+      "to": "bytes@3.1.2"
+    },
+    {
+      "from": "raw-body@3.0.2",
+      "to": "http-errors@2.0.1"
+    },
+    {
+      "from": "raw-body@3.0.2",
+      "to": "iconv-lite@0.7.3"
+    },
+    {
+      "from": "raw-body@3.0.2",
+      "to": "unpipe@1.0.0"
+    },
+    {
+      "from": "react-dom@19.3.1",
+      "to": "scheduler@0.28.0"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@types/estree@1.0.10"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-android-arm-eabi@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-android-arm64@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-android-x64@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-darwin-arm64@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-darwin-x64@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-freebsd-arm64@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-freebsd-x64@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-arm-gnueabihf@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-arm-musleabihf@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-arm64-gnu@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-arm64-musl@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-loong64-gnu@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-loong64-musl@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-ppc64-gnu@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-ppc64-musl@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-riscv64-gnu@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-riscv64-musl@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-s390x-gnu@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-x64-gnu@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-linux-x64-musl@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-openbsd-x64@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-openharmony-arm64@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-win32-arm64-msvc@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-win32-ia32-msvc@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-win32-x64-gnu@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "@rollup/rollup-win32-x64-msvc@4.68.2"
+    },
+    {
+      "from": "rollup@4.68.2",
+      "to": "fsevents@2.3.3"
+    },
+    {
+      "from": "router@2.2.0",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "router@2.2.0",
+      "to": "depd@2.0.0"
+    },
+    {
+      "from": "router@2.2.0",
+      "to": "is-promise@4.0.0"
+    },
+    {
+      "from": "router@2.2.0",
+      "to": "parseurl@1.3.3"
+    },
+    {
+      "from": "router@2.2.0",
+      "to": "path-to-regexp@8.4.2"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "encodeurl@2.0.1"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "escape-html@1.0.3"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "etag@1.8.1"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "fresh@2.0.0"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "http-errors@2.0.1"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "mime-types@3.0.2"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "ms@2.1.3"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "on-finished@2.4.2"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "range-parser@1.3.0"
+    },
+    {
+      "from": "send@1.2.1",
+      "to": "statuses@2.0.2"
+    },
+    {
+      "from": "serve-static@2.2.1",
+      "to": "encodeurl@2.0.1"
+    },
+    {
+      "from": "serve-static@2.2.1",
+      "to": "escape-html@1.0.3"
+    },
+    {
+      "from": "serve-static@2.2.1",
+      "to": "parseurl@1.3.3"
+    },
+    {
+      "from": "serve-static@2.2.1",
+      "to": "send@1.2.1"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/colour@1.1.0"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "detect-libc@2.1.2"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "semver@7.8.6"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-darwin-arm64@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-darwin-x64@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-freebsd-wasm32@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-libvips-darwin-arm64@1.3.4"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-libvips-darwin-x64@1.3.4"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-libvips-linux-arm@1.3.4"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-libvips-linux-arm64@1.3.4"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-libvips-linux-ppc64@1.3.4"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-libvips-linux-riscv64@1.3.4"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-libvips-linux-s390x@1.3.4"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-libvips-linux-x64@1.3.4"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-libvips-linuxmusl-arm64@1.3.4"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-libvips-linuxmusl-x64@1.3.4"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-linux-arm@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-linux-arm64@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-linux-ppc64@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-linux-riscv64@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-linux-s390x@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-linux-x64@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-linuxmusl-arm64@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-linuxmusl-x64@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-webcontainers-wasm32@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-win32-arm64@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-win32-ia32@0.35.5"
+    },
+    {
+      "from": "sharp@0.35.5",
+      "to": "@img/sharp-win32-x64@0.35.5"
+    },
+    {
+      "from": "shebang-command@2.0.0",
+      "to": "shebang-regex@3.0.0"
+    },
+    {
+      "from": "side-channel@1.1.1",
+      "to": "es-errors@1.3.0"
+    },
+    {
+      "from": "side-channel@1.1.1",
+      "to": "object-inspect@1.13.4"
+    },
+    {
+      "from": "side-channel@1.1.1",
+      "to": "side-channel-list@1.0.1"
+    },
+    {
+      "from": "side-channel@1.1.1",
+      "to": "side-channel-map@1.0.1"
+    },
+    {
+      "from": "side-channel@1.1.1",
+      "to": "side-channel-weakmap@1.0.2"
+    },
+    {
+      "from": "side-channel-list@1.0.1",
+      "to": "es-errors@1.3.0"
+    },
+    {
+      "from": "side-channel-list@1.0.1",
+      "to": "object-inspect@1.13.4"
+    },
+    {
+      "from": "side-channel-map@1.0.1",
+      "to": "call-bound@1.0.4"
+    },
+    {
+      "from": "side-channel-map@1.0.1",
+      "to": "es-errors@1.3.0"
+    },
+    {
+      "from": "side-channel-map@1.0.1",
+      "to": "get-intrinsic@1.3.0"
+    },
+    {
+      "from": "side-channel-map@1.0.1",
+      "to": "object-inspect@1.13.4"
+    },
+    {
+      "from": "side-channel-weakmap@1.0.2",
+      "to": "call-bound@1.0.4"
+    },
+    {
+      "from": "side-channel-weakmap@1.0.2",
+      "to": "es-errors@1.3.0"
+    },
+    {
+      "from": "side-channel-weakmap@1.0.2",
+      "to": "get-intrinsic@1.3.0"
+    },
+    {
+      "from": "side-channel-weakmap@1.0.2",
+      "to": "object-inspect@1.13.4"
+    },
+    {
+      "from": "side-channel-weakmap@1.0.2",
+      "to": "side-channel-map@1.0.1"
+    },
+    {
+      "from": "strip-ansi@6.0.1",
+      "to": "ansi-regex@5.0.1"
+    },
+    {
+      "from": "strip-literal@3.1.0",
+      "to": "js-tokens@9.0.1"
+    },
+    {
+      "from": "styled-jsx@5.1.6",
+      "to": "client-only@0.0.1"
+    },
+    {
+      "from": "swr@2.5.1",
+      "to": "dequal@2.0.3"
+    },
+    {
+      "from": "swr@2.5.1",
+      "to": "use-sync-external-store@1.7.0"
+    },
+    {
+      "from": "tinyglobby@0.2.17",
+      "to": "fdir@6.5.0"
+    },
+    {
+      "from": "tinyglobby@0.2.17",
+      "to": "picomatch@4.0.7"
+    },
+    {
+      "from": "tsx@4.23.15",
+      "to": "esbuild@0.28.2"
+    },
+    {
+      "from": "tsx@4.23.15",
+      "to": "fsevents@2.3.3"
+    },
+    {
+      "from": "type-is@2.1.0",
+      "to": "content-type@2.1.0"
+    },
+    {
+      "from": "type-is@2.1.0",
+      "to": "media-typer@1.1.1"
+    },
+    {
+      "from": "type-is@2.1.0",
+      "to": "mime-types@3.0.2"
+    },
+    {
+      "from": "vite@7.3.8",
+      "to": "esbuild@0.28.2"
+    },
+    {
+      "from": "vite@7.3.8",
+      "to": "fdir@6.5.0"
+    },
+    {
+      "from": "vite@7.3.8",
+      "to": "picomatch@4.0.7"
+    },
+    {
+      "from": "vite@7.3.8",
+      "to": "postcss@8.5.23"
+    },
+    {
+      "from": "vite@7.3.8",
+      "to": "rollup@4.68.2"
+    },
+    {
+      "from": "vite@7.3.8",
+      "to": "tinyglobby@0.2.17"
+    },
+    {
+      "from": "vite@7.3.8",
+      "to": "fsevents@2.3.3"
+    },
+    {
+      "from": "vite-node@3.2.4",
+      "to": "cac@6.7.14"
+    },
+    {
+      "from": "vite-node@3.2.4",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "vite-node@3.2.4",
+      "to": "es-module-lexer@1.7.0"
+    },
+    {
+      "from": "vite-node@3.2.4",
+      "to": "pathe@2.0.3"
+    },
+    {
+      "from": "vite-node@3.2.4",
+      "to": "vite@7.3.8"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "@types/chai@5.2.3"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "@vitest/expect@3.2.7"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "@vitest/mocker@3.2.7"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "@vitest/pretty-format@3.2.7"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "@vitest/runner@3.2.7"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "@vitest/snapshot@3.2.7"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "@vitest/spy@3.2.7"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "@vitest/utils@3.2.7"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "chai@5.3.3"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "debug@4.4.3"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "expect-type@1.4.0"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "magic-string@0.30.21"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "pathe@2.0.3"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "picomatch@4.0.7"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "std-env@3.10.0"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "tinybench@2.9.0"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "tinyexec@0.3.2"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "tinyglobby@0.2.17"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "tinypool@1.1.1"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "tinyrainbow@2.0.0"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "vite@7.3.8"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "vite-node@3.2.4"
+    },
+    {
+      "from": "vitest@3.2.7",
+      "to": "why-is-node-running@2.3.0"
+    },
+    {
+      "from": "whatwg-url@5.0.0",
+      "to": "tr46@0.0.3"
+    },
+    {
+      "from": "whatwg-url@5.0.0",
+      "to": "webidl-conversions@3.0.1"
+    },
+    {
+      "from": "which@2.0.2",
+      "to": "isexe@2.0.0"
+    },
+    {
+      "from": "why-is-node-running@2.3.0",
+      "to": "siginfo@2.0.0"
+    },
+    {
+      "from": "why-is-node-running@2.3.0",
+      "to": "stackback@0.0.2"
+    },
+    {
+      "from": "yocto-spinner@1.2.2",
+      "to": "yoctocolors@2.2.0"
+    }
+  ]
+}

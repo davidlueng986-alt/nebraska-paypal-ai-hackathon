@@ -33,6 +33,24 @@ try {
   await call("demo/approve", { kind: "grant", id: grant.id });
   await call("treasurer", { period: "2026-11", execute: true });
   await call("treasurer", { period: "2026-11", execute: true });
+  const run = await call("month-end/runs", { period: "2026-11" });
+  const read = async (q = "") => {
+    const r = await GET(
+      new Request(`http://localhost:3000/api/month-end/runs/${run.run_id}/events${q}`),
+    );
+    if (!r.headers.get("content-type")?.includes("text/event-stream"))
+      throw new Error("Month-end stream is not SSE");
+    return (await r.text())
+      .split("\n\n")
+      .filter((b) => b.includes("event: month-end"))
+      .map((b) => JSON.parse(b.split("data: ")[1]));
+  };
+  const live = await read();
+  if (live.filter((e) => e.step === "gate").length !== 7)
+    throw new Error("Expected one gate event per invariant");
+  if (live.at(-1).title !== "Month-end run complete") throw new Error("Run did not complete");
+  if (JSON.stringify(await read("?replay=1&delay_ms=0")) !== JSON.stringify(live))
+    throw new Error("Replay differs from the recorded stream");
   const ledger = await call("ledger?period=2026-11");
   if (ledger.batches.length !== 1) throw new Error("Duplicate batch");
   const m = await call("maintainer?id=m3&period=2026-11");
@@ -55,7 +73,7 @@ try {
   const updated = await call("maintainer?id=m3&period=2026-11");
   if (updated.eligibility.ready) throw new Error("Host cooldown bypassed");
   console.log(
-    "PASS: API bootstrap, payer, EUR subscription, grant capture, settlement replay, maintainer income, CSV, audit and fiscal-host cooldown.",
+    "PASS: API bootstrap, payer, EUR subscription, grant capture, settlement replay, maintainer income, CSV, audit, month-end SSE stream and replay, fiscal-host cooldown.",
   );
 } finally {
   await getService().store.close();
