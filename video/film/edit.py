@@ -77,7 +77,7 @@ class Reader:
 ff = subprocess.Popen(['ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
                        '-c:v', 'libx264', '-preset', 'medium', '-crf', '15', '-pix_fmt', 'yuv420p', OUT], stdin=subprocess.PIPE)
 
-NOTE = 'Real app, recorded in demo mode  ·  PayPal steps simulated  ·  identities fictional'
+NOTE = 'Demo mode  ·  fictional identities'
 for shot in SHOTS:
     if ONLY and shot['name'] != ONLY: continue
     dur = sum(p[2] for p in shot['pieces'])
