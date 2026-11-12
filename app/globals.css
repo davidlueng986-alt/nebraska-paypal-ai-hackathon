@@ -483,13 +483,18 @@ main {
 /* ───── Flash / banner ───── */
 .flash {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
-  flex-wrap: wrap;
   padding: 12px 16px;
   border: 1px solid var(--attention-border);
   border-radius: var(--radius);
   background: var(--attention-bg);
+}
+.flash > svg {
+  margin-top: 3px;
+}
+.flash > span {
+  flex: 1;
 }
 .flash-danger {
   background: var(--danger-bg);
