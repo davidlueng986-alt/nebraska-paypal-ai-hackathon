@@ -13,29 +13,30 @@ Fewer people ever visit the docs, or the
 sponsor button.
 
 4
-00:00:46,300 --> 00:00:49,536
-A company approves a monthly budget on PayPal.
+00:00:46,300 --> 00:00:50,361
+One click redirects to PayPal to approve a
+monthly budget.
 
 5
-00:00:49,586 --> 00:00:52,750
+00:00:50,411 --> 00:00:53,550
 That is the agent's mandate, and its ceiling.
 
 6
-00:00:53,000 --> 00:00:57,852
+00:00:53,800 --> 00:00:58,652
 Then, one hook line. Only package names and
 depth leave the machine.
 
 7
-00:00:57,902 --> 00:00:59,150
+00:00:58,702 --> 00:00:59,950
 Never source code.
 
 8
-00:00:59,800 --> 00:01:04,921
+00:01:00,100 --> 00:01:05,221
 At month end, the AI Treasurer answers typed
 questions about each package.
 
 9
-00:01:04,971 --> 00:01:08,625
+00:01:05,271 --> 00:01:08,925
 How critical is it? How much do its
 maintainers need?
 
