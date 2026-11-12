@@ -59,28 +59,26 @@ def pad(chord, t0, t1, gain, bright=5.0, attack=2.0, release=2.0):
     put(music, out * e[:, None], t0, gain)
 
 A2, C3, E3, A3, Cs3, Fs2, D3, B2, G2 = 110, 130.81, 164.81, 220, 138.59, 92.5, 146.83, 123.47, 98.0
-s_st, s_tu, s_pr, s_en, s_ec = starts['stakes'], starts['turn'], starts['product'], starts['end'], starts['endcard']
-pad([55, A2, C3, E3], s_st - 1.0, s_tu - 0.3, 0.30, bright=3.5)                 # stakes: A minor, dark
-pad([87.31, A2, C3, 174.6], s_st + 7.5, s_tu - 0.3, 0.16, bright=3.0)          # F colour under Tailwind card
-pad([55, A2, Cs3, E3, A3], s_tu + 6.9, s_pr + 1.0, 0.30, bright=5.0, attack=2.5)  # "Nebraska": A major, lift
+s_pb, s_tu, s_pp, s_pr, s_en, s_ec = (starts[k] for k in ('problem', 'turn', 'paypal', 'product', 'end', 'endcard'))
+pad([55, A2, C3, E3], s_pb - 1.0, s_tu - 0.3, 0.28, bright=3.5)                  # problem: A minor, dark
+pad([87.31, A2, C3, 174.6], s_pb + 27.5, s_tu - 0.3, 0.14, bright=3.0)          # F colour under the AI beat
+pad([55, A2, Cs3, E3, A3], s_tu + 6.6, s_pp + 15.0, 0.28, bright=5.0, attack=2.5)  # "Nebraska" + why PayPal: A major
 # product underscore: gentle progression, 4 bars repeating
 prog = [[55, 110, 138.59, 164.81], [92.5, 110, 138.59, 185.0], [73.42, 110, 146.83, 185.0], [82.41, 123.47, 164.81, 207.65]]
 bar = 6.0
 k = 0
 tb = s_pr
 while tb < s_en - 0.5:
-    pad(prog[k % 4], tb, min(tb + bar, s_en), 0.22, bright=4.0, attack=1.2, release=1.5)
+    pad(prog[k % 4], tb, min(tb + bar, s_en), 0.2, bright=4.0, attack=1.2, release=1.5)
     tb += bar; k += 1
-# soft pulse (heartbeat-like) during product
 beat = 60 / 76
-tb = s_pr + 0.5
+tb = s_pp + 0.5
 while tb < s_en - 1.0:
     m = 0.5; tt = np.arange(int(m * SR)) / SR
-    put(music, np.sin(2 * np.pi * (46 * np.exp(-tt * 6) + 38) * tt) * env(m, 0.004, 0.12), tb, 0.10)
+    put(music, np.sin(2 * np.pi * (46 * np.exp(-tt * 6) + 38) * tt) * env(m, 0.004, 0.12), tb, 0.09)
     tb += beat
-# end shot: big swell as the graph turns green, then quiet chord under the end card
-pad([55, A2, Cs3, E3, A3, 277.18], s_en, s_en + 9.5, 0.42, bright=7.0, attack=6.0, release=2.5)
-pad([55, A2, E3, A3], s_ec + 0.2, DUR - 1.0, 0.24, bright=3.0, attack=1.5, release=1.0)
+pad([55, A2, Cs3, E3, A3, 277.18], s_en - 0.5, s_en + 7.5, 0.42, bright=7.0, attack=4.0, release=2.0)
+pad([55, A2, E3, A3], s_ec + 0.2, DUR - 0.8, 0.24, bright=3.0, attack=1.2, release=0.8)
 
 # ---------------- sound design ----------------
 def hit(at, gain=0.5):
@@ -104,30 +102,49 @@ def whoosh(at, sec=0.8, gain=0.25):
     tt = np.arange(int(sec * SR)) / SR
     sh = np.sin(np.pi * tt / sec) ** 2
     put(sfx, bp(rng.normal(size=len(tt)), 300, 5000) * sh, at, gain)
+def crack(at):
+    m = 1.2; tt = np.arange(int(m * SR)) / SR
+    grains = (rng.random(len(tt)) < 0.004 * np.exp(-tt * 2)) * rng.normal(size=len(tt))
+    put(sfx, hp(grains, 1500) * 0.8 + lp(rng.normal(size=len(tt)), 400) * env(m, 0.01, 0.3) * 0.3, at, 0.35)
+def drop(at, sec=1.6):
+    tt = np.arange(int(sec * SR)) / SR
+    put(sfx, np.sin(2 * np.pi * np.cumsum(420 * np.exp(-tt * 1.4) + 60) / SR) * env(sec, 0.02, 0.6), at, 0.12)
 
-# stakes: a hit on each card
-for i, c in enumerate([0.0, 4.0, 8.0]):
-    hit(s_st + c + 0.1, 0.35 if i else 0.5); tick(s_st + c + 0.35, 0.12, 5000)
-# turn: silence beat, then the name lands
-hit(s_tu + 7.1, 0.3)
-# product section cuts
-pstart = s_pr
-offs = 0.0
-for sh in E['product']:
-    whoosh(pstart + offs - 0.35, 0.7, 0.12); offs += sum(p[2] for p in sh['pieces'])
-for at in [2.3, 20.3, 33.6, 40.87, 81.3]:
-    uiclick(pstart + at)
-p4 = pstart + 40.0
-deny(p4 + 5.3)                       # injection rejected
-chime(p4 + 12.4, 440, 0.06); chime(p4 + 12.65, 349.2, 0.06)   # recipient held
-for i in range(7): lock(p4 + 16.9 + i * 0.5, i)                 # I1..I7
-hit(p4 + 20.6, 0.25)                                            # payout batch submitted
-for i, f in enumerate([880, 1108.7, 1318.5]): chime(p4 + 22.6 + i * 0.9, f, 0.06)  # three payout items
-chime(p4 + 26.6, 659.3, 0.07); chime(p4 + 26.6, 880, 0.05)      # success
-chime(pstart + 70.4, 554.4, 0.05); chime(pstart + 70.9, 659.3, 0.05)  # maintainer
-chime(pstart + 84.4, 659.3, 0.07)                               # "No second payment" (same motif as success)
+# problem: a hit on each beat, a crack under the failures, a falling tone under the AI beat
+for i, c in enumerate([0.1, 10.2, 16.6, 27.8]):
+    hit(s_pb + c, 0.45 if i == 0 else 0.3); tick(s_pb + c + 0.3, 0.1, 5000)
+crack(s_pb + 20.6); drop(s_pb + 33.0); drop(s_pb + 34.4, 2.0)
+# turn: the name lands
+hit(s_tu + 6.85, 0.3)
+# why PayPal: soft lights on the globe, then the three boxes
+for i, c in enumerate([3.4, 4.6, 5.9, 7.1]): chime(s_pp + c, [880, 987.8, 1108.7, 1318.5][i], 0.03)
+for c in (9.2, 10.3, 11.4): tick(s_pp + c, 0.14, 2600)
+
+# product: cues are written in capture time and mapped through the edit decision list
+shots = E['product']
+shot_start = {}; acc = 0.0
+for sh in shots:
+    shot_start[sh['name']] = acc; acc += sum(p[2] for p in sh['pieces'])
+def at_cap(name, cap):
+    sh = next(x for x in shots if x['name'] == name); a0 = shot_start[name]
+    for a, b, d in sh['pieces']:
+        if b > a and a <= cap <= b: return s_pr + a0 + (cap - a) / (b - a) * d
+        a0 += d
+    return None
+for sh in shots: whoosh(s_pr + shot_start[sh['name']] - 0.35, 0.7, 0.12)
+for name, cap in (('p1', 3.3), ('p2', 6.8), ('p3', 3.0), ('p4', 2.0), ('p6', 1.8)):
+    t0 = at_cap(name, cap)
+    if t0: uiclick(t0)
+deny(at_cap('p4', 10.2))
+t0 = at_cap('p4', 13.8); chime(t0, 440, 0.06); chime(t0 + 0.25, 349.2, 0.06)
+for i in range(7): lock(at_cap('p4', 18.3 + i * 0.5), i)
+hit(at_cap('p4', 22.0), 0.25)
+for i, f in enumerate([880, 1108.7, 1318.5]): chime(at_cap('p4', 24.0 + i), f, 0.06)
+t0 = at_cap('p4', 28.0); chime(t0, 659.3, 0.07); chime(t0, 880, 0.05)
+t0 = s_pr + shot_start['p5'] + 0.4; chime(t0, 554.4, 0.05); chime(t0 + 0.5, 659.3, 0.05)
+chime(at_cap('p6', 12.0), 659.3, 0.07)
 # end card logo
-hit(s_ec + 5.3, 0.28)
+hit(s_ec + 4.8, 0.28)
 
 # ---------------- voice-over ----------------
 from scipy.io.wavfile import read as wread
