@@ -1,8 +1,12 @@
 # Nebraska
 
-## Tagline
+## Taglines
 
-AI agents fund the open-source maintainers they depend on. Actual usage. Bounded decisions. PayPal settlement.
+- AI is the first user of open source that knows exactly who it owes.
+- The AI decides where the money goes. The code decides where it can never go.
+- You can still choose not to pay. You just can't say you didn't know.
+
+**One line:** Nebraska is a hosted service that pays the open-source maintainers behind your AI coding agent's dependencies, every month, by actual usage, through PayPal.
 
 ## Inspiration
 
@@ -45,9 +49,11 @@ The original example also hid a one-cent rounding difference. We made it explici
 
 ## Accomplishments
 
-The reproducible local run produces the specified allocations: $96.77, $217.74, $161.29 and $24.19 from a $500 pool, with one cent recycled. The infrastructure maintainer’s allocation rises from about $69 with neutral AI weights to $161.29 with bounded judgments. A suspicious recipient is held, a separately approved simulated $250 grant is credited, and rerunning settlement preserves a single batch.
-
-Automated checks cover all seven invariants, invalid model responses, injected package text, ambiguous provider failures, reordered status messages, currency isolation, privacy and ledger integrity. PostgreSQL was exercised with concurrent writers and append-only triggers. The local API and actual MCP transports were also exercised.
+- A reproducible month: a $500 budget becomes $96.77, $217.74, $161.29 and $24.19, with one cent recycled. The infrastructure package rises from $69.44 with neutral AI weights to $161.29 with bounded AI judgment. Anyone can rerun it (`npm run demo`) and recompute it independently (`npm run recompute`).
+- A README prompt injection that asks for an out-of-range weight is rejected to the neutral weight; a recipient whose email changed yesterday is held; rerunning month-end returns the same batch `nebraska-2026-11` instead of paying twice.
+- The month-end run is a live Server-Sent Events stream with one event per invariant (I1–I7), persisted so it can be replayed. The same stream drives the UI and the demo film.
+- 54 automated tests cover all seven invariants, invalid and injected model output, ambiguous provider failures, reordered webhooks, currency isolation, privacy and ledger integrity; API route handlers and the MCP stdio transport are exercised for real.
+- Deployed on Render in PayPal sandbox mode. Against the PayPal sandbox we verified OAuth and that the app's token carries the Payouts, Subscriptions and Webhooks scopes.
 
 ## What we learned
 
@@ -55,7 +61,7 @@ Autonomy and accountability can reinforce each other. Let the agent make the dec
 
 ## What's next
 
-Complete external sandbox validation with the entrant’s PayPal/GitHub/model accounts, gather real maintainer feedback, calibrate the public policy parameters and pursue the regulated arrangement needed before any real-money rollout. Larger deployments will add verified ledger checkpoints and indexed read projections.
+Record a complete end-to-end sandbox month with real model decisions, gather real maintainer feedback, calibrate the public policy parameters and pursue the regulated arrangement needed before any real-money rollout. Larger deployments will add verified ledger checkpoints and indexed read projections.
 
 Our long-term vision is for supporting open-source maintainers to become a shared responsibility across the technology industry, rather than relying on a few people’s goodwill.
 
@@ -65,10 +71,13 @@ TypeScript · Next.js · React · AG Grid Community · PostgreSQL · SQLite · P
 
 ## AI disclosure
 
-The configured runtime decision and Treasurer model defaults to `gpt-4.1-2025-04-14`; the returned identifier is recorded per decision. Local demo decisions are deterministic simulations, not model calls. Codex assisted implementation. Video narration is synthetic eSpeak-NG speech. No stock imagery or music is used.
+- **Development:** OpenAI Codex and Anthropic Claude were used for design, planning and implementation.
+- **Runtime:** the decision provider and the Treasurer call an OpenAI-compatible chat-completions model with structured output (configured: DeepSeek V4.1 Flash through OpenCode Zen). The model answers only a fixed catalog of typed questions, never sees payment credentials and cannot approve or redirect money. The returned model ID is stored with every decision. No successful runtime inference was observed before the deadline because the model account had no credit; without an answer, decisions fall back to the neutral weight.
+- **Local demo decisions are simulated** by a deterministic rules provider and labelled as such. All demo identities are fictional.
+- **Video:** synthetic narration (Kokoro-82M, Apache-2.0), synthesized music and sound, no stock footage or third-party logos.
 
-## Testing instructions and submission links
+## Testing instructions
 
-Follow the repository README for the no-credential interactive demo, `npm run demo`, `npm run check`, `npm run check:api` and `npm run check:mcp`. Follow `docs/SANDBOX.md` for actual external integration.
-
-Public source repository: https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon. Before submitting, fill in the optional hosted demo URL and public YouTube video URL. Do not describe the prepared Render configuration as an existing deployment. Do not describe simulated payments as actual sandbox execution. Update this draft’s accomplishments only after retaining the corresponding external evidence.
+- Hosted (PayPal sandbox mode): https://nebraska-paypal-ai-hackathon.onrender.com. Sandbox sign-in and test accounts are listed in the README.
+- Local, no credentials: `npm ci && npm run build && npm start`, then follow "Try it in 3 minutes" in the README.
+- Source: https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon

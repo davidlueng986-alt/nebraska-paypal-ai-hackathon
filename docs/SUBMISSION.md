@@ -1,31 +1,37 @@
-# Entrant-owned submission steps
+# Submission checklist
 
-Official rules were checked on **2026-11-11** at https://paypalaihackathon.devpost.com/rules.
+Official rules: https://paypalaihackathon.devpost.com/rules
+Deadline: **2026-11-12 12:00 Pacific = 20:00 UTC = 21:00 Paris = 2026-11-13 04:00 Taipei**.
 
-Deadline: **2026-11-12 12:00 Pacific**, **20:00 UTC**, **21:00 Paris**, **2026-11-13 04:00 Hong Kong**. Follow the official page if the organizer changes it.
+Status as of 2026-11-12 18:00 UTC.
 
-## Prepared locally
+## Done (with evidence)
 
-- Complete application source and no-credential run instructions.
-- P0/P1/P2 implementation and requirement mapping.
-- MIT license, CI, Render Blueprint and sandbox runbook.
-- English Devpost text and synthetic narrated local-execution video under three minutes.
-- Reproducible demo, example amounts, audit bundle and verification scripts.
+- [x] Public repository with all source, assets and run instructions: https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon
+- [x] MIT `LICENSE` at the repository root (detected by GitHub).
+- [x] PayPal developer platform is central: Subscriptions (budget mandate), Orders v2 (grants), Payouts (one batch per month), verified webhooks, read-only Agent Toolkit cross-check.
+- [x] English README for judges, with a 3-minute local path and a "real vs simulated" table.
+- [x] Working demo: hosted on Render in sandbox mode (https://nebraska-paypal-ai-hackathon.onrender.com, `/api/health` returned `mode: sandbox` on 2026-11-12), plus full local install steps.
+- [x] PayPal sandbox app: OAuth verified; token scopes include Payouts, Subscriptions and Webhooks (2026-11-12).
+- [x] Webhook registered for 14 event types and configured on Render (reported by the team).
+- [x] Automated checks green on `main`: `npm run check` (54 tests + build), `check:api`, `check:mcp`.
+- [x] AI disclosure in README and `docs/DEVPOST.md`.
+- [x] Demo film sources and captions in `video/` and `artifacts/video/` (see `docs/VIDEO.md`).
 
-## Requires entrant account or authentic external evidence
+## Must do before submitting
 
-- [ ] Join the hackathon with the entrant’s Devpost account and confirm eligibility/team details.
-- [ ] Configure PayPal sandbox accounts/app, Payouts entitlement and webhook; record actual end-to-end evidence.
-- [ ] Configure GitHub OAuth and a supported model account; record actual verification/model identifiers.
-- [ ] Resolve the 14-day recipient cooldown timing honestly; do not present seeded verification as genuine.
-- [x] Publish source to the public repository [https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon](https://github.com/davidlueng986-alt/nebraska-paypal-ai-hackathon). GitHub detects its root MIT license.
-- [ ] Optionally deploy to the entrant’s Render account. A working local build with complete instructions is allowed by the rules.
-- [ ] Record browser/sandbox footage and combine it with the prepared video assets. The included video contains local command execution, not browser or actual sandbox footage.
-- [ ] Upload the final video publicly to **YouTube**, under three minutes.
-- [ ] Fill public repo, working-demo/testing instructions and YouTube URLs into the Devpost draft.
-- [ ] Describe actual AI services used; distinguish simulated decisions and actual runtime models.
-- [ ] Provide dedicated sandbox judging access through the submission’s testing mechanism. Never publish private server/API secrets.
-- [ ] Re-read sponsor requirements before selecting AG Grid or Render prizes. AG Grid is actually used; Render is configured but not yet deployed.
-- [ ] Submit before the deadline and retain the submission receipt.
+- [ ] Fill the three "TO FILL" rows in the README (sandbox workspace sign-in token, PayPal sandbox payer and maintainer test logins). Sandbox credentials only.
+- [ ] Upload the film to YouTube as **Public**, under 3 minutes, and paste the link into Devpost (and optionally the README).
+- [ ] Paste `docs/DEVPOST.md` into the Devpost form; add the hosted URL, repository URL and YouTube URL.
+- [ ] Submit on Devpost before 20:00 UTC and keep the confirmation.
 
-Source publication to the public repository above is complete. User-owned deployment, YouTube upload and Devpost submission remain incomplete and require the entrant’s accounts. The source and materials needed for those steps are included.
+## Not done (do not claim)
+
+- [ ] A complete real sandbox month (subscription approved → usage → grant → Payouts → webhooks → statement) recorded in `artifacts/sandbox-run/`.
+- [ ] A successful runtime model inference (the OpenCode account returned "Insufficient balance").
+- [ ] GitHub OAuth verified end to end.
+
+## After judging
+
+- Rotate the PayPal sandbox client secret and the model API key; both were shared in chat during the build.
+- Rotate the judge sign-in token.
