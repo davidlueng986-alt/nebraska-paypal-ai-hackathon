@@ -3,7 +3,6 @@ import { BarChart3, CalendarCheck, CircleDollarSign, FileText, Inbox, PackageChe
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useData, usePayer } from "../lib/data";
-import { Honesty } from "./honesty";
 
 export function Masthead() {
   const path = usePathname() ?? "/";
@@ -62,7 +61,6 @@ export function Masthead() {
           </div>
         </div>
       </header>
-      <Honesty />
     </>
   );
 }

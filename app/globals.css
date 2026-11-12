@@ -504,23 +504,6 @@ main {
   background: var(--success-bg);
   border-color: #1a7f3766;
 }
-.banner {
-  background: var(--attention-bg);
-  border-bottom: 1px solid var(--attention-border);
-}
-.banner-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 36px;
-  padding: 6px 0;
-}
-.banner svg {
-  color: var(--attention);
-}
-.banner-row > span:first-of-type {
-  flex: 1;
-}
 
 /* ───── Identity ───── */
 .who {

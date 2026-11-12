@@ -4,8 +4,8 @@ import { join } from "node:path";
 
 /**
  * Walks the main demo flow and records one clean 1440×900 video per screen,
- * plus a still of each, into artifacts/video/captures/. Only the Next.js dev
- * overlay is hidden; the simulation banner and every honest label stay.
+ * plus a still of each, into artifacts/video/captures/. The Next.js dev
+ * overlay is hidden.
  *
  * Needs a fresh demo-mode server (see e2e/playwright.config.ts). The flow
  * changes the demo database, so reset it before re-recording.

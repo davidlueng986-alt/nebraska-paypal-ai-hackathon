@@ -35,7 +35,7 @@ Swap fixture for live data without code changes: the payload shapes above are id
 - Optional API additions the UI already handles if present: `rows[].aiOffCents` in `GET payer` (else a client mirror of the allocator is used); `demoOverrides` on `GET health` or `GET bootstrap` (any key matching /cooldown/ shows "Demo: cooldown shortened").
 - Live demo seed: kleur's injected README is not rejected in a live run (it is in the fixture). If you want the injection to show in the live video segment, make the demo decision provider reject it live as well.
 - Small shared-file changes made by Agent B: `vitest.config.ts` (excludes `e2e/**` from unit tests), `package.json` (`capture` script, `@playwright/test@1.63.0` dev dependency; removed nothing else), `.gitignore` (`!artifacts/ui/`).
-- README screenshots: `artifacts/ui/desktop/*.png` (1440×900) and `artifacts/ui/mobile/*.png` (390×844). All show demo mode with the simulation banner.
+- README screenshots: `artifacts/ui/desktop/*.png` (1440×900) and `artifacts/ui/mobile/*.png` (390×844). All show demo mode.
 
 ## From Agent B (UI) to Agent C (Video)
 
