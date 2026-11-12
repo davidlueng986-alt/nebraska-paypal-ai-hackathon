@@ -2,6 +2,7 @@ import { z } from "zod";
 import type { Nebraska } from "./service";
 import { PARAMS, questions, type Question } from "./model";
 import { DomainError, hash, id, now } from "./util";
+import { chatCompletion, modelKey } from "./llm";
 const toolSchemas = [
   {
     name: "ledger_summary",
@@ -243,7 +244,7 @@ export class Treasurer {
   async run(period: string, execute = true) {
     if (
       this.service.mode === "sandbox" &&
-      process.env.OPENAI_API_KEY &&
+      modelKey() &&
       process.env.TREASURER_MODE !== "workflow"
     ) {
       try {
@@ -302,19 +303,11 @@ export class Treasurer {
       .filter((t) => execute || t.name !== "payout_execute")
       .map((t) => ({ type: "function", function: { ...t, strict: true } }));
     for (let step = 0; step < 32; step++) {
-      const r = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        signal: AbortSignal.timeout(45000),
-        body: JSON.stringify({
-          model: process.env.TREASURER_MODEL ?? "gpt-4.1-2025-04-14",
-          messages,
-          tools,
-          parallel_tool_calls: false,
-        }),
+      const r = await chatCompletion({
+        model: process.env.TREASURER_MODEL ?? "gpt-4.1-2025-04-14",
+        messages,
+        tools,
+        parallel_tool_calls: false,
       });
       if (!r.ok) throw new DomainError(`Treasurer model HTTP ${r.status}`, 502);
       const data = await r.json();

@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { PARAMS, type Decision, type Package, type Question } from "./model";
 import { hash, id } from "./util";
+import { chatCompletion, modelKey, parseJsonContent } from "./llm";
 export type DecisionInput = {
   period: string;
   subject: string;
@@ -170,11 +171,11 @@ export class DemoDecisionProvider implements DecisionProvider {
 }
 export class StructuredDecisionProvider implements DecisionProvider {
   constructor(
-    private key = process.env.OPENAI_API_KEY ?? "",
+    private key = modelKey(),
     private model = process.env.DECISION_MODEL ?? "gpt-4.1-2025-04-14",
   ) {}
   async answer(input: DecisionInput): Promise<Answer> {
-    if (!this.key) throw new Error("OPENAI_API_KEY missing");
+    if (!this.key) throw new Error("MODEL_API_KEY / OPENAI_API_KEY missing");
     const rule = rules[input.question];
     const valueSchema =
       input.question === "payout_exception"
@@ -186,14 +187,8 @@ export class StructuredDecisionProvider implements DecisionProvider {
               minimum: input.question === "payee_risk" ? 0 : 0.5,
               maximum: input.question === "payee_risk" ? 1 : 2,
             };
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${this.key}`,
-        "Content-Type": "application/json",
-      },
-      signal: AbortSignal.timeout(45_000),
-      body: JSON.stringify({
+    const response = await chatCompletion(
+      {
         model: this.model,
         messages: [
           {
@@ -225,8 +220,8 @@ export class StructuredDecisionProvider implements DecisionProvider {
             },
           },
         },
-      }),
-    });
+      },
+    );
     if (!response.ok) throw new Error(`Model HTTP ${response.status}`);
     const data = await response.json();
     const parsed = z
@@ -236,7 +231,7 @@ export class StructuredDecisionProvider implements DecisionProvider {
         reason: z.string().max(1200),
       })
       .strict()
-      .parse(JSON.parse(data.choices[0].message.content));
+      .parse(parseJsonContent(data.choices[0].message.content));
     return { ...parsed, modelVersion: data.model ?? this.model };
   }
 }
