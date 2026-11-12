@@ -1,0 +1,13 @@
+{
+  "name": "03-approvals",
+  "seconds": 10.68,
+  "frames": 109,
+  "viewport": [
+    1440,
+    900
+  ],
+  "dpr": 2,
+  "base": "http://localhost:3000",
+  "mode": "demo",
+  "capturedAt": "2026-11-12T13:52:48.758Z"
+}

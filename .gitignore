@@ -15,3 +15,14 @@ artifacts/*
 !artifacts/scenes.json
 !artifacts/video-metadata.json
 !artifacts/ui/
+# Agent C (video)
+!artifacts/video/
+artifacts/video/build/
+artifacts/video/captures/.frames/
+artifacts/video/captures/.raw/
+video/film/scene/bundle.js
+video/film/fonts/
+video/film/scene/fonts/
+video/film/vo/
+artifacts/video/captures/*.mp4
+video/film/scene/layout.json

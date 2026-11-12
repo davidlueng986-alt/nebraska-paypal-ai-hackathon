@@ -1,0 +1,13 @@
+{
+  "name": "05-month-end-live",
+  "seconds": 32.38,
+  "frames": 1534,
+  "viewport": [
+    1440,
+    900
+  ],
+  "dpr": 2,
+  "base": "http://localhost:3000",
+  "mode": "demo",
+  "capturedAt": "2026-11-12T13:53:49.877Z"
+}

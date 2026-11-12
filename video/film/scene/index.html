@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Mono;src:url(fonts/jetbrains-mono-latin-400-normal.woff2)}
+@font-face{font-family:Serif;src:url(fonts/instrument-serif-latin-400-normal.woff2)}
+@font-face{font-family:Serif;font-style:italic;src:url(fonts/instrument-serif-latin-400-italic.woff2)}
+@font-face{font-family:Sans;src:url(fonts/inter-tight-latin-500-normal.woff2)}
+:root{--s:calc(100vw/1920)}
+html,body{margin:0;background:#070706;overflow:hidden;width:100vw;height:100vh}
+#stage canvas{display:block}
+.ov{position:absolute;pointer-events:none;color:#ede8dd}
+#code{left:50%;top:50%;font:400 calc(30*var(--s))/1 Mono;letter-spacing:.01em;white-space:pre;transform-origin:50% 50%;color:#ede8dd}
+#code .kw{color:#9a958b}
+.caret{display:inline-block;width:calc(15*var(--s));height:calc(32*var(--s));background:#ede8dd;vertical-align:calc(-6*var(--s));margin-left:calc(3*var(--s))}
+#stat{left:calc(150*var(--s));bottom:calc(180*var(--s));font:500 calc(15*var(--s)) Sans;letter-spacing:.22em;text-transform:uppercase;color:#a8a397}
+#stat b{display:block;font:400 calc(64*var(--s))/1.05 Serif;letter-spacing:0;text-transform:none;color:#ede8dd;margin-bottom:calc(10*var(--s))}
+#depth{right:calc(150*var(--s));top:calc(170*var(--s));text-align:right;font:500 calc(14*var(--s)) Sans;letter-spacing:.24em;color:#a8a397}
+#depthN{display:block;font:400 calc(96*var(--s))/1 Serif;letter-spacing:0;color:#ede8dd;margin:calc(8*var(--s)) 0}
+#depthName{font:400 calc(15*var(--s)) Mono;letter-spacing:0;color:#ffd9a0}
+.line{left:0;right:0;text-align:center;font:400 calc(58*var(--s))/1.1 Serif;color:#ede8dd}
+#l1{bottom:calc(250*var(--s))}
+#l2{bottom:calc(178*var(--s));font-style:italic}
+#label{left:0;top:0;font:400 calc(17*var(--s)) Mono;color:#ede8dd;white-space:nowrap}
+#label small{display:block;font:500 calc(12*var(--s)) Sans;letter-spacing:.2em;color:#a8a397;margin-top:calc(6*var(--s));text-transform:uppercase}
+</style></head>
+<body>
+<div id="stage"></div>
+<div id="code" class="ov"></div>
+<div id="stat" class="ov"><b>419 packages.</b>one repository · package-lock.json</div>
+<div id="depth" class="ov">DEPTH<span id="depthN">0</span><span id="depthName"></span></div>
+<div id="l1" class="ov line">Every line an AI agent writes</div>
+<div id="l2" class="ov line">stands on someone else’s work.</div>
+<div id="label" class="ov">p-try<small>depth 8 · 1 dependent</small></div>
+<script src="bundle.js"></script>
+</body></html>
