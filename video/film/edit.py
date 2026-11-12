@@ -88,6 +88,9 @@ for shot in SHOTS:
         st = src_time(shot['pieces'], t)
         src = rd.get(int(round(st * FPS)))
         cx, cy, z = cam_at(shot['camera'], t)
+        # shot transitions: a slight push-in from darkness at the head, a short dip at the tail
+        k_in = ease(min(1.0, t / 0.5)); k_out = ease(min(1.0, (dur - t) / 0.3))
+        z = z * (0.95 + 0.05 * k_in)
         # keep the content filling the frame once we are zoomed in
         fill = min(1.0, max(0.0, (z - 1.0) / 0.3))
         hx, hy = 960 / z, 540 / z
@@ -110,6 +113,8 @@ for shot in SHOTS:
         mask = Image.new('L', (W, H), 0)
         ImageDraw.Draw(mask).rounded_rectangle([x0, y0, x1, y1], radius=max(2, int(12 * sc)), fill=255)
         frame.paste(img, (0, 0), mask)
+        dip = 1.0 - k_in * k_out
+        if dip > 0.002: frame = Image.blend(frame, BG, dip * 0.85)
         d = ImageDraw.Draw(frame)
         # chapter label + honesty note (fade in with the shot)
         k = min(1.0, t / 0.6)

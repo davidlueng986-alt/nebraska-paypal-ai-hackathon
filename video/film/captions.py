@@ -17,15 +17,25 @@ for v in E['vo']:
     text, t0, d = V[v['id']], v['at'], dur(v['id'])
     # split into caption chunks of at most two lines, timed by character share
     sents = [s.strip() for s in text.replace('? ', '?|').replace('. ', '.|').split('|') if s.strip()]
+    split = []
+    for s in sents:  # a sentence longer than two lines is split at the comma or colon nearest its middle
+        if len(s) > 96:
+            cuts = [i for i, ch in enumerate(s) if ch in ',:' and 20 < i < len(s) - 20]
+            if cuts:
+                i = min(cuts, key=lambda i: abs(i - len(s) / 2)); split += [s[:i + 1], s[i + 1:].strip()]; continue
+        split.append(s)
+    sents = split
     chunks, cur = [], ''
     for s in sents:
         if len(cur) + len(s) + 1 <= 84: cur = (cur + ' ' + s).strip()
-        else: chunks.append(cur); cur = s
+        else:
+            if cur: chunks.append(cur)
+            cur = s
     if cur: chunks.append(cur)
     total = sum(len(c) for c in chunks); t = t0
     for c in chunks:
         cd = d * len(c) / total
-        out.append(f"{k}\n{ts(t)} --> {ts(t + cd - 0.05)}\n" + '\n'.join(textwrap.wrap(c, 46)) + '\n')
+        out.append(f"{k}\n{ts(t)} --> {ts(t + cd - 0.05)}\n" + '\n'.join(textwrap.wrap(c, 54, break_on_hyphens=False)) + '\n')
         k += 1; t += cd
 open(sys.argv[1], 'w').write('\n'.join(out))
 print(k - 1, 'captions')
