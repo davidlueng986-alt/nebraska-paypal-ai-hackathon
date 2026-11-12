@@ -28,14 +28,15 @@ PAYPAL_CLIENT_SECRET=<sandbox app client secret>
 PAYPAL_WEBHOOK_ID=<registered webhook ID>
 GITHUB_CLIENT_ID=<OAuth app client ID>
 GITHUB_CLIENT_SECRET=<OAuth app client secret>
-OPENAI_API_KEY=<model key>
+MODEL_BASE_URL=<OpenAI-compatible endpoint; default https://api.openai.com/v1>
+MODEL_API_KEY=<model key>   # OPENAI_API_KEY also accepted
 ```
 
 Use Postgres for shared web/worker deployment (`DATABASE_URL`). The Render Blueprint supplies both services with the same database. SQLite can run a single-host local sandbox, but the webhook must reach a public HTTPS route.
 
 Create a GitHub OAuth app with callback `APP_URL/api/auth/github/callback`. The sign-in scope is `read:user public_repo`; only a maintainer with admin/maintain permission on the canonical public repository can claim its package. Repository organization policies may require explicit app approval before GitHub returns usable permissions.
 
-For the model, select an available dated structured-output model. Both model defaults are `gpt-4.1-2025-04-14`. `TREASURER_MODE=agent` runs the fixed tool-calling loop. `TREASURER_MODE=workflow` is useful when validating payment plumbing separately while still using structured decision calls.
+For the model, select an available dated structured-output model on any OpenAI-compatible endpoint (for example OpenCode Zen: `MODEL_BASE_URL=https://opencode.ai/zen/v1`, `DECISION_MODEL=deepseek-v4.1-flash`). The identifier the provider returns is recorded on every decision. Both model defaults are `gpt-4.1-2025-04-14`. `TREASURER_MODE=agent` runs the fixed tool-calling loop. `TREASURER_MODE=workflow` is useful when validating payment plumbing separately while still using structured decision calls.
 
 ## 3. Register webhook events
 
